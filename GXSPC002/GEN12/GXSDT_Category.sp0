@@ -1,0 +1,45 @@
+ 
+spec_i([ sdt,[ 0,6,0 ],'Category','Category',0,spa,'17_0_5-152925' ]).
+ 
+struct_dt_i([ 0,6,0 ],name,'Category').
+struct_dt_i([ 0,6,0 ],namespace,'Parks').
+struct_dt_i([ 0,6,0 ],significantName,'Category').
+struct_dt_i([ 0,6,0 ],'ObjName','Category').
+struct_dt_i([ 0,6,0 ],'ObjDesc','Category').
+struct_dt_i([ 0,6,0 ],'ExternalName','Category').
+struct_dt_i([ 0,6,0 ],'ExternalNamespace','Parks').
+struct_dt_i([ 0,6,0 ],key,[ 19 ]).
+struct_dt_i([ 0,6,0 ],lvl,6).
+struct_dt_i([ 0,6,0 ],fullname,'Category').
+ 
+struct_dt_elem_i([ 0,6,0 ],1,name,'Categoryid').
+struct_dt_elem_i([ 0,6,0 ],1,camelname,'CategoryId').
+struct_dt_elem_i([ 0,6,0 ],1,basedon,82).
+struct_dt_elem_i([ 0,6,0 ],1,length,4).
+struct_dt_elem_i([ 0,6,0 ],1,decimals,0).
+struct_dt_elem_i([ 0,6,0 ],1,sign,0).
+struct_dt_elem_i([ 0,6,0 ],1,type,[ 4,4,0 ]).
+struct_dt_elem_i([ 0,6,0 ],1,pic,'ZZZ9').
+struct_dt_elem_i([ 0,6,0 ],1,collection,'False').
+struct_dt_elem_i([ 0,6,0 ],1,attributeid,'19').
+struct_dt_elem_i([ 0,6,0 ],1,'ExternalName','CategoryId').
+struct_dt_elem_i([ 0,6,0 ],1,'ExternalNamespace','Parks').
+struct_dt_elem_i([ 0,6,0 ],2,name,'Categoryname').
+struct_dt_elem_i([ 0,6,0 ],2,camelname,'CategoryName').
+struct_dt_elem_i([ 0,6,0 ],2,basedon,83).
+struct_dt_elem_i([ 0,6,0 ],2,length,50).
+struct_dt_elem_i([ 0,6,0 ],2,decimals,0).
+struct_dt_elem_i([ 0,6,0 ],2,type,[ 5,50,0 ]).
+struct_dt_elem_i([ 0,6,0 ],2,pic,'').
+struct_dt_elem_i([ 0,6,0 ],2,collection,'False').
+struct_dt_elem_i([ 0,6,0 ],2,attributeid,'20').
+struct_dt_elem_i([ 0,6,0 ],2,'ExternalName','CategoryName').
+struct_dt_elem_i([ 0,6,0 ],2,'ExternalNamespace','Parks').
+ 
+ 
+ 
+ 
+ 
+ 
+module_info_i('GeneXus\Common','PACKAGE','com.genexuscore').
+module_info_i('GeneXus\Common','PackageName','GeneXus.jar').

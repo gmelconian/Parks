@@ -1,0 +1,22 @@
+
+<ObjectSpec>
+<SpecVersion>17_0_5-152925</SpecVersion>
+<Object>
+<ObjClsGuid>84a12160-f59b-4ad7-a683-ea4481ac23e9</ObjClsGuid>
+<ObjCls>1</ObjCls>
+<ObjId>23</ObjId>
+<ObjName>GamesByCategoryUnitTest</ObjName>
+<ObjDesc>Games By Category Unit Test</ObjDesc>
+<ObjPgmName>GamesByCategoryUnitTest</ObjPgmName>
+<ObjClsName>Procedure</ObjClsName></Object>
+<Result>genreq</Result>
+<Warnings></Warnings>
+<Errors></Errors>
+<OutputDevices>
+<Device>None</Device></OutputDevices>
+<Generator>
+<GenId>12</GenId>
+<GenName>Default (Java)</GenName></Generator>
+<FormClass>Graphic</FormClass>
+<Parameters></Parameters>
+<Levels></Levels></ObjectSpec>

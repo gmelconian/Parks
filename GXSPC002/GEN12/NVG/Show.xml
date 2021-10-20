@@ -1,0 +1,128 @@
+
+<ObjectSpec>
+<SpecVersion>17_0_5-152925</SpecVersion>
+<Object>
+<ObjClsGuid>1db606f2-af09-4cf9-a3b5-b481519d28f6</ObjClsGuid>
+<ObjCls>0</ObjCls>
+<ObjId>4</ObjId>
+<ObjName>Show</ObjName>
+<ObjDesc>Show</ObjDesc>
+<ObjPgmName>Show</ObjPgmName>
+<ObjClsName>Transaction</ObjClsName></Object>
+<Result>genreq</Result>
+<Warnings></Warnings>
+<Errors></Errors>
+<Generator>
+<GenId>12</GenId>
+<GenName>Default (Java)</GenName></Generator>
+<FormClass>HTML</FormClass>
+<Parameters>
+<Parameter>
+<IO>in</IO>
+<Variable>
+<VarId>Mode</VarId>
+<VarName>&amp;Mode</VarName></Variable></Parameter>
+<Parameter>
+<IO>in</IO>
+<Variable>
+<VarId>Showid</VarId>
+<VarName>&amp;ShowId</VarName></Variable></Parameter></Parameters>
+<Levels>
+<Level>
+<LevelType>Trn</LevelType>
+<LevelNumber>4</LevelNumber>
+<BaseTable>
+<Table>
+<TableId>4</TableId>
+<TableName>Show</TableName>
+<Description>Show</Description></Table></BaseTable>
+<NavigationTree>
+<Table>
+<TableId>4</TableId>
+<TableName>Show</TableName>
+<Description>Show</Description>
+<Updated>Yes</Updated>
+<RecordsToRead>many</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>14</AttriId>
+<AttriName>ShowId</AttriName>
+<Description>Show Id</Description></Attribute></KeyAttributes>
+<Tables></Tables></Table></NavigationTree>
+<Formulas>
+<VerticalFormulas></VerticalFormulas>
+<AggSelFormulas></AggSelFormulas></Formulas>
+<DynamicLoads></DynamicLoads>
+<Rules></Rules>
+<AfterAttributeRules></AfterAttributeRules>
+<AfterConfirmRules></AfterConfirmRules>
+<TablesToUpdate>
+<TableToUpdate>
+<Table>
+<TableId>4</TableId>
+<TableName>Show</TableName>
+<Description>Show</Description></Table>
+<TableAction>insert</TableAction>
+<AttrisToUpdate>
+<Attribute>
+<AttriId>15</AttriId>
+<AttriName>ShowName</AttriName>
+<Description>Show Name</Description></Attribute>
+<Attribute>
+<AttriId>16</AttriId>
+<AttriName>ShowImage</AttriName>
+<Description>Show Image</Description></Attribute>
+<Attribute>
+<AttriId>40000</AttriId>
+<AttriName>ShowImage.Uri  </AttriName>
+<Description></Description></Attribute>
+<Attribute>
+<AttriId>50</AttriId>
+<AttriName>ShowDate</AttriName>
+<Description>Show Date</Description></Attribute>
+<Attribute>
+<AttriId>51</AttriId>
+<AttriName>ShowSchedule</AttriName>
+<Description>Show Schedule</Description></Attribute></AttrisToUpdate></TableToUpdate>
+<TableToUpdate>
+<Table>
+<TableId>4</TableId>
+<TableName>Show</TableName>
+<Description>Show</Description></Table>
+<TableAction>update</TableAction>
+<AttrisToUpdate>
+<Attribute>
+<AttriId>15</AttriId>
+<AttriName>ShowName</AttriName>
+<Description>Show Name</Description></Attribute>
+<Attribute>
+<AttriId>16</AttriId>
+<AttriName>ShowImage</AttriName>
+<Description>Show Image</Description></Attribute>
+<Attribute>
+<AttriId>40000</AttriId>
+<AttriName>ShowImage.Uri  </AttriName>
+<Description></Description></Attribute>
+<Attribute>
+<AttriId>50</AttriId>
+<AttriName>ShowDate</AttriName>
+<Description>Show Date</Description></Attribute>
+<Attribute>
+<AttriId>51</AttriId>
+<AttriName>ShowSchedule</AttriName>
+<Description>Show Schedule</Description></Attribute></AttrisToUpdate></TableToUpdate>
+<TableToUpdate>
+<Table>
+<TableId>4</TableId>
+<TableName>Show</TableName>
+<Description>Show</Description></Table>
+<TableAction>delete</TableAction>
+<AttrisToUpdate></AttrisToUpdate></TableToUpdate></TablesToUpdate>
+<AfterInsertRules></AfterInsertRules>
+<AfterUpdateRules></AfterUpdateRules>
+<AfterDeleteRules></AfterDeleteRules>
+<TablesToControlOnDelete></TablesToControlOnDelete>
+<Levels></Levels>
+<AfterTrnRules></AfterTrnRules>
+<AfterLevelRules></AfterLevelRules></Level></Levels>
+<Suggests></Suggests></ObjectSpec>

@@ -1,0 +1,105 @@
+
+<ObjectSpec>
+<SpecVersion>17_0_5-152925</SpecVersion>
+<Object>
+<ObjClsGuid>84a12160-f59b-4ad7-a683-ea4481ac23e9</ObjClsGuid>
+<ObjCls>1</ObjCls>
+<ObjId>14</ObjId>
+<ObjName>AmusementParksList</ObjName>
+<ObjDesc>Amusement Parks List</ObjDesc>
+<ObjPgmName>AmusementParksList</ObjPgmName>
+<ObjClsName>Procedure</ObjClsName></Object>
+<Result>genreq</Result>
+<Warnings>
+<Warning>
+<MsgCode>spc0038</MsgCode>
+<Message>
+<Token>There is no index for order </Token>
+<Attribute>
+<AttriId>13</AttriId>
+<AttriName>CountryName</AttriName>
+<Description>Country Name</Description></Attribute>
+<Token>; poor performance may be noticed</Token>
+<Token> in group starting at line </Token>
+<Token>5</Token>
+<Token></Token>
+<Token>.</Token></Message></Warning></Warnings>
+<Errors></Errors>
+<OutputDevices>
+<Device>File</Device></OutputDevices>
+<Main>Yes</Main>
+<CallProtocol>HTTP</CallProtocol>
+<Generator>
+<GenId>12</GenId>
+<GenName>Default (Java)</GenName></Generator>
+<FormClass>Graphic</FormClass>
+<Parameters></Parameters>
+<Levels>
+<Level>
+<LevelNumber>2</LevelNumber>
+<Optimizations></Optimizations>
+<LevelType>For Each</LevelType>
+<LevelBeginRow>18</LevelBeginRow>
+<BaseTable>
+<Table>
+<TableId>2</TableId>
+<TableName>AmusementPark</TableName>
+<Description>Amusement Park</Description></Table></BaseTable>
+<Order>
+<Attribute>
+<AttriId>13</AttriId>
+<AttriName>CountryName</AttriName>
+<Description>Country Name</Description></Attribute></Order>
+<Condition></Condition>
+<LevelOptions></LevelOptions>
+<OptimizedWhere>
+<StartFrom>
+<Condition>
+<Attribute>
+<AttriId>13</AttriId>
+<AttriName>CountryName</AttriName>
+<Description>Country Name</Description></Attribute>
+<Sp></Sp>
+<Token>=</Token>
+<Sp></Sp>
+<Token>&quot;Uruguay&quot;</Token></Condition></StartFrom>
+<LoopWhile>
+<Condition>
+<Attribute>
+<AttriId>13</AttriId>
+<AttriName>CountryName</AttriName>
+<Description>Country Name</Description></Attribute>
+<Sp></Sp>
+<Token>=</Token>
+<Sp></Sp>
+<Token>&quot;Uruguay&quot;</Token></Condition></LoopWhile></OptimizedWhere>
+<NonOptimizedWhere></NonOptimizedWhere>
+<JoinLocation>1</JoinLocation>
+<NavigationTree>
+<Table>
+<TableId>2</TableId>
+<TableName>AmusementPark</TableName>
+<Description>Amusement Park</Description>
+<RecordsToRead>many</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>7</AttriId>
+<AttriName>AmusementParkId</AttriName>
+<Description>Amusement Park Id</Description></Attribute></KeyAttributes>
+<Tables>
+<Table>
+<TableId>3</TableId>
+<TableName>Country</TableName>
+<Description>Country</Description>
+<RecordsToRead>one</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>12</AttriId>
+<AttriName>CountryId</AttriName>
+<Description>Country Id</Description></Attribute></KeyAttributes>
+<Tables></Tables></Table></Tables></Table></NavigationTree>
+<TablesToUpdate></TablesToUpdate>
+<Formulas>
+<VerticalFormulas></VerticalFormulas>
+<AggSelFormulas></AggSelFormulas></Formulas>
+<Levels></Levels></Level></Levels></ObjectSpec>

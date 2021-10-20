@@ -1,0 +1,114 @@
+ 
+spec_i([ sdt,[ 26,66,0 ],'StringConcatenationUnitTestSDT','StringConcatenationUnitTestSDT',0,spa,'17_0_5-152925' ]).
+ 
+struct_dt_i([ 26,66,0 ],name,'StringConcatenationUnitTestSDT').
+struct_dt_i([ 26,66,0 ],namespace,'Parks').
+struct_dt_i([ 26,66,0 ],'ObjName','StringConcatenationUnitTestSDT').
+struct_dt_i([ 26,66,0 ],'ObjDesc','String Concatenation Unit Test SDT').
+struct_dt_i([ 26,66,0 ],'ExternalName','StringConcatenationUnitTestSDT').
+struct_dt_i([ 26,66,0 ],'ExternalNamespace','Parks').
+struct_dt_i([ 26,66,0 ],fullname,'StringConcatenationUnitTestSDT').
+struct_dt_i([ 26,66,0 ],modified,yes).
+ 
+struct_dt_elem_i([ 26,66,0 ],1,name,'Testcaseid').
+struct_dt_elem_i([ 26,66,0 ],1,camelname,'TestCaseId').
+struct_dt_elem_i([ 26,66,0 ],1,length,40).
+struct_dt_elem_i([ 26,66,0 ],1,decimals,0).
+struct_dt_elem_i([ 26,66,0 ],1,type,[ 13,40,0 ]).
+struct_dt_elem_i([ 26,66,0 ],1,pic,'').
+struct_dt_elem_i([ 26,66,0 ],1,collection,'False').
+struct_dt_elem_i([ 26,66,0 ],1,'ExternalName','TestCaseId').
+struct_dt_elem_i([ 26,66,0 ],1,'ExternalNamespace','Parks').
+struct_dt_elem_i([ 26,66,0 ],1,'XmlType','Element').
+struct_dt_elem_i([ 26,66,0 ],1,'XmlName','').
+struct_dt_elem_i([ 26,66,0 ],1,'XmlNamespace','').
+struct_dt_elem_i([ 26,66,0 ],1,soaptype,'').
+struct_dt_elem_i([ 26,66,0 ],1,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,66,0 ],1,'JsonName','').
+struct_dt_elem_i([ 26,66,0 ],1,'JsonInclude',idJsonEmpty).
+struct_dt_elem_i([ 26,66,0 ],2,name,'String1').
+struct_dt_elem_i([ 26,66,0 ],2,camelname,string1).
+struct_dt_elem_i([ 26,66,0 ],2,length,20).
+struct_dt_elem_i([ 26,66,0 ],2,decimals,0).
+struct_dt_elem_i([ 26,66,0 ],2,type,[ 5,20,0 ]).
+struct_dt_elem_i([ 26,66,0 ],2,pic,'').
+struct_dt_elem_i([ 26,66,0 ],2,collection,'False').
+struct_dt_elem_i([ 26,66,0 ],2,'ExternalName',string1).
+struct_dt_elem_i([ 26,66,0 ],2,'ExternalNamespace','Parks').
+struct_dt_elem_i([ 26,66,0 ],2,'XmlType','Element').
+struct_dt_elem_i([ 26,66,0 ],2,'XmlName','').
+struct_dt_elem_i([ 26,66,0 ],2,'XmlNamespace','').
+struct_dt_elem_i([ 26,66,0 ],2,soaptype,'').
+struct_dt_elem_i([ 26,66,0 ],2,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,66,0 ],2,'JsonName','').
+struct_dt_elem_i([ 26,66,0 ],2,'JsonInclude',idJsonEmpty).
+struct_dt_elem_i([ 26,66,0 ],3,name,'String2').
+struct_dt_elem_i([ 26,66,0 ],3,camelname,string2).
+struct_dt_elem_i([ 26,66,0 ],3,length,20).
+struct_dt_elem_i([ 26,66,0 ],3,decimals,0).
+struct_dt_elem_i([ 26,66,0 ],3,type,[ 5,20,0 ]).
+struct_dt_elem_i([ 26,66,0 ],3,pic,'').
+struct_dt_elem_i([ 26,66,0 ],3,collection,'False').
+struct_dt_elem_i([ 26,66,0 ],3,'ExternalName',string2).
+struct_dt_elem_i([ 26,66,0 ],3,'ExternalNamespace','Parks').
+struct_dt_elem_i([ 26,66,0 ],3,'XmlType','Element').
+struct_dt_elem_i([ 26,66,0 ],3,'XmlName','').
+struct_dt_elem_i([ 26,66,0 ],3,'XmlNamespace','').
+struct_dt_elem_i([ 26,66,0 ],3,soaptype,'').
+struct_dt_elem_i([ 26,66,0 ],3,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,66,0 ],3,'JsonName','').
+struct_dt_elem_i([ 26,66,0 ],3,'JsonInclude',idJsonEmpty).
+struct_dt_elem_i([ 26,66,0 ],4,name,'Concatenation').
+struct_dt_elem_i([ 26,66,0 ],4,camelname,concatenation).
+struct_dt_elem_i([ 26,66,0 ],4,length,20).
+struct_dt_elem_i([ 26,66,0 ],4,decimals,0).
+struct_dt_elem_i([ 26,66,0 ],4,type,[ 5,20,0 ]).
+struct_dt_elem_i([ 26,66,0 ],4,pic,'').
+struct_dt_elem_i([ 26,66,0 ],4,collection,'False').
+struct_dt_elem_i([ 26,66,0 ],4,'ExternalName',concatenation).
+struct_dt_elem_i([ 26,66,0 ],4,'ExternalNamespace','Parks').
+struct_dt_elem_i([ 26,66,0 ],4,'XmlType','Element').
+struct_dt_elem_i([ 26,66,0 ],4,'XmlName','').
+struct_dt_elem_i([ 26,66,0 ],4,'XmlNamespace','').
+struct_dt_elem_i([ 26,66,0 ],4,soaptype,'').
+struct_dt_elem_i([ 26,66,0 ],4,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,66,0 ],4,'JsonName','').
+struct_dt_elem_i([ 26,66,0 ],4,'JsonInclude',idJsonEmpty).
+struct_dt_elem_i([ 26,66,0 ],5,name,'Expectedconcatenation').
+struct_dt_elem_i([ 26,66,0 ],5,camelname,'Expectedconcatenation').
+struct_dt_elem_i([ 26,66,0 ],5,length,20).
+struct_dt_elem_i([ 26,66,0 ],5,decimals,0).
+struct_dt_elem_i([ 26,66,0 ],5,type,[ 5,20,0 ]).
+struct_dt_elem_i([ 26,66,0 ],5,pic,'').
+struct_dt_elem_i([ 26,66,0 ],5,collection,'False').
+struct_dt_elem_i([ 26,66,0 ],5,'ExternalName','Expectedconcatenation').
+struct_dt_elem_i([ 26,66,0 ],5,'ExternalNamespace','Parks').
+struct_dt_elem_i([ 26,66,0 ],5,'XmlType','Element').
+struct_dt_elem_i([ 26,66,0 ],5,'XmlName','').
+struct_dt_elem_i([ 26,66,0 ],5,'XmlNamespace','').
+struct_dt_elem_i([ 26,66,0 ],5,soaptype,'').
+struct_dt_elem_i([ 26,66,0 ],5,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,66,0 ],5,'JsonName','').
+struct_dt_elem_i([ 26,66,0 ],5,'JsonInclude',idJsonEmpty).
+struct_dt_elem_i([ 26,66,0 ],6,name,'Msgconcatenation').
+struct_dt_elem_i([ 26,66,0 ],6,camelname,'Msgconcatenation').
+struct_dt_elem_i([ 26,66,0 ],6,length,100).
+struct_dt_elem_i([ 26,66,0 ],6,decimals,0).
+struct_dt_elem_i([ 26,66,0 ],6,type,[ 13,100,0 ]).
+struct_dt_elem_i([ 26,66,0 ],6,pic,'').
+struct_dt_elem_i([ 26,66,0 ],6,collection,'False').
+struct_dt_elem_i([ 26,66,0 ],6,'ExternalName','Msgconcatenation').
+struct_dt_elem_i([ 26,66,0 ],6,'ExternalNamespace','Parks').
+struct_dt_elem_i([ 26,66,0 ],6,'XmlType','Element').
+struct_dt_elem_i([ 26,66,0 ],6,'XmlName','').
+struct_dt_elem_i([ 26,66,0 ],6,'XmlNamespace','').
+struct_dt_elem_i([ 26,66,0 ],6,soaptype,'').
+struct_dt_elem_i([ 26,66,0 ],6,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,66,0 ],6,'JsonName','').
+struct_dt_elem_i([ 26,66,0 ],6,'JsonInclude',idJsonEmpty).
+ 
+ 
+ 
+ 
+ 
+ 

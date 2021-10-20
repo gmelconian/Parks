@@ -1,0 +1,333 @@
+spec_i([ mnproc,2,'String Concatenation Unit Test Data','StringConcatenationUnitTestData',0,spa,'17_0_5-152925' ]).
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+rule_i(0,datastore(1,'DS_LAST_CHANGE','')).
+rule_i(0,datastore(1,'LOCK_RETRY','10')).
+rule_i(0,datastore(1,'ISOLATION_LEVEL','CR')).
+rule_i(0,datastore(1,'MYSQL_VERSION','5')).
+rule_i(0,datastore(1,'COMMENT_ON','No')).
+rule_i(0,datastore(1,'DCL_REF_INT_DB','Yes')).
+rule_i(0,datastore(1,'PRIMARY_KEY_TYPE','PK')).
+rule_i(0,datastore(1,'RecycleRWMin','30')).
+rule_i(0,datastore(1,'RecycleRWType','1')).
+rule_i(0,datastore(1,'RecycleRW','-1')).
+rule_i(0,datastore(1,'POOL_STARTUP','No')).
+rule_i(0,datastore(1,'POOLSIZE_RW','10')).
+rule_i(0,datastore(1,'UnlimitedRWPool','-1')).
+rule_i(0,datastore(1,'PoolRWEnabled','-1')).
+rule_i(0,datastore(1,'CS_RPCPGML','')).
+rule_i(0,datastore(1,'JDBC_DATASOURCE','')).
+rule_i(0,datastore(1,'USE_JDBC_DATASOURCE','0')).
+rule_i(0,datastore(1,'DS_DBMS_ADDINFO','')).
+rule_i(0,datastore(1,'USER_PASSWORD',j󺦷鬘�8藺炭蘇襀)).
+rule_i(0,datastore(1,'USER_ID',gabriel)).
+rule_i(0,datastore(1,'CS_CNTDLG','2')).
+rule_i(0,datastore(1,'CS_CONNECT','First')).
+rule_i(0,datastore(1,'DBMS_PORT','3306')).
+rule_i(0,datastore(1,'CS_SERVER',dgs_339)).
+rule_i(0,datastore(1,'CS_DBNAME',parks)).
+rule_i(0,datastore(1,'CS_FLEDSNAME','')).
+rule_i(0,datastore(1,'CS_DRVNAME','')).
+rule_i(0,datastore(1,'CS_DSNAME','')).
+rule_i(0,datastore(1,'DB_URL','')).
+rule_i(0,datastore(1,'JDBC_CUSTOM_URL','0')).
+rule_i(0,datastore(1,'JDBC_CUSTOM_DRIVER','')).
+rule_i(0,datastore(1,'ADONET_DRIVER','')).
+rule_i(0,datastore(1,'JDBC_DRIVER','com.mysql.jdbc.Driver')).
+rule_i(0,datastore(1,'CONNECT_METHOD','OPSYS')).
+rule_i(0,datastore(1,'ACCESS_TECHNO','JDBC')).
+rule_i(0,datastore(1,'MAIN_DS','-1')).
+rule_i(0,datastore(1,'REORG_GEN','8')).
+rule_i(0,datastore(1,'HelpKeyword','15')).
+rule_i(0,datastore(1,'DBMS',18)).
+rule_i(0,datastore(1,'NAME','Default')).
+rule_i(0,prop(idNULLS_BEHAVIOR,idNB_Current)).
+rule_i(0,prop('ObjectVisibility','Public')).
+rule_i(0,prop('FullyQualifiedName','StringConcatenationUnitTestData')).
+rule_i(0,prop('GenerateObject','-1')).
+rule_i(0,prop('SPC_WARNINGS_DISABLED','spc0096 spc0107 spc0142 spc0217')).
+rule_i(0,prop(idConnectivitySupport,idInherit)).
+rule_i(0,prop('OutputCollectionName','StringConcatenationUnitTestSDTCollection')).
+rule_i(0,prop('OutputCollection','-1')).
+rule_i(0,prop('OutputSDT',o(26,'StringConcatenationUnitTestSDT'))).
+rule_i(0,prop(idINFER_SDT,idINFER_STRUCTURE_NO)).
+rule_i(0,prop('OBJECT_METADATA','')).
+rule_i(0,prop('CALL_PROTOCOL','INTERNAL')).
+rule_i(0,prop('IsMain','0')).
+rule_i(0,prop('Theme',o(25,'Carmine'))).
+rule_i(0,prop(idISWEBSERVICE,'0')).
+rule_i(0,prop('ObjDesc','String Concatenation Unit Test Data')).
+rule_i(0,prop('ObjName','StringConcatenationUnitTestData')).
+rule_i(0,rule([ a(22,[ 'Rfr','"Renovar"','5' ]) ],[],[],[])).
+rule_i(0,maingen(12)).
+rule_i(0,parm([ 'Gxm2rootcol' ],[])).
+rule_i(0,parmio([ [ 'Gxm2rootcol',out ] ])).
+ 
+a_i(1,1,f,'Err',[],[ [],[ t('0',3) ] ]).
+ 
+v_i(f,i,1,[]).
+v_i(f,o,1,'Err').
+ 
+ 
+ 
+ 
+ 
+ 
+attri_i('Errmsg',[ 'Gx_emsg',char,70,0,'',1,'Error text','',8 ]).
+attri_i('Err',[ 'Gx_err',int,3,0,'ZZ9',1,'Error code','',7 ]).
+attri_i('Gxm1stringconcatenationunittestsdt',[ 'Gxm1stringconcatenationunittestsdt',o('StringConcatenationUnitTestSDT'),0,0,'',0,'Gxm1stringconcatenationunittestsdt','',6 ]).
+attri_i('Gxm2rootcol',[ 'Gxm2rootcol',o(objectcollection('StringConcatenationUnitTestSDT')),0,0,'',0,'Gxm2rootcol','',5 ]).
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+break_i(1,rpt,0,[],[ [],[],[] ]).
+ 
+b_group_i(1,1,lit,0,1,0).
+ 
+b_line_i(1,1,1,cmd,1,[ t('',107,1,0),t('Gxm1stringconcatenationunittestsdt',23,1,0),t(=,10,1,0),t([ 'StringConcatenationUnitTestSDT',[ t('(',0,1,0),t(')',4,1,0) ],n ],46,1,0) ]).
+b_line_i([ 1,1 ],1,1,cmd,1,[ t('',107,1,0),t([ t('Gxm2rootcol',23,1,0),t('add(',1,1,0) ],31,1,0),t('Gxm1stringconcatenationunittestsdt',23,1,0),t(')',4,1,0) ]).
+b_line_i(3,1,1,cmd,3,[ t('',107,3,0),t([ t('Gxm1stringconcatenationunittestsdt',23,3,0),t('Testcaseid',3,3,0) ],29,3,0),t(=,10,3,0),t('''1''',3,3,0) ]).
+b_line_i(4,1,1,cmd,3,[ t('',107,4,0),t([ t('Gxm1stringconcatenationunittestsdt',23,3,0),t('String1',3,3,0) ],29,3,0),t(=,10,3,0),t('''C9WD8V1BYR''',3,3,0) ]).
+b_line_i(5,1,1,cmd,3,[ t('',107,5,0),t([ t('Gxm1stringconcatenationunittestsdt',23,3,0),t('String2',3,3,0) ],29,3,0),t(=,10,3,0),t(''' HG0F8EWY''',3,3,0) ]).
+b_line_i(6,1,1,cmd,3,[ t('',107,6,0),t([ t('Gxm1stringconcatenationunittestsdt',23,3,0),t('Expectedconcatenation',3,3,0) ],29,3,0),t(=,10,3,0),t('''C9WD8V1BYR HG0F8EWY''',3,3,0) ]).
+b_line_i(7,1,1,cmd,3,[ t('',107,7,0),t([ t('Gxm1stringconcatenationunittestsdt',23,3,0),t('Msgconcatenation',3,3,0) ],29,3,0),t(=,10,3,0),t('''''',3,3,0) ]).
+b_line_i(10,1,1,cmd,3,[ t('',107,10,0),t('Gxm1stringconcatenationunittestsdt',23,3,0),t(=,10,3,0),t([ 'StringConcatenationUnitTestSDT',[ t('(',0,10,0),t(')',4,10,0) ],n ],46,3,0) ]).
+b_line_i([ 10,1 ],1,1,cmd,3,[ t('',107,10,0),t([ t('Gxm2rootcol',23,10,0),t('add(',1,10,0) ],31,10,0),t('Gxm1stringconcatenationunittestsdt',23,3,0),t(')',4,3,0) ]).
+b_line_i(12,1,1,cmd,5,[ t('',107,12,0),t([ t('Gxm1stringconcatenationunittestsdt',23,5,0),t('Testcaseid',3,5,0) ],29,5,0),t(=,10,5,0),t('''2''',3,5,0) ]).
+b_line_i(13,1,1,cmd,5,[ t('',107,13,0),t([ t('Gxm1stringconcatenationunittestsdt',23,5,0),t('String1',3,5,0) ],29,5,0),t(=,10,5,0),t('''1U8OF18Z8U38E1HGFLU5''',3,5,0) ]).
+b_line_i(14,1,1,cmd,5,[ t('',107,14,0),t([ t('Gxm1stringconcatenationunittestsdt',23,5,0),t('String2',3,5,0) ],29,5,0),t(=,10,5,0),t('''VZMRC HGTM 4H1GYRG6U''',3,5,0) ]).
+b_line_i(15,1,1,cmd,5,[ t('',107,15,0),t([ t('Gxm1stringconcatenationunittestsdt',23,5,0),t('Expectedconcatenation',3,5,0) ],29,5,0),t(=,10,5,0),t('''1U8OF18Z8U38E1HGFLU5VZMRC HGTM 4H1GYRG6U''',3,5,0) ]).
+b_line_i(16,1,1,cmd,5,[ t('',107,16,0),t([ t('Gxm1stringconcatenationunittestsdt',23,5,0),t('Msgconcatenation',3,5,0) ],29,5,0),t(=,10,5,0),t('''''',3,5,0) ]).
+b_line_i(19,1,1,cmd,5,[ t('',107,19,0),t('Gxm1stringconcatenationunittestsdt',23,5,0),t(=,10,5,0),t([ 'StringConcatenationUnitTestSDT',[ t('(',0,19,0),t(')',4,19,0) ],n ],46,5,0) ]).
+b_line_i([ 19,1 ],1,1,cmd,5,[ t('',107,19,0),t([ t('Gxm2rootcol',23,19,0),t('add(',1,19,0) ],31,19,0),t('Gxm1stringconcatenationunittestsdt',23,5,0),t(')',4,5,0) ]).
+b_line_i(21,1,1,cmd,7,[ t('',107,21,0),t([ t('Gxm1stringconcatenationunittestsdt',23,7,0),t('Testcaseid',3,7,0) ],29,7,0),t(=,10,7,0),t('''3''',3,7,0) ]).
+b_line_i(22,1,1,cmd,7,[ t('',107,22,0),t([ t('Gxm1stringconcatenationunittestsdt',23,7,0),t('String1',3,7,0) ],29,7,0),t(=,10,7,0),t('''''',3,7,0) ]).
+b_line_i(23,1,1,cmd,7,[ t('',107,23,0),t([ t('Gxm1stringconcatenationunittestsdt',23,7,0),t('String2',3,7,0) ],29,7,0),t(=,10,7,0),t('''''',3,7,0) ]).
+b_line_i(24,1,1,cmd,7,[ t('',107,24,0),t([ t('Gxm1stringconcatenationunittestsdt',23,7,0),t('Expectedconcatenation',3,7,0) ],29,7,0),t(=,10,7,0),t('''''',3,7,0) ]).
+b_line_i(25,1,1,cmd,7,[ t('',107,25,0),t([ t('Gxm1stringconcatenationunittestsdt',23,7,0),t('Msgconcatenation',3,7,0) ],29,7,0),t(=,10,7,0),t('''''',3,7,0) ]).
+b_line_i(28,1,1,cmd,7,[ t('',107,28,0),t('Gxm1stringconcatenationunittestsdt',23,7,0),t(=,10,7,0),t([ 'StringConcatenationUnitTestSDT',[ t('(',0,28,0),t(')',4,28,0) ],n ],46,7,0) ]).
+b_line_i([ 28,1 ],1,1,cmd,7,[ t('',107,28,0),t([ t('Gxm2rootcol',23,28,0),t('add(',1,28,0) ],31,28,0),t('Gxm1stringconcatenationunittestsdt',23,7,0),t(')',4,7,0) ]).
+b_line_i(30,1,1,cmd,9,[ t('',107,30,0),t([ t('Gxm1stringconcatenationunittestsdt',23,9,0),t('Testcaseid',3,9,0) ],29,9,0),t(=,10,9,0),t('''4''',3,9,0) ]).
+b_line_i(31,1,1,cmd,9,[ t('',107,31,0),t([ t('Gxm1stringconcatenationunittestsdt',23,9,0),t('String1',3,9,0) ],29,9,0),t(=,10,9,0),t('''BZJZ C Z WUJVMJVQRLA''',3,9,0) ]).
+b_line_i(32,1,1,cmd,9,[ t('',107,32,0),t([ t('Gxm1stringconcatenationunittestsdt',23,9,0),t('String2',3,9,0) ],29,9,0),t(=,10,9,0),t('''AVGAHERHCOXPJUZLPVZV''',3,9,0) ]).
+b_line_i(33,1,1,cmd,9,[ t('',107,33,0),t([ t('Gxm1stringconcatenationunittestsdt',23,9,0),t('Expectedconcatenation',3,9,0) ],29,9,0),t(=,10,9,0),t('''BZJZ C Z WUJVMJVQRLAAVGAHERHCOXPJUZLPVZV''',3,9,0) ]).
+b_line_i(34,1,1,cmd,9,[ t('',107,34,0),t([ t('Gxm1stringconcatenationunittestsdt',23,9,0),t('Msgconcatenation',3,9,0) ],29,9,0),t(=,10,9,0),t('''''',3,9,0) ]).
+b_line_i(37,1,1,cmd,9,[ t('',107,37,0),t('Gxm1stringconcatenationunittestsdt',23,9,0),t(=,10,9,0),t([ 'StringConcatenationUnitTestSDT',[ t('(',0,37,0),t(')',4,37,0) ],n ],46,9,0) ]).
+b_line_i([ 37,1 ],1,1,cmd,9,[ t('',107,37,0),t([ t('Gxm2rootcol',23,37,0),t('add(',1,37,0) ],31,37,0),t('Gxm1stringconcatenationunittestsdt',23,9,0),t(')',4,9,0) ]).
+b_line_i(39,1,1,cmd,11,[ t('',107,39,0),t([ t('Gxm1stringconcatenationunittestsdt',23,11,0),t('Testcaseid',3,11,0) ],29,11,0),t(=,10,11,0),t('''5''',3,11,0) ]).
+b_line_i(40,1,1,cmd,11,[ t('',107,40,0),t([ t('Gxm1stringconcatenationunittestsdt',23,11,0),t('String1',3,11,0) ],29,11,0),t(=,10,11,0),t('''1U8OF18Z8U38E1HGFLU5''',3,11,0) ]).
+b_line_i(41,1,1,cmd,11,[ t('',107,41,0),t([ t('Gxm1stringconcatenationunittestsdt',23,11,0),t('String2',3,11,0) ],29,11,0),t(=,10,11,0),t('''''',3,11,0) ]).
+b_line_i(42,1,1,cmd,11,[ t('',107,42,0),t([ t('Gxm1stringconcatenationunittestsdt',23,11,0),t('Expectedconcatenation',3,11,0) ],29,11,0),t(=,10,11,0),t('''1U8OF18Z8U38E1HGFLU5''',3,11,0) ]).
+b_line_i(43,1,1,cmd,11,[ t('',107,43,0),t([ t('Gxm1stringconcatenationunittestsdt',23,11,0),t('Msgconcatenation',3,11,0) ],29,11,0),t(=,10,11,0),t('''''',3,11,0) ]).
+ 
+ 
+ 
+ 
+ 
+ 
+page_layout_i([ 66,0,6 ]).
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+calling_main_i(1,26).
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+struct_dt_i([ 26,66,0 ],name,'StringConcatenationUnitTestSDT').
+struct_dt_i([ 26,66,0 ],namespace,'Parks').
+struct_dt_i([ 26,66,0 ],'ObjName','StringConcatenationUnitTestSDT').
+struct_dt_i([ 26,66,0 ],'ObjDesc','String Concatenation Unit Test SDT').
+struct_dt_i([ 26,66,0 ],'ExternalName','StringConcatenationUnitTestSDT').
+struct_dt_i([ 26,66,0 ],'ExternalNamespace','Parks').
+struct_dt_i([ 26,66,0 ],fullname,'StringConcatenationUnitTestSDT').
+struct_dt_i([ 26,66,0 ],camelname,'Stringconcatenationunittestsdt').
+ 
+struct_dt_elem_i([ 26,66,0 ],1,name,'Testcaseid').
+struct_dt_elem_i([ 26,66,0 ],1,camelname,'TestCaseId').
+struct_dt_elem_i([ 26,66,0 ],1,length,40).
+struct_dt_elem_i([ 26,66,0 ],1,decimals,0).
+struct_dt_elem_i([ 26,66,0 ],1,type,[ 13,40,0 ]).
+struct_dt_elem_i([ 26,66,0 ],1,pic,'').
+struct_dt_elem_i([ 26,66,0 ],1,collection,'False').
+struct_dt_elem_i([ 26,66,0 ],1,'ExternalName','TestCaseId').
+struct_dt_elem_i([ 26,66,0 ],1,'ExternalNamespace','Parks').
+struct_dt_elem_i([ 26,66,0 ],1,'XmlType','Element').
+struct_dt_elem_i([ 26,66,0 ],1,'XmlName','').
+struct_dt_elem_i([ 26,66,0 ],1,'XmlNamespace','').
+struct_dt_elem_i([ 26,66,0 ],1,soaptype,'').
+struct_dt_elem_i([ 26,66,0 ],1,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,66,0 ],1,'JsonName','').
+struct_dt_elem_i([ 26,66,0 ],1,'JsonInclude',idJsonEmpty).
+struct_dt_elem_i([ 26,66,0 ],2,name,'String1').
+struct_dt_elem_i([ 26,66,0 ],2,camelname,string1).
+struct_dt_elem_i([ 26,66,0 ],2,length,20).
+struct_dt_elem_i([ 26,66,0 ],2,decimals,0).
+struct_dt_elem_i([ 26,66,0 ],2,type,[ 5,20,0 ]).
+struct_dt_elem_i([ 26,66,0 ],2,pic,'').
+struct_dt_elem_i([ 26,66,0 ],2,collection,'False').
+struct_dt_elem_i([ 26,66,0 ],2,'ExternalName',string1).
+struct_dt_elem_i([ 26,66,0 ],2,'ExternalNamespace','Parks').
+struct_dt_elem_i([ 26,66,0 ],2,'XmlType','Element').
+struct_dt_elem_i([ 26,66,0 ],2,'XmlName','').
+struct_dt_elem_i([ 26,66,0 ],2,'XmlNamespace','').
+struct_dt_elem_i([ 26,66,0 ],2,soaptype,'').
+struct_dt_elem_i([ 26,66,0 ],2,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,66,0 ],2,'JsonName','').
+struct_dt_elem_i([ 26,66,0 ],2,'JsonInclude',idJsonEmpty).
+struct_dt_elem_i([ 26,66,0 ],3,name,'String2').
+struct_dt_elem_i([ 26,66,0 ],3,camelname,string2).
+struct_dt_elem_i([ 26,66,0 ],3,length,20).
+struct_dt_elem_i([ 26,66,0 ],3,decimals,0).
+struct_dt_elem_i([ 26,66,0 ],3,type,[ 5,20,0 ]).
+struct_dt_elem_i([ 26,66,0 ],3,pic,'').
+struct_dt_elem_i([ 26,66,0 ],3,collection,'False').
+struct_dt_elem_i([ 26,66,0 ],3,'ExternalName',string2).
+struct_dt_elem_i([ 26,66,0 ],3,'ExternalNamespace','Parks').
+struct_dt_elem_i([ 26,66,0 ],3,'XmlType','Element').
+struct_dt_elem_i([ 26,66,0 ],3,'XmlName','').
+struct_dt_elem_i([ 26,66,0 ],3,'XmlNamespace','').
+struct_dt_elem_i([ 26,66,0 ],3,soaptype,'').
+struct_dt_elem_i([ 26,66,0 ],3,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,66,0 ],3,'JsonName','').
+struct_dt_elem_i([ 26,66,0 ],3,'JsonInclude',idJsonEmpty).
+struct_dt_elem_i([ 26,66,0 ],4,name,'Concatenation').
+struct_dt_elem_i([ 26,66,0 ],4,camelname,concatenation).
+struct_dt_elem_i([ 26,66,0 ],4,length,20).
+struct_dt_elem_i([ 26,66,0 ],4,decimals,0).
+struct_dt_elem_i([ 26,66,0 ],4,type,[ 5,20,0 ]).
+struct_dt_elem_i([ 26,66,0 ],4,pic,'').
+struct_dt_elem_i([ 26,66,0 ],4,collection,'False').
+struct_dt_elem_i([ 26,66,0 ],4,'ExternalName',concatenation).
+struct_dt_elem_i([ 26,66,0 ],4,'ExternalNamespace','Parks').
+struct_dt_elem_i([ 26,66,0 ],4,'XmlType','Element').
+struct_dt_elem_i([ 26,66,0 ],4,'XmlName','').
+struct_dt_elem_i([ 26,66,0 ],4,'XmlNamespace','').
+struct_dt_elem_i([ 26,66,0 ],4,soaptype,'').
+struct_dt_elem_i([ 26,66,0 ],4,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,66,0 ],4,'JsonName','').
+struct_dt_elem_i([ 26,66,0 ],4,'JsonInclude',idJsonEmpty).
+struct_dt_elem_i([ 26,66,0 ],5,name,'Expectedconcatenation').
+struct_dt_elem_i([ 26,66,0 ],5,camelname,'Expectedconcatenation').
+struct_dt_elem_i([ 26,66,0 ],5,length,20).
+struct_dt_elem_i([ 26,66,0 ],5,decimals,0).
+struct_dt_elem_i([ 26,66,0 ],5,type,[ 5,20,0 ]).
+struct_dt_elem_i([ 26,66,0 ],5,pic,'').
+struct_dt_elem_i([ 26,66,0 ],5,collection,'False').
+struct_dt_elem_i([ 26,66,0 ],5,'ExternalName','Expectedconcatenation').
+struct_dt_elem_i([ 26,66,0 ],5,'ExternalNamespace','Parks').
+struct_dt_elem_i([ 26,66,0 ],5,'XmlType','Element').
+struct_dt_elem_i([ 26,66,0 ],5,'XmlName','').
+struct_dt_elem_i([ 26,66,0 ],5,'XmlNamespace','').
+struct_dt_elem_i([ 26,66,0 ],5,soaptype,'').
+struct_dt_elem_i([ 26,66,0 ],5,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,66,0 ],5,'JsonName','').
+struct_dt_elem_i([ 26,66,0 ],5,'JsonInclude',idJsonEmpty).
+struct_dt_elem_i([ 26,66,0 ],6,name,'Msgconcatenation').
+struct_dt_elem_i([ 26,66,0 ],6,camelname,'Msgconcatenation').
+struct_dt_elem_i([ 26,66,0 ],6,length,100).
+struct_dt_elem_i([ 26,66,0 ],6,decimals,0).
+struct_dt_elem_i([ 26,66,0 ],6,type,[ 13,100,0 ]).
+struct_dt_elem_i([ 26,66,0 ],6,pic,'').
+struct_dt_elem_i([ 26,66,0 ],6,collection,'False').
+struct_dt_elem_i([ 26,66,0 ],6,'ExternalName','Msgconcatenation').
+struct_dt_elem_i([ 26,66,0 ],6,'ExternalNamespace','Parks').
+struct_dt_elem_i([ 26,66,0 ],6,'XmlType','Element').
+struct_dt_elem_i([ 26,66,0 ],6,'XmlName','').
+struct_dt_elem_i([ 26,66,0 ],6,'XmlNamespace','').
+struct_dt_elem_i([ 26,66,0 ],6,soaptype,'').
+struct_dt_elem_i([ 26,66,0 ],6,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,66,0 ],6,'JsonName','').
+struct_dt_elem_i([ 26,66,0 ],6,'JsonInclude',idJsonEmpty).
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+pgm_callprotocol_i(mnproc,2,'STRINGCONCATENATIONUNITTESTDATA','INTERNAL','').
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

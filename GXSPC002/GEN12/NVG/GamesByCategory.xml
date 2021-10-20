@@ -1,0 +1,142 @@
+
+<ObjectSpec>
+<SpecVersion>17_0_5-152925</SpecVersion>
+<Object>
+<ObjClsGuid>84a12160-f59b-4ad7-a683-ea4481ac23e9</ObjClsGuid>
+<ObjCls>1</ObjCls>
+<ObjId>15</ObjId>
+<ObjName>GamesByCategory</ObjName>
+<ObjDesc>Games By Category</ObjDesc>
+<ObjPgmName>GamesByCategory</ObjPgmName>
+<ObjClsName>Procedure</ObjClsName></Object>
+<Result>genreq</Result>
+<Warnings></Warnings>
+<Errors></Errors>
+<OutputDevices>
+<Device>File</Device></OutputDevices>
+<Main>Yes</Main>
+<CallProtocol>HTTP</CallProtocol>
+<Generator>
+<GenId>12</GenId>
+<GenName>Default (Java)</GenName></Generator>
+<FormClass>Graphic</FormClass>
+<Parameters></Parameters>
+<Levels>
+<Level>
+<LevelNumber>2</LevelNumber>
+<Optimizations></Optimizations>
+<LevelType>For Each</LevelType>
+<LevelBeginRow>10</LevelBeginRow>
+<BaseTable>
+<Table>
+<TableId>6</TableId>
+<TableName>Category</TableName>
+<Description>Category</Description></Table></BaseTable>
+<Order>
+<Attribute>
+<AttriId>19</AttriId>
+<AttriName>CategoryId</AttriName>
+<Description>Category Id</Description></Attribute></Order>
+<Condition></Condition>
+<IndexName>ICATEGORY</IndexName>
+<LevelOptions></LevelOptions>
+<OptimizedWhere>
+<StartFrom>
+<Condition>
+<Token>FirstRecord</Token></Condition></StartFrom>
+<LoopWhile>
+<Condition>
+<Token>NotEndOfTable</Token></Condition></LoopWhile></OptimizedWhere>
+<NonOptimizedWhere></NonOptimizedWhere>
+<NavigationTree>
+<Table>
+<TableId>6</TableId>
+<TableName>Category</TableName>
+<Description>Category</Description>
+<RecordsToRead>many</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>19</AttriId>
+<AttriName>CategoryId</AttriName>
+<Description>Category Id</Description></Attribute></KeyAttributes>
+<Tables></Tables></Table></NavigationTree>
+<TablesToUpdate></TablesToUpdate>
+<Formulas>
+<VerticalFormulas></VerticalFormulas>
+<AggSelFormulas></AggSelFormulas></Formulas>
+<Levels>
+<Level>
+<LevelNumber>3</LevelNumber>
+<Optimizations></Optimizations>
+<LevelType>For Each</LevelType>
+<LevelBeginRow>19</LevelBeginRow>
+<BaseTable>
+<Table>
+<TableId>5</TableId>
+<TableName>Game</TableName>
+<Description>Game</Description></Table></BaseTable>
+<Order>
+<Attribute>
+<AttriId>19</AttriId>
+<AttriName>CategoryId</AttriName>
+<Description>Category Id</Description></Attribute></Order>
+<Condition></Condition>
+<IndexName>IGAME2</IndexName>
+<LevelOptions></LevelOptions>
+<OptimizedWhere>
+<StartFrom>
+<Condition>
+<Attribute>
+<AttriId>19</AttriId>
+<AttriName>CategoryId</AttriName>
+<Description>Category Id</Description></Attribute>
+<Sp></Sp>
+<Token>=</Token>
+<Sp></Sp>
+<Attribute>
+<AttriId>19</AttriId>
+<AttriName>@CategoryId</AttriName>
+<Description>Category Id</Description></Attribute></Condition></StartFrom>
+<LoopWhile>
+<Condition>
+<Attribute>
+<AttriId>19</AttriId>
+<AttriName>CategoryId</AttriName>
+<Description>Category Id</Description></Attribute>
+<Sp></Sp>
+<Token>=</Token>
+<Sp></Sp>
+<Attribute>
+<AttriId>19</AttriId>
+<AttriName>@CategoryId</AttriName>
+<Description>Category Id</Description></Attribute></Condition></LoopWhile></OptimizedWhere>
+<NonOptimizedWhere></NonOptimizedWhere>
+<JoinLocation>1</JoinLocation>
+<NavigationTree>
+<Table>
+<TableId>5</TableId>
+<TableName>Game</TableName>
+<Description>Game</Description>
+<RecordsToRead>many</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>17</AttriId>
+<AttriName>GameId</AttriName>
+<Description>Game Id</Description></Attribute></KeyAttributes>
+<Tables>
+<Table>
+<TableId>2</TableId>
+<TableName>AmusementPark</TableName>
+<Description>Amusement Park</Description>
+<RecordsToRead>one</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>7</AttriId>
+<AttriName>AmusementParkId</AttriName>
+<Description>Amusement Park Id</Description></Attribute></KeyAttributes>
+<Tables></Tables></Table></Tables></Table></NavigationTree>
+<TablesToUpdate></TablesToUpdate>
+<Formulas>
+<VerticalFormulas></VerticalFormulas>
+<AggSelFormulas></AggSelFormulas></Formulas>
+<Levels></Levels></Level></Levels></Level></Levels></ObjectSpec>

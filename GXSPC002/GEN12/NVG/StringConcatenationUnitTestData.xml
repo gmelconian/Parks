@@ -1,0 +1,25 @@
+
+<ObjectSpec>
+<SpecVersion>17_0_5-152925</SpecVersion>
+<Object>
+<ObjClsGuid>2a9e9aba-d2de-4801-ae7f-5e3819222daf</ObjClsGuid>
+<ObjCls>33</ObjCls>
+<ObjId>2</ObjId>
+<ObjName>StringConcatenationUnitTestData</ObjName>
+<ObjDesc>String Concatenation Unit Test Data</ObjDesc>
+<ObjPgmName>StringConcatenationUnitTestData</ObjPgmName>
+<ObjClsName>DataProvider</ObjClsName></Object>
+<Result>genreq</Result>
+<Warnings></Warnings>
+<Errors></Errors>
+<OutputDevices>
+<Device>None</Device></OutputDevices>
+<Generator>
+<GenId>12</GenId>
+<GenName>Default (Java)</GenName></Generator>
+<FormClass>HTML</FormClass>
+<Parameters>
+<Parameter>
+<IO>out</IO>
+<Token>StringConcatenationUnitTestSDT</Token></Parameter></Parameters>
+<Levels></Levels></ObjectSpec>

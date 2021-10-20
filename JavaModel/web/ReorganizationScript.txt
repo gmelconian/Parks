@@ -1,0 +1,6 @@
+CREATE TABLE `AmusementParkShow` (`AmusementParkId` smallint NOT NULL , `ShowId` smallint NOT NULL , PRIMARY KEY(`AmusementParkId`, `ShowId`))  ENGINE=InnoDB
+CREATE INDEX `IAMUSEMENTPARKSHOW1` ON `AmusementParkShow` (`ShowId` )
+
+ALTER TABLE `AmusementParkShow` ADD CONSTRAINT `IAMUSEMENTPARKSHOW2` FOREIGN KEY (`AmusementParkId`) REFERENCES `AmusementPark` (`AmusementParkId`)
+ALTER TABLE `AmusementParkShow` ADD CONSTRAINT `IAMUSEMENTPARKSHOW1` FOREIGN KEY (`ShowId`) REFERENCES `Show` (`ShowId`)
+

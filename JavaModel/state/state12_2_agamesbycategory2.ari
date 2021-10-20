@@ -1,0 +1,37 @@
+current_obj_i(2,proc,31).
+ 
+current_guid('a5a76d63-8eb7-41b4-9cfa-1250d147292e').
+ 
+ 
+ 
+is_webproc_i(agamesbycategory2).
+ 
+ 
+is_pdf_i.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ij_main_object(agamesbycategory2,'Games By Category2','','""','HTTP',default).
+ 
+ 
+ 
+ 
+ij_object_dependency(agamesbycategory2,[ agamesbycategory2__default ],[ agamesbycategory2_impl ],[ 'GxWebStd' ],31).
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+module_info_i('GeneXus','PACKAGE','com.genexuscore').
+module_info_i('GeneXus','PackageName','GeneXus.jar').
+ 

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="prgs.xsl"?>
+<Objects>
+   <Charset>UTF-8</Charset>
+   <Path>file:///C:/Program Files (x86)/GeneXus/GeneXus17/</Path>
+   <Object>
+      <ObjCls>13</ObjCls>
+      <ObjName>Home</ObjName>
+      <ObjDesc>Home</ObjDesc>
+      <ObjLink>/ParksJavaEnvironment/com.parks.home</ObjLink>
+   </Object>
+   <Object>
+      <ObjCls>13</ObjCls>
+      <ObjName>WWAmusementPark</ObjName>
+      <ObjDesc>Amusement Parks</ObjDesc>
+      <ObjLink>/ParksJavaEnvironment/com.parks.wwamusementpark</ObjLink>
+   </Object>
+   <Object>
+      <ObjCls>13</ObjCls>
+      <ObjName>WWCategory</ObjName>
+      <ObjDesc>Categories</ObjDesc>
+      <ObjLink>/ParksJavaEnvironment/com.parks.wwcategory</ObjLink>
+   </Object>
+   <Object>
+      <ObjCls>13</ObjCls>
+      <ObjName>WWCountry</ObjName>
+      <ObjDesc>Countries</ObjDesc>
+      <ObjLink>/ParksJavaEnvironment/com.parks.wwcountry</ObjLink>
+   </Object>
+   <Object>
+      <ObjCls>13</ObjCls>
+      <ObjName>WWEmployee</ObjName>
+      <ObjDesc>Employees</ObjDesc>
+      <ObjLink>/ParksJavaEnvironment/com.parks.wwemployee</ObjLink>
+   </Object>
+   <Object>
+      <ObjCls>13</ObjCls>
+      <ObjName>WWGame</ObjName>
+      <ObjDesc>Games</ObjDesc>
+      <ObjLink>/ParksJavaEnvironment/com.parks.wwgame</ObjLink>
+   </Object>
+   <Object>
+      <ObjCls>13</ObjCls>
+      <ObjName>WWShow</ObjName>
+      <ObjDesc>Shows</ObjDesc>
+      <ObjLink>/ParksJavaEnvironment/com.parks.wwshow</ObjLink>
+   </Object>
+   <Object>
+      <ObjCls>13</ObjCls>
+      <ObjName>WWRepair</ObjName>
+      <ObjDesc>Repairs</ObjDesc>
+      <ObjLink>/ParksJavaEnvironment/com.parks.wwrepair</ObjLink>
+   </Object>
+   <Object>
+      <ObjCls>13</ObjCls>
+      <ObjName>WWTechnician</ObjName>
+      <ObjDesc>Technicians</ObjDesc>
+      <ObjLink>/ParksJavaEnvironment/com.parks.wwtechnician</ObjLink>
+   </Object>
+   <Object>
+      <ObjCls>13</ObjCls>
+      <ObjName>WWShowsByDate</ObjName>
+      <ObjDesc>WWShows By Date</ObjDesc>
+      <ObjLink>/ParksJavaEnvironment/com.parks.wwshowsbydate</ObjLink>
+   </Object>
+   <Object>
+      <ObjCls>1</ObjCls>
+      <ObjName>AmusementParksList</ObjName>
+      <ObjDesc>Amusement Parks List</ObjDesc>
+      <ObjLink>/ParksJavaEnvironment/com.parks.aamusementparkslist</ObjLink>
+   </Object>
+   <Object>
+      <ObjCls>1</ObjCls>
+      <ObjName>GamesByCategory</ObjName>
+      <ObjDesc>Games By Category</ObjDesc>
+      <ObjLink>/ParksJavaEnvironment/com.parks.agamesbycategory</ObjLink>
+   </Object>
+   <Object>
+      <ObjCls>1</ObjCls>
+      <ObjName>GamesByCategory2</ObjName>
+      <ObjDesc>Games By Category2</ObjDesc>
+      <ObjLink>/ParksJavaEnvironment/com.parks.agamesbycategory2</ObjLink>
+   </Object>
+</Objects>

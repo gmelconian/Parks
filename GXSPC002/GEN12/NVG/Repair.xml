@@ -1,0 +1,379 @@
+
+<ObjectSpec>
+<SpecVersion>17_0_5-152925</SpecVersion>
+<Object>
+<ObjClsGuid>1db606f2-af09-4cf9-a3b5-b481519d28f6</ObjClsGuid>
+<ObjCls>0</ObjCls>
+<ObjId>7</ObjId>
+<ObjName>Repair</ObjName>
+<ObjDesc>Repair</ObjDesc>
+<ObjPgmName>Repair</ObjPgmName>
+<ObjClsName>Transaction</ObjClsName></Object>
+<Result>genreq</Result>
+<Warnings></Warnings>
+<Errors></Errors>
+<Generator>
+<GenId>12</GenId>
+<GenName>Default (Java)</GenName></Generator>
+<FormClass>HTML</FormClass>
+<Parameters>
+<Parameter>
+<IO>in</IO>
+<Variable>
+<VarId>Mode</VarId>
+<VarName>&amp;Mode</VarName></Variable></Parameter>
+<Parameter>
+<IO>in</IO>
+<Variable>
+<VarId>Repairid</VarId>
+<VarName>&amp;RepairId</VarName></Variable></Parameter></Parameters>
+<Levels>
+<Level>
+<LevelType>Trn</LevelType>
+<LevelNumber>8</LevelNumber>
+<BaseTable>
+<Table>
+<TableId>8</TableId>
+<TableName>Repair</TableName>
+<Description>Repair</Description></Table></BaseTable>
+<NavigationTree>
+<Table>
+<TableId>8</TableId>
+<TableName>Repair</TableName>
+<Description>Repair</Description>
+<Updated>Yes</Updated>
+<RecordsToRead>many</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>27</AttriId>
+<AttriName>RepairId</AttriName>
+<Description>Repair Id</Description></Attribute></KeyAttributes>
+<Tables>
+<Table>
+<TableId>5</TableId>
+<TableName>Game</TableName>
+<Description>Game</Description>
+<RecordsToRead>one</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>17</AttriId>
+<AttriName>GameId</AttriName>
+<Description>Game Id</Description></Attribute></KeyAttributes>
+<Tables></Tables></Table>
+<Table>
+<TableId>9</TableId>
+<TableName>Technician</TableName>
+<Description>Technician</Description>
+<RecordsToRead>one</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>30</AttriId>
+<AttriName>TechnicianId</AttriName>
+<Description>Technician Id</Description></Attribute></KeyAttributes>
+<Tables></Tables></Table>
+<Table>
+<TableId>9</TableId>
+<TableName>Technician</TableName>
+<Description>Technician</Description>
+<RecordsToRead>one</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>35</AttriId>
+<AttriName>TechnicianAlternateId</AttriName>
+<Description>Technician Alternate Id</Description></Attribute></KeyAttributes>
+<Tables></Tables></Table>
+<Table>
+<TableId>8</TableId>
+<TableName>RepairProblems navigation</TableName>
+<Description>Repair</Description>
+<RecordsToRead>one</RecordsToRead>
+<JoinType>Outer</JoinType>
+<Tables>
+<Table>
+<TableId>10</TableId>
+<TableName>RepairKind</TableName>
+<Description>Kind</Description>
+<RecordsToRead>many</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>27</AttriId>
+<AttriName>RepairId</AttriName>
+<Description>Repair Id</Description></Attribute></KeyAttributes>
+<Tables></Tables></Table></Tables></Table></Tables></Table></NavigationTree>
+<Formulas>
+<VerticalFormulas></VerticalFormulas>
+<AggSelFormulas></AggSelFormulas></Formulas>
+<DynamicLoads></DynamicLoads>
+<Rules></Rules>
+<AfterAttributeRules></AfterAttributeRules>
+<AfterConfirmRules></AfterConfirmRules>
+<TablesToUpdate>
+<TableToUpdate>
+<Table>
+<TableId>8</TableId>
+<TableName>Repair</TableName>
+<Description>Repair</Description></Table>
+<TableAction>insert</TableAction>
+<AttrisToUpdate>
+<Attribute>
+<AttriId>28</AttriId>
+<AttriName>RepairBeginDate</AttriName>
+<Description>Repair Begin Date</Description></Attribute>
+<Attribute>
+<AttriId>29</AttriId>
+<AttriName>RepairDays</AttriName>
+<Description>Repair Days</Description></Attribute>
+<Attribute>
+<AttriId>34</AttriId>
+<AttriName>RepairCost</AttriName>
+<Description>Repair Cost</Description></Attribute>
+<Attribute>
+<AttriId>39</AttriId>
+<AttriName>RepairDiscountPercentage</AttriName>
+<Description>Repair Discount Percentage</Description></Attribute>
+<Attribute>
+<AttriId>17</AttriId>
+<AttriName>GameId</AttriName>
+<Description>Game Id</Description></Attribute>
+<Attribute>
+<AttriId>30</AttriId>
+<AttriName>TechnicianId</AttriName>
+<Description>Technician Id</Description></Attribute>
+<Attribute>
+<AttriId>35</AttriId>
+<AttriName>TechnicianAlternateId</AttriName>
+<Description>Technician Alternate Id</Description></Attribute></AttrisToUpdate></TableToUpdate>
+<TableToUpdate>
+<Table>
+<TableId>8</TableId>
+<TableName>Repair</TableName>
+<Description>Repair</Description></Table>
+<TableAction>update</TableAction>
+<AttrisToUpdate>
+<Attribute>
+<AttriId>28</AttriId>
+<AttriName>RepairBeginDate</AttriName>
+<Description>Repair Begin Date</Description></Attribute>
+<Attribute>
+<AttriId>29</AttriId>
+<AttriName>RepairDays</AttriName>
+<Description>Repair Days</Description></Attribute>
+<Attribute>
+<AttriId>34</AttriId>
+<AttriName>RepairCost</AttriName>
+<Description>Repair Cost</Description></Attribute>
+<Attribute>
+<AttriId>39</AttriId>
+<AttriName>RepairDiscountPercentage</AttriName>
+<Description>Repair Discount Percentage</Description></Attribute>
+<Attribute>
+<AttriId>17</AttriId>
+<AttriName>GameId</AttriName>
+<Description>Game Id</Description></Attribute>
+<Attribute>
+<AttriId>30</AttriId>
+<AttriName>TechnicianId</AttriName>
+<Description>Technician Id</Description></Attribute>
+<Attribute>
+<AttriId>35</AttriId>
+<AttriName>TechnicianAlternateId</AttriName>
+<Description>Technician Alternate Id</Description></Attribute></AttrisToUpdate></TableToUpdate>
+<TableToUpdate>
+<Table>
+<TableId>8</TableId>
+<TableName>Repair</TableName>
+<Description>Repair</Description></Table>
+<TableAction>delete</TableAction>
+<AttrisToUpdate></AttrisToUpdate></TableToUpdate></TablesToUpdate>
+<AfterInsertRules></AfterInsertRules>
+<AfterUpdateRules></AfterUpdateRules>
+<AfterDeleteRules></AfterDeleteRules>
+<TablesToControlOnDelete></TablesToControlOnDelete>
+<Levels>
+<Level>
+<LevelType>Trn</LevelType>
+<LevelNumber>10</LevelNumber>
+<BaseTable>
+<Table>
+<TableId>10</TableId>
+<TableName>RepairKind</TableName>
+<Description>Kind</Description></Table></BaseTable>
+<NavigationTree>
+<Table>
+<TableId>10</TableId>
+<TableName>RepairKind</TableName>
+<Description>Kind</Description>
+<Updated>Yes</Updated>
+<RecordsToRead>many</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>27</AttriId>
+<AttriName>RepairId</AttriName>
+<Description>Repair Id</Description></Attribute>
+<Attribute>
+<AttriId>43</AttriId>
+<AttriName>RepairKindId</AttriName>
+<Description>Repair Kind Id</Description></Attribute></KeyAttributes>
+<Tables>
+<Table>
+<TableId>8</TableId>
+<TableName>RepairProblems navigation</TableName>
+<Description>Repair</Description>
+<RecordsToRead>one</RecordsToRead>
+<JoinType>Outer</JoinType>
+<Tables>
+<Table>
+<TableId>10</TableId>
+<TableName>RepairKind</TableName>
+<Description>Kind</Description>
+<Updated>Yes</Updated>
+<RecordsToRead>many</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>27</AttriId>
+<AttriName>RepairId</AttriName>
+<Description>Repair Id</Description></Attribute></KeyAttributes>
+<Tables></Tables></Table></Tables></Table></Tables></Table></NavigationTree>
+<Formulas>
+<VerticalFormulas></VerticalFormulas>
+<AggSelFormulas></AggSelFormulas></Formulas>
+<DynamicLoads></DynamicLoads>
+<Rules></Rules>
+<AfterAttributeRules></AfterAttributeRules>
+<AfterConfirmRules></AfterConfirmRules>
+<TablesToUpdate>
+<TableToUpdate>
+<Table>
+<TableId>10</TableId>
+<TableName>RepairKind</TableName>
+<Description>Kind</Description></Table>
+<TableAction>insert</TableAction>
+<AttrisToUpdate>
+<Attribute>
+<AttriId>27</AttriId>
+<AttriName>RepairId</AttriName>
+<Description>Repair Id</Description></Attribute>
+<Attribute>
+<AttriId>43</AttriId>
+<AttriName>RepairKindId</AttriName>
+<Description>Repair Kind Id</Description></Attribute>
+<Attribute>
+<AttriId>44</AttriId>
+<AttriName>RepairKindName</AttriName>
+<Description>Repair Kind Name</Description></Attribute>
+<Attribute>
+<AttriId>45</AttriId>
+<AttriName>RepairKindRemarks</AttriName>
+<Description>Repair Kind Remarks</Description></Attribute></AttrisToUpdate></TableToUpdate>
+<TableToUpdate>
+<Table>
+<TableId>10</TableId>
+<TableName>RepairKind</TableName>
+<Description>Kind</Description></Table>
+<TableAction>update</TableAction>
+<AttrisToUpdate>
+<Attribute>
+<AttriId>44</AttriId>
+<AttriName>RepairKindName</AttriName>
+<Description>Repair Kind Name</Description></Attribute>
+<Attribute>
+<AttriId>45</AttriId>
+<AttriName>RepairKindRemarks</AttriName>
+<Description>Repair Kind Remarks</Description></Attribute></AttrisToUpdate></TableToUpdate>
+<TableToUpdate>
+<Table>
+<TableId>10</TableId>
+<TableName>RepairKind</TableName>
+<Description>Kind</Description></Table>
+<TableAction>delete</TableAction>
+<AttrisToUpdate></AttrisToUpdate></TableToUpdate></TablesToUpdate>
+<AfterInsertRules></AfterInsertRules>
+<AfterUpdateRules></AfterUpdateRules>
+<AfterDeleteRules></AfterDeleteRules>
+<TablesToControlOnDelete></TablesToControlOnDelete>
+<Levels></Levels>
+<AfterLevelRules></AfterLevelRules></Level></Levels>
+<AfterTrnRules></AfterTrnRules>
+<AfterLevelRules></AfterLevelRules></Level></Levels>
+<Prompts>
+<Prompt>
+<Table>
+<TableId>10</TableId>
+<TableName>RepairKind</TableName>
+<Description>Kind</Description></Table>
+<Object>
+<ObjClsGuid>c9584656-94b6-4ccd-890f-332d11fc2c25</ObjClsGuid>
+<ObjCls>13</ObjCls>
+<ObjId>51</ObjId>
+<ObjName>Gx00A1</ObjName>
+<ObjPgmName>Gx00A1</ObjPgmName>
+<ObjClsName>Web Panel</ObjClsName></Object>
+<InputParameters>
+<Attribute>
+<AttriId>27</AttriId>
+<AttriName>RepairId</AttriName>
+<Description>Repair Id</Description></Attribute></InputParameters>
+<OutputParameters>
+<Attribute>
+<AttriId>43</AttriId>
+<AttriName>RepairKindId</AttriName>
+<Description>Repair Kind Id</Description></Attribute></OutputParameters>
+<PromptType>System</PromptType></Prompt>
+<Prompt>
+<Table>
+<TableId>9</TableId>
+<TableName>Technician</TableName>
+<Description>Technician</Description></Table>
+<Object>
+<ObjClsGuid>c9584656-94b6-4ccd-890f-332d11fc2c25</ObjClsGuid>
+<ObjCls>13</ObjCls>
+<ObjId>40</ObjId>
+<ObjName>Gx0090</ObjName>
+<ObjPgmName>Gx0090</ObjPgmName>
+<ObjClsName>Web Panel</ObjClsName></Object>
+<InputParameters></InputParameters>
+<OutputParameters>
+<Attribute>
+<AttriId>35</AttriId>
+<AttriName>TechnicianAlternateId</AttriName>
+<Description>Technician Alternate Id</Description></Attribute></OutputParameters>
+<PromptType>System</PromptType></Prompt>
+<Prompt>
+<Table>
+<TableId>9</TableId>
+<TableName>Technician</TableName>
+<Description>Technician</Description></Table>
+<Object>
+<ObjClsGuid>c9584656-94b6-4ccd-890f-332d11fc2c25</ObjClsGuid>
+<ObjCls>13</ObjCls>
+<ObjId>40</ObjId>
+<ObjName>Gx0090</ObjName>
+<ObjPgmName>Gx0090</ObjPgmName>
+<ObjClsName>Web Panel</ObjClsName></Object>
+<InputParameters></InputParameters>
+<OutputParameters>
+<Attribute>
+<AttriId>30</AttriId>
+<AttriName>TechnicianId</AttriName>
+<Description>Technician Id</Description></Attribute></OutputParameters>
+<PromptType>System</PromptType></Prompt>
+<Prompt>
+<Table>
+<TableId>5</TableId>
+<TableName>Game</TableName>
+<Description>Game</Description></Table>
+<Object>
+<ObjClsGuid>c9584656-94b6-4ccd-890f-332d11fc2c25</ObjClsGuid>
+<ObjCls>13</ObjCls>
+<ObjId>11</ObjId>
+<ObjName>Gx0050</ObjName>
+<ObjPgmName>Gx0050</ObjPgmName>
+<ObjClsName>Web Panel</ObjClsName></Object>
+<InputParameters></InputParameters>
+<OutputParameters>
+<Attribute>
+<AttriId>17</AttriId>
+<AttriName>GameId</AttriName>
+<Description>Game Id</Description></Attribute></OutputParameters>
+<PromptType>System</PromptType></Prompt></Prompts>
+<Suggests></Suggests></ObjectSpec>

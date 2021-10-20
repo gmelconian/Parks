@@ -1,0 +1,346 @@
+spec_i([ proc,28,'String Concatenation Unit Test','StringConcatenationUnitTest',78,spa,'17_0_5-152925' ]).
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+default_i(e('Output',2,2,'''FIL''')).
+ 
+rule_i(0,datastore(1,'DS_LAST_CHANGE','')).
+rule_i(0,datastore(1,'LOCK_RETRY','10')).
+rule_i(0,datastore(1,'ISOLATION_LEVEL','CR')).
+rule_i(0,datastore(1,'MYSQL_VERSION','5')).
+rule_i(0,datastore(1,'COMMENT_ON','No')).
+rule_i(0,datastore(1,'DCL_REF_INT_DB','Yes')).
+rule_i(0,datastore(1,'PRIMARY_KEY_TYPE','PK')).
+rule_i(0,datastore(1,'RecycleRWMin','30')).
+rule_i(0,datastore(1,'RecycleRWType','1')).
+rule_i(0,datastore(1,'RecycleRW','-1')).
+rule_i(0,datastore(1,'POOL_STARTUP','No')).
+rule_i(0,datastore(1,'POOLSIZE_RW','10')).
+rule_i(0,datastore(1,'UnlimitedRWPool','-1')).
+rule_i(0,datastore(1,'PoolRWEnabled','-1')).
+rule_i(0,datastore(1,'CS_RPCPGML','')).
+rule_i(0,datastore(1,'JDBC_DATASOURCE','')).
+rule_i(0,datastore(1,'USE_JDBC_DATASOURCE','0')).
+rule_i(0,datastore(1,'DS_DBMS_ADDINFO','')).
+rule_i(0,datastore(1,'USER_PASSWORD',j󺦷鬘�8藺炭蘇襀)).
+rule_i(0,datastore(1,'USER_ID',gabriel)).
+rule_i(0,datastore(1,'CS_CNTDLG','2')).
+rule_i(0,datastore(1,'CS_CONNECT','First')).
+rule_i(0,datastore(1,'DBMS_PORT','3306')).
+rule_i(0,datastore(1,'CS_SERVER',dgs_339)).
+rule_i(0,datastore(1,'CS_DBNAME',parks)).
+rule_i(0,datastore(1,'CS_FLEDSNAME','')).
+rule_i(0,datastore(1,'CS_DRVNAME','')).
+rule_i(0,datastore(1,'CS_DSNAME','')).
+rule_i(0,datastore(1,'DB_URL','')).
+rule_i(0,datastore(1,'JDBC_CUSTOM_URL','0')).
+rule_i(0,datastore(1,'JDBC_CUSTOM_DRIVER','')).
+rule_i(0,datastore(1,'ADONET_DRIVER','')).
+rule_i(0,datastore(1,'JDBC_DRIVER','com.mysql.jdbc.Driver')).
+rule_i(0,datastore(1,'CONNECT_METHOD','OPSYS')).
+rule_i(0,datastore(1,'ACCESS_TECHNO','JDBC')).
+rule_i(0,datastore(1,'MAIN_DS','-1')).
+rule_i(0,datastore(1,'REORG_GEN','8')).
+rule_i(0,datastore(1,'HelpKeyword','15')).
+rule_i(0,datastore(1,'DBMS',18)).
+rule_i(0,datastore(1,'NAME','Default')).
+rule_i(0,prop(idNULLS_BEHAVIOR,idNB_Current)).
+rule_i(0,prop('TEST_ENABLED','-1')).
+rule_i(0,prop('PWFCallable','0')).
+rule_i(0,prop('ObjectVisibility','Public')).
+rule_i(0,prop('FullyQualifiedName','StringConcatenationUnitTest')).
+rule_i(0,prop('GenerateObject','-1')).
+rule_i(0,prop('CS_ORA_FORUPD','UMPV')).
+rule_i(0,prop('Optimize_copy','UMPV')).
+rule_i(0,prop('JOIN_TYPE','UMPV')).
+rule_i(0,prop('DBMS_JOINS','UMPV')).
+rule_i(0,prop('NULLVALUE_AS_NULL','UMPV')).
+rule_i(0,prop('INITIALIZE_NEW','UMPV')).
+rule_i(0,prop('STD_FUNC_OBJECT','Yes')).
+rule_i(0,prop('SPC_WARNINGS_DISABLED','spc0096 spc0107 spc0142')).
+rule_i(0,prop('TRNEND','Yes')).
+rule_i(0,prop('AUTOCENTER','UMPV')).
+rule_i(0,prop('LSTPFOOT','YES')).
+rule_i(0,prop('CANCEL','YES')).
+rule_i(0,prop('CONFIRM','UMPV')).
+rule_i(0,prop('TRNCFM','UMPV')).
+rule_i(0,prop('PRINT_CUST_LAYOUT','UMPV')).
+rule_i(0,prop('OUTPUT','FIL')).
+rule_i(0,prop(idConnectivitySupport,idInherit)).
+rule_i(0,prop(idISBCEJB,'0')).
+rule_i(0,prop(idISPRCWEBSERVICE,'0')).
+rule_i(0,prop('USE_ENCRYPTION','NO')).
+rule_i(0,prop('EXECUTE_IN_NEW_UTL','0')).
+rule_i(0,prop('Theme',o(25,'Carmine'))).
+rule_i(0,prop('OBJECT_METADATA','')).
+rule_i(0,prop('CALL_PROTOCOL','INTERNAL')).
+rule_i(0,prop('IsMain','0')).
+rule_i(0,prop(sessiontype,'RW')).
+rule_i(0,prop('ObjDesc','String Concatenation Unit Test')).
+rule_i(0,prop('ObjName','StringConcatenationUnitTest')).
+rule_i(0,maingen(12)).
+rule_i(0,parm([],[])).
+rule_i(0,parmio([])).
+rule_i(0,output('FIL')).
+ 
+a_i(3,1,f,'Err',[],[ [],[ t('0',3) ] ]).
+ 
+v_i(f,i,3,[]).
+v_i(f,o,3,'Err').
+ 
+ 
+ 
+ 
+ 
+ 
+attri_i('Output',[ 'Gx_out',char,3,0,'',1,'','',13 ]).
+attri_i('GXV2',[ 'GXV2',int,8,0,'',0,'','',12 ]).
+attri_i('GXV1',[ 'GXV1',o(objectcollection('StringConcatenationUnitTestSDT')),0,0,'',0,'','',11 ]).
+attri_i('Errmsg',[ 'Gx_emsg',char,70,0,'',1,'Error text','',10 ]).
+attri_i('Err',[ 'Gx_err',int,3,0,'ZZ9',1,'Error code','',9 ]).
+attri_i('Testcasedata',[ 'TestCaseData',o('StringConcatenationUnitTestSDT'),0,0,'',0,'Test Case Data','',8 ]).
+ 
+ 
+ 
+ 
+ 
+function_i(1,[ t('Testcasedata',23),t('Concatenation',3) ],yes,udp,o(1,'StringConcatenation'),[],6,[ t('Testcasedata',23),t('Concatenation',3) ],[ [ t([ t('Testcasedata',23),t('String1',3) ],29),t(',',7),t([ t('Testcasedata',23),t('String2',3) ],29) ] ]).
+function_i(1,'GXV1',yes,udp,o(33,'StringConcatenationUnitTestData'),[],3,'GXV1',[ [] ]).
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+break_i(1,rpt,0,[],[ [],[],[] ]).
+ 
+b_group_i(1,1,lit,0,1,0).
+ 
+b_line_i(0,1,1,cmd,0,[]).
+b_line_i(1,1,1,cmd,0,[]).
+b_line_i(2,1,1,cmd,0,[]).
+b_line_i(3,1,1,cmd,0,[ t('',107,3,0),t('GXV2',23,0,0),t(=,10,0,0),t(1,3,0,0) ]).
+b_line_i([ 3,1 ],1,1,cmd,0,[ t('',107,3,0),t('GXV1',23,0,0),t(=,10,0,0),t('udp(',1,0,0),t('GXV1',3,0,0),t(3,3,0,0),t(')',4,0,0) ]).
+b_line_i([ 3,2 ],1,1,cmd,0,[ t('',114,3,0),t('GXV2',23,0,0),t(<=,10,0,0),t([ t('GXV1',23,3,0),t('Count',3,3,0) ],29,3,0) ]).
+b_line_i([ 3,3 ],1,1,cmd,0,[ t('',107,3,0),t('Testcasedata',23,0,0),t(=,10,0,0),t([ t('GXV1',23,0,0),t('item(',1,0,0) ],31,0,0),t('GXV2',23,0,0),t(')',4,0,0) ]).
+b_line_i(4,1,1,cmd,1,[]).
+b_line_i(5,1,1,cmd,1,[]).
+b_line_i(6,1,1,cmd,1,[ t('',107,6,0),t([ t('Testcasedata',23,1,0),t('Concatenation',3,1,0) ],29,1,0),t(=,10,1,0),t('udp(',1,1,0),t([ t('Testcasedata',23),t('Concatenation',3) ],3,1,0),t(6,3,1,0),t([ t('Testcasedata',23,1,0),t('String1',3,1,0) ],29,1,0),t(',',7,1,0),t([ t('Testcasedata',23,1,0),t('String2',3,1,0) ],29,1,0),t(')',4,1,0) ]).
+b_line_i(7,1,1,cmd,1,[]).
+b_line_i(8,1,1,cmd,1,[]).
+b_line_i(9,1,1,cmd,1,[ t('',104,9,0),t(o(1,'GXtest\AssertStringEquals'),28,1,2),t([ t('Testcasedata',23,9,21),t('Expectedconcatenation',3,9,35) ],29,9,35),t(',',7,1,0),t([ t('Testcasedata',23,9,58),t('Concatenation',3,9,72) ],29,9,72),t(',',7,1,0),t('format(',1,1,87),t('''%1.Expectedconcatenation: %2''',3,9,95),t(',',7,1,126),t([ t('Testcasedata',23,9,128),t('Testcaseid',3,9,142) ],29,9,142),t(',',7,1,152),t([ t('Testcasedata',23,9,154),t('Msgconcatenation',3,9,168) ],29,9,168),t(')',4,1,184) ]).
+b_line_i([ 10,1 ],1,1,cmd,1,[ t('',107,10,0),t('GXV2',23,1,0),t(=,10,1,0),t('GXV2',23,1,0),t(+,5,1,0),t(1,3,1,0) ]).
+b_line_i([ 10,2 ],1,1,cmd,1,[ t('',115,10,0) ]).
+ 
+ 
+ 
+ 
+ 
+ 
+page_layout_i([ 66,0,6 ]).
+ 
+ 
+ 
+paper_info_i([ 0,256,'',11909,16834,0,0,0,0,1 ]).
+ 
+ppi_i([ 100,100 ]).
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+grid_i(7,15).
+ 
+ 
+ 
+form_class_i(1,'Graphic').
+ 
+ 
+ 
+ 
+calling_main_i(1,26).
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+struct_dt_i([ 26,66,0 ],name,'StringConcatenationUnitTestSDT').
+struct_dt_i([ 26,66,0 ],namespace,'Parks').
+struct_dt_i([ 26,66,0 ],'ObjName','StringConcatenationUnitTestSDT').
+struct_dt_i([ 26,66,0 ],'ObjDesc','String Concatenation Unit Test SDT').
+struct_dt_i([ 26,66,0 ],'ExternalName','StringConcatenationUnitTestSDT').
+struct_dt_i([ 26,66,0 ],'ExternalNamespace','Parks').
+struct_dt_i([ 26,66,0 ],fullname,'StringConcatenationUnitTestSDT').
+ 
+struct_dt_elem_i([ 26,66,0 ],1,name,'Testcaseid').
+struct_dt_elem_i([ 26,66,0 ],1,camelname,'TestCaseId').
+struct_dt_elem_i([ 26,66,0 ],1,length,40).
+struct_dt_elem_i([ 26,66,0 ],1,decimals,0).
+struct_dt_elem_i([ 26,66,0 ],1,type,[ 13,40,0 ]).
+struct_dt_elem_i([ 26,66,0 ],1,pic,'').
+struct_dt_elem_i([ 26,66,0 ],1,collection,'False').
+struct_dt_elem_i([ 26,66,0 ],1,'ExternalName','TestCaseId').
+struct_dt_elem_i([ 26,66,0 ],1,'ExternalNamespace','Parks').
+struct_dt_elem_i([ 26,66,0 ],1,'XmlType','Element').
+struct_dt_elem_i([ 26,66,0 ],1,'XmlName','').
+struct_dt_elem_i([ 26,66,0 ],1,'XmlNamespace','').
+struct_dt_elem_i([ 26,66,0 ],1,soaptype,'').
+struct_dt_elem_i([ 26,66,0 ],1,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,66,0 ],1,'JsonName','').
+struct_dt_elem_i([ 26,66,0 ],1,'JsonInclude',idJsonEmpty).
+struct_dt_elem_i([ 26,66,0 ],2,name,'String1').
+struct_dt_elem_i([ 26,66,0 ],2,camelname,string1).
+struct_dt_elem_i([ 26,66,0 ],2,length,20).
+struct_dt_elem_i([ 26,66,0 ],2,decimals,0).
+struct_dt_elem_i([ 26,66,0 ],2,type,[ 5,20,0 ]).
+struct_dt_elem_i([ 26,66,0 ],2,pic,'').
+struct_dt_elem_i([ 26,66,0 ],2,collection,'False').
+struct_dt_elem_i([ 26,66,0 ],2,'ExternalName',string1).
+struct_dt_elem_i([ 26,66,0 ],2,'ExternalNamespace','Parks').
+struct_dt_elem_i([ 26,66,0 ],2,'XmlType','Element').
+struct_dt_elem_i([ 26,66,0 ],2,'XmlName','').
+struct_dt_elem_i([ 26,66,0 ],2,'XmlNamespace','').
+struct_dt_elem_i([ 26,66,0 ],2,soaptype,'').
+struct_dt_elem_i([ 26,66,0 ],2,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,66,0 ],2,'JsonName','').
+struct_dt_elem_i([ 26,66,0 ],2,'JsonInclude',idJsonEmpty).
+struct_dt_elem_i([ 26,66,0 ],3,name,'String2').
+struct_dt_elem_i([ 26,66,0 ],3,camelname,string2).
+struct_dt_elem_i([ 26,66,0 ],3,length,20).
+struct_dt_elem_i([ 26,66,0 ],3,decimals,0).
+struct_dt_elem_i([ 26,66,0 ],3,type,[ 5,20,0 ]).
+struct_dt_elem_i([ 26,66,0 ],3,pic,'').
+struct_dt_elem_i([ 26,66,0 ],3,collection,'False').
+struct_dt_elem_i([ 26,66,0 ],3,'ExternalName',string2).
+struct_dt_elem_i([ 26,66,0 ],3,'ExternalNamespace','Parks').
+struct_dt_elem_i([ 26,66,0 ],3,'XmlType','Element').
+struct_dt_elem_i([ 26,66,0 ],3,'XmlName','').
+struct_dt_elem_i([ 26,66,0 ],3,'XmlNamespace','').
+struct_dt_elem_i([ 26,66,0 ],3,soaptype,'').
+struct_dt_elem_i([ 26,66,0 ],3,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,66,0 ],3,'JsonName','').
+struct_dt_elem_i([ 26,66,0 ],3,'JsonInclude',idJsonEmpty).
+struct_dt_elem_i([ 26,66,0 ],4,name,'Concatenation').
+struct_dt_elem_i([ 26,66,0 ],4,camelname,concatenation).
+struct_dt_elem_i([ 26,66,0 ],4,length,20).
+struct_dt_elem_i([ 26,66,0 ],4,decimals,0).
+struct_dt_elem_i([ 26,66,0 ],4,type,[ 5,20,0 ]).
+struct_dt_elem_i([ 26,66,0 ],4,pic,'').
+struct_dt_elem_i([ 26,66,0 ],4,collection,'False').
+struct_dt_elem_i([ 26,66,0 ],4,'ExternalName',concatenation).
+struct_dt_elem_i([ 26,66,0 ],4,'ExternalNamespace','Parks').
+struct_dt_elem_i([ 26,66,0 ],4,'XmlType','Element').
+struct_dt_elem_i([ 26,66,0 ],4,'XmlName','').
+struct_dt_elem_i([ 26,66,0 ],4,'XmlNamespace','').
+struct_dt_elem_i([ 26,66,0 ],4,soaptype,'').
+struct_dt_elem_i([ 26,66,0 ],4,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,66,0 ],4,'JsonName','').
+struct_dt_elem_i([ 26,66,0 ],4,'JsonInclude',idJsonEmpty).
+struct_dt_elem_i([ 26,66,0 ],5,name,'Expectedconcatenation').
+struct_dt_elem_i([ 26,66,0 ],5,camelname,'Expectedconcatenation').
+struct_dt_elem_i([ 26,66,0 ],5,length,20).
+struct_dt_elem_i([ 26,66,0 ],5,decimals,0).
+struct_dt_elem_i([ 26,66,0 ],5,type,[ 5,20,0 ]).
+struct_dt_elem_i([ 26,66,0 ],5,pic,'').
+struct_dt_elem_i([ 26,66,0 ],5,collection,'False').
+struct_dt_elem_i([ 26,66,0 ],5,'ExternalName','Expectedconcatenation').
+struct_dt_elem_i([ 26,66,0 ],5,'ExternalNamespace','Parks').
+struct_dt_elem_i([ 26,66,0 ],5,'XmlType','Element').
+struct_dt_elem_i([ 26,66,0 ],5,'XmlName','').
+struct_dt_elem_i([ 26,66,0 ],5,'XmlNamespace','').
+struct_dt_elem_i([ 26,66,0 ],5,soaptype,'').
+struct_dt_elem_i([ 26,66,0 ],5,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,66,0 ],5,'JsonName','').
+struct_dt_elem_i([ 26,66,0 ],5,'JsonInclude',idJsonEmpty).
+struct_dt_elem_i([ 26,66,0 ],6,name,'Msgconcatenation').
+struct_dt_elem_i([ 26,66,0 ],6,camelname,'Msgconcatenation').
+struct_dt_elem_i([ 26,66,0 ],6,length,100).
+struct_dt_elem_i([ 26,66,0 ],6,decimals,0).
+struct_dt_elem_i([ 26,66,0 ],6,type,[ 13,100,0 ]).
+struct_dt_elem_i([ 26,66,0 ],6,pic,'').
+struct_dt_elem_i([ 26,66,0 ],6,collection,'False').
+struct_dt_elem_i([ 26,66,0 ],6,'ExternalName','Msgconcatenation').
+struct_dt_elem_i([ 26,66,0 ],6,'ExternalNamespace','Parks').
+struct_dt_elem_i([ 26,66,0 ],6,'XmlType','Element').
+struct_dt_elem_i([ 26,66,0 ],6,'XmlName','').
+struct_dt_elem_i([ 26,66,0 ],6,'XmlNamespace','').
+struct_dt_elem_i([ 26,66,0 ],6,soaptype,'').
+struct_dt_elem_i([ 26,66,0 ],6,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,66,0 ],6,'JsonName','').
+struct_dt_elem_i([ 26,66,0 ],6,'JsonInclude',idJsonEmpty).
+ 
+ 
+ 
+ 
+ 
+ 
+pgm_parm_i(proc,17,'GXTEST\ASSERTSTRINGEQUALS',[ [ svchar,2097152,0,0 ],[ svchar,2097152,0,0 ],[ svchar,2097152,0,0 ] ],[ [ 'ExpectedValue',in,[] ],[ 'ObtainedValue',in,[] ],[ 'Message',in,[] ] ]).
+pgm_parm_i(proc,24,'STRINGCONCATENATION',[ [ char,20,0,0 ],[ char,20,0,0 ],[ char,20,0,0 ] ],[ [ string1,in,[] ],[ string2,in,[] ],[ concatenation,out,[] ] ]).
+pgm_parm_i(mnproc,2,'STRINGCONCATENATIONUNITTESTDATA',[ [ o(objectcollection('StringConcatenationUnitTestSDT')),0,0,0 ] ],[ [ 'ReturnValue',out,[ '-1' ] ] ]).
+ 
+pgm_callprotocol_i(proc,28,'STRINGCONCATENATIONUNITTEST','INTERNAL','Unsecure').
+pgm_callprotocol_i(proc,17,'GXTEST\ASSERTSTRINGEQUALS','INTERNAL','Unsecure').
+pgm_callprotocol_i(proc,24,'STRINGCONCATENATION','INTERNAL','Unsecure').
+pgm_callprotocol_i(mnproc,2,'STRINGCONCATENATIONUNITTESTDATA','INTERNAL','').
+ 
+ 
+ 
+ 
+module_info_i('GXtest','PACKAGE',gxtest).
+module_info_i('GXtest','PackageName','GXtest.jar').
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

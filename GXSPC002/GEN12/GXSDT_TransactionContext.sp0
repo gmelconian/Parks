@@ -1,0 +1,142 @@
+ 
+spec_i([ sdt,[ 26,56,0 ],'TransactionContext','TransactionContext',0,spa,'17_0_5-152925' ]).
+ 
+struct_dt_i([ 26,56,0 ],name,'TransactionContext').
+struct_dt_i([ 26,56,0 ],namespace,'Parks').
+struct_dt_i([ 26,56,0 ],'ObjName','TransactionContext').
+struct_dt_i([ 26,56,0 ],'ObjDesc','Transaction Context').
+struct_dt_i([ 26,56,0 ],'ExternalName','TransactionContext').
+struct_dt_i([ 26,56,0 ],'ExternalNamespace','Parks').
+struct_dt_i([ 26,56,84 ],name,'Attribute').
+struct_dt_i([ 26,56,84 ],namespace,'Parks.TransactionContext').
+struct_dt_i([ 26,56,0 ],fullname,'TransactionContext').
+struct_dt_i([ 26,56,84 ],fullname,'TransactionContext.Attribute').
+struct_dt_i([ 26,56,0 ],modified,yes).
+struct_dt_i([ 26,56,84 ],modified,yes).
+ 
+struct_dt_elem_i([ 26,56,0 ],1,name,'Callerobject').
+struct_dt_elem_i([ 26,56,0 ],1,camelname,'CallerObject').
+struct_dt_elem_i([ 26,56,0 ],1,basedon,50).
+struct_dt_elem_i([ 26,56,0 ],1,length,256).
+struct_dt_elem_i([ 26,56,0 ],1,decimals,0).
+struct_dt_elem_i([ 26,56,0 ],1,type,[ 13,256,0 ]).
+struct_dt_elem_i([ 26,56,0 ],1,pic,'').
+struct_dt_elem_i([ 26,56,0 ],1,collection,'False').
+struct_dt_elem_i([ 26,56,0 ],1,'ExternalName','CallerObject').
+struct_dt_elem_i([ 26,56,0 ],1,'ExternalNamespace','Parks').
+struct_dt_elem_i([ 26,56,0 ],1,'XmlType','Element').
+struct_dt_elem_i([ 26,56,0 ],1,'XmlName','').
+struct_dt_elem_i([ 26,56,0 ],1,'XmlNamespace','').
+struct_dt_elem_i([ 26,56,0 ],1,soaptype,'').
+struct_dt_elem_i([ 26,56,0 ],1,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,56,0 ],1,'JsonName','').
+struct_dt_elem_i([ 26,56,0 ],1,'JsonInclude',idJsonEmpty).
+struct_dt_elem_i([ 26,56,0 ],2,name,'Callerondelete').
+struct_dt_elem_i([ 26,56,0 ],2,camelname,'CallerOnDelete').
+struct_dt_elem_i([ 26,56,0 ],2,length,4).
+struct_dt_elem_i([ 26,56,0 ],2,decimals,0).
+struct_dt_elem_i([ 26,56,0 ],2,type,[ 15,4,0 ]).
+struct_dt_elem_i([ 26,56,0 ],2,pic,'').
+struct_dt_elem_i([ 26,56,0 ],2,collection,'False').
+struct_dt_elem_i([ 26,56,0 ],2,'ExternalName','CallerOnDelete').
+struct_dt_elem_i([ 26,56,0 ],2,'ExternalNamespace','Parks').
+struct_dt_elem_i([ 26,56,0 ],2,'XmlType','Element').
+struct_dt_elem_i([ 26,56,0 ],2,'XmlName','').
+struct_dt_elem_i([ 26,56,0 ],2,'XmlNamespace','').
+struct_dt_elem_i([ 26,56,0 ],2,soaptype,'').
+struct_dt_elem_i([ 26,56,0 ],2,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,56,0 ],2,'JsonName','').
+struct_dt_elem_i([ 26,56,0 ],2,'JsonInclude',idJsonEmpty).
+struct_dt_elem_i([ 26,56,0 ],3,name,'Callerurl').
+struct_dt_elem_i([ 26,56,0 ],3,camelname,'CallerURL').
+struct_dt_elem_i([ 26,56,0 ],3,basedon,29).
+struct_dt_elem_i([ 26,56,0 ],3,length,1000).
+struct_dt_elem_i([ 26,56,0 ],3,decimals,0).
+struct_dt_elem_i([ 26,56,0 ],3,type,[ 13,1000,0 ]).
+struct_dt_elem_i([ 26,56,0 ],3,pic,'').
+struct_dt_elem_i([ 26,56,0 ],3,collection,'False').
+struct_dt_elem_i([ 26,56,0 ],3,'ExternalName','CallerURL').
+struct_dt_elem_i([ 26,56,0 ],3,'ExternalNamespace','Parks').
+struct_dt_elem_i([ 26,56,0 ],3,'XmlType','Element').
+struct_dt_elem_i([ 26,56,0 ],3,'XmlName','').
+struct_dt_elem_i([ 26,56,0 ],3,'XmlNamespace','').
+struct_dt_elem_i([ 26,56,0 ],3,soaptype,'').
+struct_dt_elem_i([ 26,56,0 ],3,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,56,0 ],3,'JsonName','').
+struct_dt_elem_i([ 26,56,0 ],3,'JsonInclude',idJsonEmpty).
+struct_dt_elem_i([ 26,56,0 ],4,name,'Transactionname').
+struct_dt_elem_i([ 26,56,0 ],4,camelname,'TransactionName').
+struct_dt_elem_i([ 26,56,0 ],4,basedon,50).
+struct_dt_elem_i([ 26,56,0 ],4,length,256).
+struct_dt_elem_i([ 26,56,0 ],4,decimals,0).
+struct_dt_elem_i([ 26,56,0 ],4,type,[ 13,256,0 ]).
+struct_dt_elem_i([ 26,56,0 ],4,pic,'').
+struct_dt_elem_i([ 26,56,0 ],4,collection,'False').
+struct_dt_elem_i([ 26,56,0 ],4,'ExternalName','TransactionName').
+struct_dt_elem_i([ 26,56,0 ],4,'ExternalNamespace','Parks').
+struct_dt_elem_i([ 26,56,0 ],4,'XmlType','Element').
+struct_dt_elem_i([ 26,56,0 ],4,'XmlName','').
+struct_dt_elem_i([ 26,56,0 ],4,'XmlNamespace','').
+struct_dt_elem_i([ 26,56,0 ],4,soaptype,'').
+struct_dt_elem_i([ 26,56,0 ],4,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,56,0 ],4,'JsonName','').
+struct_dt_elem_i([ 26,56,0 ],4,'JsonInclude',idJsonEmpty).
+struct_dt_elem_i([ 26,56,0 ],5,name,'Attributes').
+struct_dt_elem_i([ 26,56,0 ],5,camelname,'Attributes').
+struct_dt_elem_i([ 26,56,0 ],5,type,[ [ 26,56,84 ],0,0 ]).
+struct_dt_elem_i([ 26,56,0 ],5,pic,'').
+struct_dt_elem_i([ 26,56,0 ],5,collection,'True').
+struct_dt_elem_i([ 26,56,0 ],5,'ObjName','Attributes').
+struct_dt_elem_i([ 26,56,0 ],5,'ObjDesc','Attributes').
+struct_dt_elem_i([ 26,56,0 ],5,'CollectionItemName','Attribute').
+struct_dt_elem_i([ 26,56,0 ],5,'XmlName','').
+struct_dt_elem_i([ 26,56,0 ],5,'XmlCollectionItemName','').
+struct_dt_elem_i([ 26,56,0 ],5,'XmlNamespace','').
+struct_dt_elem_i([ 26,56,0 ],5,'CollectionSerialization',idXmlCollectionWrapped).
+struct_dt_elem_i([ 26,56,0 ],5,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,56,0 ],5,'JsonName','').
+struct_dt_elem_i([ 26,56,0 ],5,'JsonInclude',idJsonNoProperty).
+struct_dt_elem_i([ 26,56,0 ],5,'JsonCollectionSerialization',idXmlCollectionWrapped).
+struct_dt_elem_i([ 26,56,84 ],1,name,'Attributename').
+struct_dt_elem_i([ 26,56,84 ],1,camelname,'AttributeName').
+struct_dt_elem_i([ 26,56,84 ],1,length,128).
+struct_dt_elem_i([ 26,56,84 ],1,decimals,0).
+struct_dt_elem_i([ 26,56,84 ],1,type,[ 13,128,0 ]).
+struct_dt_elem_i([ 26,56,84 ],1,pic,'').
+struct_dt_elem_i([ 26,56,84 ],1,collection,'False').
+struct_dt_elem_i([ 26,56,84 ],1,'ExternalName','AttributeName').
+struct_dt_elem_i([ 26,56,84 ],1,'ExternalNamespace','Parks').
+struct_dt_elem_i([ 26,56,84 ],1,'XmlType','Element').
+struct_dt_elem_i([ 26,56,84 ],1,'XmlName','').
+struct_dt_elem_i([ 26,56,84 ],1,'XmlNamespace','').
+struct_dt_elem_i([ 26,56,84 ],1,soaptype,'').
+struct_dt_elem_i([ 26,56,84 ],1,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,56,84 ],1,'JsonName','').
+struct_dt_elem_i([ 26,56,84 ],1,'JsonInclude',idJsonEmpty).
+struct_dt_elem_i([ 26,56,84 ],2,name,'Attributevalue').
+struct_dt_elem_i([ 26,56,84 ],2,camelname,'AttributeValue').
+struct_dt_elem_i([ 26,56,84 ],2,length,1000).
+struct_dt_elem_i([ 26,56,84 ],2,decimals,0).
+struct_dt_elem_i([ 26,56,84 ],2,type,[ 13,1000,0 ]).
+struct_dt_elem_i([ 26,56,84 ],2,pic,'').
+struct_dt_elem_i([ 26,56,84 ],2,collection,'False').
+struct_dt_elem_i([ 26,56,84 ],2,'ExternalName','AttributeValue').
+struct_dt_elem_i([ 26,56,84 ],2,'ExternalNamespace','Parks').
+struct_dt_elem_i([ 26,56,84 ],2,'XmlType','Element').
+struct_dt_elem_i([ 26,56,84 ],2,'XmlName','').
+struct_dt_elem_i([ 26,56,84 ],2,'XmlNamespace','').
+struct_dt_elem_i([ 26,56,84 ],2,soaptype,'').
+struct_dt_elem_i([ 26,56,84 ],2,'XmlInclude',idXmlIncludeAlways).
+struct_dt_elem_i([ 26,56,84 ],2,'JsonName','').
+struct_dt_elem_i([ 26,56,84 ],2,'JsonInclude',idJsonEmpty).
+struct_dt_elem_i([ 26,56,0 ],3,pic,'ZZZ9').
+ 
+ 
+ 
+ 
+ 
+ 
+module_info_i('GeneXus\Common','PACKAGE','com.genexuscore').
+module_info_i('GeneXus\Common','PackageName','GeneXus.jar').
+module_info_i('GeneXus','PACKAGE','com.genexuscore').
+module_info_i('GeneXus','PackageName','GeneXus.jar').

@@ -1,0 +1,15 @@
+
+<Object>
+<ObjClsGuid>1db606f2-af09-4cf9-a3b5-b481519d28f6</ObjClsGuid>
+<ObjCls>0</ObjCls>
+<ObjId>6</ObjId>
+<ObjName>Category</ObjName>
+<ObjStatus>genreq</ObjStatus>
+<ObjNavig>GXSPC002\GEN12\NVG\Category.xml</ObjNavig></Object>
+<Object>
+<ObjClsGuid>1db606f2-af09-4cf9-a3b5-b481519d28f6</ObjClsGuid>
+<ObjCls>0</ObjCls>
+<ObjId>6</ObjId>
+<ObjName>Category_BC</ObjName>
+<ObjStatus>genreq</ObjStatus>
+<ObjNavig>GXSPC002\GEN12\NVG\Category_BC.xml</ObjNavig></Object>

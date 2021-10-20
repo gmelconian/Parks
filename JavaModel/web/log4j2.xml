@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="error">
+   <Properties>    
+	<Property name="LS">${sys:file.separator}</Property>	
+	<Property name="logPath">${main:0}${LS}logs${LS}</Property>
+	<Property name="logFilePath">${logPath}client.log</Property>
+	
+  </Properties>
+  <Appenders>
+	<Console name="GeneXusDefaultLogger" target="SYSTEM_OUT">
+		<PatternLayout pattern="%d{ISO8601} [%t] %-5p %c - %m%n"/>    
+	</Console>
+    <RollingFile name="RollingFile" fileName="${logFilePath}" filePattern="${logPath}old${LS}app-%d{yyyy-MM-dd-HH}-%i.log.gz">
+      <PatternLayout>
+    	<Pattern>%d{ISO8601} [%t] %-5p %c - %m%n</Pattern>
+      </PatternLayout>
+      <Policies>
+    	<TimeBasedTriggeringPolicy />
+    	<SizeBasedTriggeringPolicy size="10 MB"/>
+      </Policies>
+    </RollingFile>	
+  </Appenders>
+  <Loggers>
+    <Root level="OFF">
+      <AppenderRef ref="RollingFile"/>
+    </Root>
+	<logger name="com.genexus" level="OFF" additivity="false">
+		<AppenderRef ref="RollingFile"/>
+	</logger>
+	<!-- User custom Logging !-->
+	<logger name="GeneXusUserLog" level="ERROR" additivity="false">
+		<AppenderRef ref="RollingFile"/>
+	</logger>
+
+    
+  </Loggers>
+</Configuration>

@@ -1,0 +1,152 @@
+
+<ReorgSpec>
+<SpecVersion>17_0_5-152925</SpecVersion>
+<Table>
+<TableId>11</TableId>
+<TableName>Materia</TableName>
+<Description>Materia</Description></Table>
+<ReorgCls>c</ReorgCls>
+<ReorgCode>new</ReorgCode>
+<ReorgMsg>Materia is new</ReorgMsg>
+<ReorgAction>*</ReorgAction>
+<TableAttributes>
+<AttrisInTable>
+<Attribute>
+<AttriId>46</AttriId>
+<AttriName>MateriaId</AttriName>
+<Description>Materia Id</Description>
+<TakesValueFrom></TakesValueFrom>
+<OnPrimaryKey>Yes</OnPrimaryKey>
+<AttriType>
+<DataType>N</DataType>
+<Presicion>4</Presicion>
+<Scale>0</Scale>
+<Properties>
+<Property>
+<Name>Autonumber</Name>
+<Value>No</Value></Property>
+<Property>
+<Name>Autogenerate</Name>
+<Value>No</Value></Property>
+<Property>
+<Name>AllowNulls</Name>
+<Value>No</Value></Property></Properties></AttriType></Attribute>
+<Attribute>
+<AttriId>47</AttriId>
+<AttriName>MateriaName</AttriName>
+<Description>Materia Name</Description>
+<TakesValueFrom></TakesValueFrom>
+<AttriType>
+<DataType>C</DataType>
+<Presicion>50</Presicion>
+<Scale>0</Scale>
+<Properties>
+<Property>
+<Name>Autonumber</Name>
+<Value>No</Value></Property>
+<Property>
+<Name>Autogenerate</Name>
+<Value>No</Value></Property>
+<Property>
+<Name>AllowNulls</Name>
+<Value>No</Value></Property>
+<Property>
+<Name>NLS</Name>
+<Value>Yes</Value></Property></Properties></AttriType></Attribute>
+<Attribute>
+<AttriId>49</AttriId>
+<AttriName>DocenteName</AttriName>
+<Description>Docente Name</Description>
+<TakesValueFrom></TakesValueFrom>
+<AttriType>
+<DataType>C</DataType>
+<Presicion>50</Presicion>
+<Scale>0</Scale>
+<Properties>
+<Property>
+<Name>Autonumber</Name>
+<Value>No</Value></Property>
+<Property>
+<Name>Autogenerate</Name>
+<Value>No</Value></Property>
+<Property>
+<Name>AllowNulls</Name>
+<Value>No</Value></Property>
+<Property>
+<Name>NLS</Name>
+<Value>Yes</Value></Property></Properties></AttriType></Attribute>
+<Attribute>
+<AttriId>48</AttriId>
+<AttriName>DocenteId</AttriName>
+<Description>Docente Id</Description>
+<TakesValueFrom></TakesValueFrom>
+<AttriType>
+<DataType>N</DataType>
+<Presicion>4</Presicion>
+<Scale>0</Scale>
+<Properties>
+<Property>
+<Name>Autonumber</Name>
+<Value>No</Value></Property>
+<Property>
+<Name>Autogenerate</Name>
+<Value>No</Value></Property>
+<Property>
+<Name>AllowNulls</Name>
+<Value>No</Value></Property></Properties></AttriType></Attribute></AttrisInTable>
+<AttrisNoLongerInTable></AttrisNoLongerInTable>
+<AttrisInManyTables>
+<Attribute>
+<AttriId>49</AttriId>
+<AttriName>DocenteName</AttriName>
+<Description>Docente Name</Description></Attribute></AttrisInManyTables></TableAttributes>
+<TableIndices>
+<Indices>
+<Index>
+<IndexName>IMATERIA</IndexName>
+<IndexType>u</IndexType>
+<IndexAttris>
+<Attribute>
+<AttriId>46</AttriId>
+<AttriName>MateriaId</AttriName>
+<Description>Materia Id</Description></Attribute></IndexAttris>
+<IndexExistance>AlreadyExist</IndexExistance>
+<Clustered>No</Clustered></Index>
+<Index>
+<IndexName>IMATERIA1</IndexName>
+<IndexType>d</IndexType>
+<IndexAttris>
+<Attribute>
+<AttriId>48</AttriId>
+<AttriName>DocenteId</AttriName>
+<Description>Docente Id</Description></Attribute></IndexAttris>
+<IndexExistance>AlreadyExist</IndexExistance>
+<Clustered>No</Clustered></Index></Indices></TableIndices>
+<FKConstraints>
+<FKConstraint>
+<ChangeType>none</ChangeType>
+<Table>
+<TableId>12</TableId>
+<TableName>Docente</TableName>
+<Description>Docente</Description></Table>
+<Attributes>
+<Attribute>
+<AttriId>48</AttriId>
+<AttriName>DocenteId</AttriName>
+<Description>Docente Id</Description></Attribute></Attributes></FKConstraint></FKConstraints>
+<Statements>
+<Statement>CREATE TABLE `Materia` (`MateriaId` smallint NOT NULL , `MateriaName` national char(50) NOT NULL , `DocenteName` national char(50) NOT NULL , `DocenteId` smallint NOT NULL , PRIMARY KEY(`MateriaId`))  ENGINE=InnoDB</Statement>
+<Statement>CREATE INDEX `IMATERIA1` ON `Materia` (`DocenteId` )</Statement>
+<Statement>ALTER TABLE `Materia` ADD CONSTRAINT `IMATERIA1` FOREIGN KEY (`DocenteId`) REFERENCES `Docente` (`DocenteId`)</Statement></Statements>
+<NeedReorganizationProgram>False</NeedReorganizationProgram>
+<Warnings></Warnings>
+<Errors>
+<Error>
+<MsgCode>rgz0011</MsgCode>
+<Message>
+<Token>Secondary attribute </Token>
+<Attribute>
+<AttriId>49</AttriId>
+<AttriName>DocenteName</AttriName>
+<Description>Docente Name</Description></Attribute>
+<Token> in more than one table.</Token></Message></Error></Errors></ReorgSpec>

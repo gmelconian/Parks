@@ -1,0 +1,35 @@
+current_obj_i(2,proc,33).
+ 
+current_guid('eccb4bfc-31fe-4116-9ea1-b4a79f9708ce').
+ 
+ 
+ 
+is_webproc_i(ashowsbydate).
+ 
+ 
+is_pdf_i.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ij_main_object(ashowsbydate,'Shows By Date','','""','HTTP',default).
+ 
+ 
+ 
+ 
+ij_object_dependency(ashowsbydate,[ ashowsbydate__default ],[ ashowsbydate_impl ],[ 'GxWebStd' ],33).
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

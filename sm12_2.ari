@@ -1,0 +1,7 @@
+sdt_map_i(12,'Category',[ 0,6,0 ]).
+sdt_map_i(12,'LinkList.LinkItem',[ 26,53,80 ]).
+sdt_map_i(12,'ProgramNames.ProgramName',[ 26,54,81 ]).
+sdt_map_i(12,'StringConcatenationUnitTestSDT',[ 26,66,0 ]).
+sdt_map_i(12,'TabOptions.TabOptionsItem',[ 26,55,82 ]).
+sdt_map_i(12,'TransactionContext',[ 26,56,0 ]).
+sdt_map_i(12,'TransactionContext.Attribute',[ 26,56,84 ]).

@@ -1,0 +1,10 @@
+14.0
+8
+1       SQLSMALLINT         0       2       ""   1     model_id                 ""
+2       SQLSMALLINT         0       2       ""   2     obj_class                ""
+3       SQLINT              0       4       ""   3     obj_id                   ""
+4       SQLNCHAR            2       256     ""   4     obj_name                 SQL_Latin1_General_CP1_CI_AS
+5       SQLNCHAR            2       512     ""   5     obj_title                SQL_Latin1_General_CP1_CI_AS
+6       SQLINT              0       4       ""   6     obj_folder               ""
+7       SQLSMALLINT         0       2       ""   7     obj_status               ""
+8       SQLSMALLINT         0       2       ""   8     obj_type                 ""
