@@ -88,28 +88,6 @@ public final  class ashowsbydate_impl extends GXWebReport
          getPrinter().GxDrawText("Show Name", 75, Gx_line+67, 136, Gx_line+81, 0+256, 0, 0, 0) ;
          Gx_OldLine = Gx_line ;
          Gx_line = (int)(Gx_line+127) ;
-         /* Using cursor P000X2 */
-         pr_default.execute(0, new Object[] {AV9SelectedDateFrom});
-         while ( (pr_default.getStatus(0) != 101) )
-         {
-            A50ShowDate = P000X2_A50ShowDate[0] ;
-            A40000ShowImage_GXI = P000X2_A40000ShowImage_GXI[0] ;
-            A51ShowSchedule = P000X2_A51ShowSchedule[0] ;
-            A16ShowImage = P000X2_A16ShowImage[0] ;
-            A15ShowName = P000X2_A15ShowName[0] ;
-            A14ShowId = P000X2_A14ShowId[0] ;
-            h0X0( false, 100) ;
-            getPrinter().GxAttris("Microsoft Sans Serif", 8, false, false, false, false, 0, 0, 0, 0, 0, 255, 255, 255) ;
-            getPrinter().GxDrawText(GXutil.rtrim( localUtil.format( A15ShowName, "")), 67, Gx_line+33, 150, Gx_line+48, 0, 0, 0, 0) ;
-            sImgUrl = ((GXutil.strcmp("", A16ShowImage)==0) ? A40000ShowImage_GXI : A16ShowImage) ;
-            getPrinter().GxDrawBitMap(sImgUrl, 283, Gx_line+33, 315, Gx_line+48) ;
-            getPrinter().GxDrawText(localUtil.format( A50ShowDate, "99/99/99"), 517, Gx_line+33, 566, Gx_line+48, 2+256, 0, 0, 0) ;
-            getPrinter().GxDrawText(localUtil.format( A51ShowSchedule, "99/99/99 99:99"), 717, Gx_line+33, 797, Gx_line+48, 2+256, 0, 0, 0) ;
-            Gx_OldLine = Gx_line ;
-            Gx_line = (int)(Gx_line+100) ;
-            pr_default.readNext(0);
-         }
-         pr_default.close(0);
          /* Print footer for last page */
          ToSkip = (int)(P_lines+1) ;
          h0X0( true, 0) ;
@@ -223,26 +201,6 @@ public final  class ashowsbydate_impl extends GXWebReport
       GXKey = "" ;
       gxfirstwebparm = "" ;
       AV9SelectedDateFrom = GXutil.nullDate() ;
-      scmdbuf = "" ;
-      P000X2_A50ShowDate = new java.util.Date[] {GXutil.nullDate()} ;
-      P000X2_A40000ShowImage_GXI = new String[] {""} ;
-      P000X2_A51ShowSchedule = new java.util.Date[] {GXutil.nullDate()} ;
-      P000X2_A16ShowImage = new String[] {""} ;
-      P000X2_A15ShowName = new String[] {""} ;
-      P000X2_A14ShowId = new short[1] ;
-      A50ShowDate = GXutil.nullDate() ;
-      A40000ShowImage_GXI = "" ;
-      A51ShowSchedule = GXutil.resetTime( GXutil.nullDate() );
-      A16ShowImage = "" ;
-      A15ShowName = "" ;
-      sImgUrl = "" ;
-      pr_default = new DataStoreProvider(context, remoteHandle, new com.parks.ashowsbydate__default(),
-         new Object[] {
-             new Object[] {
-            P000X2_A50ShowDate, P000X2_A40000ShowImage_GXI, P000X2_A51ShowSchedule, P000X2_A16ShowImage, P000X2_A15ShowName, P000X2_A14ShowId
-            }
-         }
-      );
       /* GeneXus formulas. */
       Gx_line = 0 ;
       Gx_err = (short)(0) ;
@@ -250,7 +208,6 @@ public final  class ashowsbydate_impl extends GXWebReport
 
    private short gxcookieaux ;
    private short AV8SelectedParkID ;
-   private short A14ShowId ;
    private short Gx_err ;
    private int M_top ;
    private int M_bot ;
@@ -260,62 +217,8 @@ public final  class ashowsbydate_impl extends GXWebReport
    private int Gx_OldLine ;
    private String GXKey ;
    private String gxfirstwebparm ;
-   private String scmdbuf ;
-   private String A15ShowName ;
-   private String sImgUrl ;
-   private java.util.Date A51ShowSchedule ;
    private java.util.Date AV9SelectedDateFrom ;
-   private java.util.Date A50ShowDate ;
    private boolean entryPointCalled ;
    private boolean toggleJsOutput ;
-   private String A40000ShowImage_GXI ;
-   private String A16ShowImage ;
-   private IDataStoreProvider pr_default ;
-   private java.util.Date[] P000X2_A50ShowDate ;
-   private String[] P000X2_A40000ShowImage_GXI ;
-   private java.util.Date[] P000X2_A51ShowSchedule ;
-   private String[] P000X2_A16ShowImage ;
-   private String[] P000X2_A15ShowName ;
-   private short[] P000X2_A14ShowId ;
-}
-
-final  class ashowsbydate__default extends DataStoreHelperBase implements ILocalDataStoreHelper
-{
-   public Cursor[] getCursors( )
-   {
-      return new Cursor[] {
-          new ForEachCursor("P000X2", "SELECT `ShowDate`, `ShowImage_GXI`, `ShowSchedule`, `ShowImage`, `ShowName`, `ShowId` FROM `Show` WHERE `ShowDate` > ? ORDER BY `ShowId` ",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100, GxCacheFrequency.OFF,false )
-      };
-   }
-
-   public void getResults( int cursor ,
-                           IFieldGetter rslt ,
-                           Object[] buf ) throws SQLException
-   {
-      switch ( cursor )
-      {
-            case 0 :
-               ((java.util.Date[]) buf[0])[0] = rslt.getGXDate(1);
-               ((String[]) buf[1])[0] = rslt.getMultimediaUri(2);
-               ((java.util.Date[]) buf[2])[0] = rslt.getGXDateTime(3);
-               ((String[]) buf[3])[0] = rslt.getMultimediaFile(4, rslt.getVarchar(2));
-               ((String[]) buf[4])[0] = rslt.getString(5, 50);
-               ((short[]) buf[5])[0] = rslt.getShort(6);
-               return;
-      }
-   }
-
-   public void setParameters( int cursor ,
-                              IFieldSetter stmt ,
-                              Object[] parms ) throws SQLException
-   {
-      switch ( cursor )
-      {
-            case 0 :
-               stmt.setDate(1, (java.util.Date)parms[0]);
-               return;
-      }
-   }
-
 }
 

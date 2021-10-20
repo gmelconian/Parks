@@ -189,7 +189,7 @@ public final  class viewamusementpark_impl extends GXDataArea
       }
       httpContext.AddJavascriptSource("jquery.js", "?"+httpContext.getBuildNumber( 75940), false, true);
       httpContext.AddJavascriptSource("gxgral.js", "?"+httpContext.getBuildNumber( 75940), false, true);
-      httpContext.AddJavascriptSource("gxcfg.js", "?20211071155666", false, true);
+      httpContext.AddJavascriptSource("gxcfg.js", "?2021102014432395", false, true);
       if ( httpContext.isSpaRequest( ) )
       {
          httpContext.enableOutput();
@@ -292,6 +292,10 @@ public final  class viewamusementpark_impl extends GXDataArea
       if ( ! ( WebComp_Gamewc == null ) )
       {
          WebComp_Gamewc.componentjscripts();
+      }
+      if ( ! ( WebComp_Showwc == null ) )
+      {
+         WebComp_Showwc.componentjscripts();
       }
    }
 
@@ -535,6 +539,47 @@ public final  class viewamusementpark_impl extends GXDataArea
          com.parks.GxWebStd.gx_div_end( httpContext, "left", "top", "div");
          com.parks.GxWebStd.gx_div_end( httpContext, "left", "top", "div");
          httpContext.writeText( "</div>") ;
+         httpContext.writeText( "<div class=\"gx_usercontrol_child\" id=\""+"TABContainer"+"title4"+"\" style=\"display:none;\">") ;
+         /* Text block */
+         com.parks.GxWebStd.gx_label_ctrl( httpContext, lblShow_title_Internalname, "Show", "", "", lblShow_title_Jsonclick, "'"+""+"'"+",false,"+"'"+""+"'", "", "TextBlock", 0, "", 1, 1, 0, (short)(0), "HLP_ViewAmusementPark.htm");
+         /* Div Control */
+         com.parks.GxWebStd.gx_div_start( httpContext, "", 1, 0, "px", 0, "px", "Section", "left", "top", "", "display:none;", "div");
+         httpContext.writeText( "Show") ;
+         com.parks.GxWebStd.gx_div_end( httpContext, "left", "top", "div");
+         httpContext.writeText( "</div>") ;
+         httpContext.writeText( "<div class=\"gx_usercontrol_child\" id=\""+"TABContainer"+"panel4"+"\" style=\"display:none;\">") ;
+         /* Div Control */
+         com.parks.GxWebStd.gx_div_start( httpContext, divTableshow_Internalname, 1, 0, "px", 0, "px", "TabsFormContainer", "left", "top", "", "", "div");
+         /* Div Control */
+         com.parks.GxWebStd.gx_div_start( httpContext, "", 1, 0, "px", 0, "px", "row", "left", "top", "", "", "div");
+         /* Div Control */
+         com.parks.GxWebStd.gx_div_start( httpContext, "", 1, 0, "px", 0, "px", "col-xs-12", "left", "top", "", "", "div");
+         if ( ! isFullAjaxMode( ) )
+         {
+            /* WebComponent */
+            com.parks.GxWebStd.gx_hidden_field( httpContext, "W0054"+"", GXutil.rtrim( WebComp_Showwc_Component));
+            httpContext.writeText( "<div") ;
+            com.parks.GxWebStd.classAttribute( httpContext, "gxwebcomponent");
+            httpContext.writeText( " id=\""+"gxHTMLWrpW0054"+""+"\""+"") ;
+            httpContext.writeText( ">") ;
+            if ( GXutil.len( WebComp_Showwc_Component) != 0 )
+            {
+               if ( GXutil.strcmp(GXutil.lower( OldShowwc), GXutil.lower( WebComp_Showwc_Component)) != 0 )
+               {
+                  httpContext.ajax_rspStartCmp("gxHTMLWrpW0054"+"");
+               }
+               WebComp_Showwc.componentdraw();
+               if ( GXutil.strcmp(GXutil.lower( OldShowwc), GXutil.lower( WebComp_Showwc_Component)) != 0 )
+               {
+                  httpContext.ajax_rspEndCmp();
+               }
+            }
+            httpContext.writeText( "</div>") ;
+         }
+         com.parks.GxWebStd.gx_div_end( httpContext, "left", "top", "div");
+         com.parks.GxWebStd.gx_div_end( httpContext, "left", "top", "div");
+         com.parks.GxWebStd.gx_div_end( httpContext, "left", "top", "div");
+         httpContext.writeText( "</div>") ;
          com.parks.GxWebStd.gx_div_end( httpContext, "left", "top", "div");
          com.parks.GxWebStd.gx_div_end( httpContext, "left", "top", "div");
          com.parks.GxWebStd.gx_div_end( httpContext, "left", "top", "div");
@@ -684,6 +729,20 @@ public final  class viewamusementpark_impl extends GXDataArea
                         }
                         WebComp_Gamewc_Component = OldGamewc ;
                      }
+                     else if ( nCmpId == 54 )
+                     {
+                        OldShowwc = httpContext.cgiGet( "W0054") ;
+                        if ( ( GXutil.len( OldShowwc) == 0 ) || ( GXutil.strcmp(OldShowwc, WebComp_Showwc_Component) != 0 ) )
+                        {
+                           WebComp_Showwc = WebUtils.getWebComponent(getClass(), "com.parks." + OldShowwc + "_impl", remoteHandle, context);
+                           WebComp_Showwc_Component = OldShowwc ;
+                        }
+                        if ( GXutil.len( WebComp_Showwc_Component) != 0 )
+                        {
+                           WebComp_Showwc.componentprocess("W0054", "", sEvt);
+                        }
+                        WebComp_Showwc_Component = OldShowwc ;
+                     }
                   }
                   httpContext.wbHandled = (byte)(1) ;
                }
@@ -808,6 +867,16 @@ public final  class viewamusementpark_impl extends GXDataArea
             if ( GXutil.len( WebComp_Gamewc_Component) != 0 )
             {
                WebComp_Gamewc.componentstart();
+            }
+         }
+      }
+      if ( ! httpContext.willRedirect( ) && ( httpContext.nUserReturn != 1 ) )
+      {
+         if ( 1 != 0 )
+         {
+            if ( GXutil.len( WebComp_Showwc_Component) != 0 )
+            {
+               WebComp_Showwc.componentstart();
             }
          }
       }
@@ -1035,6 +1104,31 @@ public final  class viewamusementpark_impl extends GXDataArea
             httpContext.ajax_rspEndCmp();
          }
       }
+      if ( AV11LoadAllTabs || ( GXutil.strcmp(AV7SelectedTabCode, "Show") == 0 ) )
+      {
+         /* Object Property */
+         if ( true )
+         {
+            bDynCreated_Showwc = true ;
+         }
+         if ( GXutil.strcmp(GXutil.lower( WebComp_Showwc_Component), GXutil.lower( "AmusementParkShowWC")) != 0 )
+         {
+            WebComp_Showwc = WebUtils.getWebComponent(getClass(), "com.parks.amusementparkshowwc_impl", remoteHandle, context);
+            WebComp_Showwc_Component = "AmusementParkShowWC" ;
+         }
+         if ( GXutil.len( WebComp_Showwc_Component) != 0 )
+         {
+            WebComp_Showwc.setjustcreated();
+            WebComp_Showwc.componentprepare(new Object[] {"W0054","",Short.valueOf(AV12AmusementParkId)});
+            WebComp_Showwc.componentbind(new Object[] {""});
+         }
+         if ( isFullAjaxMode( ) || isAjaxCallMode( ) && bDynCreated_Showwc )
+         {
+            httpContext.ajax_rspStartCmp("gxHTMLWrpW0054"+"");
+            WebComp_Showwc.componentdraw();
+            httpContext.ajax_rspEndCmp();
+         }
+      }
    }
 
    protected void nextLoad( )
@@ -1120,6 +1214,13 @@ public final  class viewamusementpark_impl extends GXDataArea
             WebComp_Gamewc.componentthemes();
          }
       }
+      if ( ! ( WebComp_Showwc == null ) )
+      {
+         if ( GXutil.len( WebComp_Showwc_Component) != 0 )
+         {
+            WebComp_Showwc.componentthemes();
+         }
+      }
       boolean outputEnabled = httpContext.isOutputEnabled( );
       if ( httpContext.isSpaRequest( ) )
       {
@@ -1128,7 +1229,7 @@ public final  class viewamusementpark_impl extends GXDataArea
       idxLst = 1 ;
       while ( idxLst <= Form.getJscriptsrc().getCount() )
       {
-         httpContext.AddJavascriptSource(GXutil.rtrim( Form.getJscriptsrc().item(idxLst)), "?20211071155696", true, true);
+         httpContext.AddJavascriptSource(GXutil.rtrim( Form.getJscriptsrc().item(idxLst)), "?2021102014432432", true, true);
          idxLst = (int)(idxLst+1) ;
       }
       if ( ! outputEnabled )
@@ -1144,7 +1245,7 @@ public final  class viewamusementpark_impl extends GXDataArea
    public void include_jscripts( )
    {
       httpContext.AddJavascriptSource("messages.spa.js", "?"+httpContext.getCacheInvalidationToken( ), false, true);
-      httpContext.AddJavascriptSource("viewamusementpark.js", "?20211071155696", false, true);
+      httpContext.AddJavascriptSource("viewamusementpark.js", "?2021102014432432", false, true);
       httpContext.AddJavascriptSource("Shared/HistoryManager/HistoryManager.js", "", false, true);
       httpContext.AddJavascriptSource("Shared/HistoryManager/rsh/json2005.js", "", false, true);
       httpContext.AddJavascriptSource("Shared/HistoryManager/rsh/rsh.js", "", false, true);
@@ -1166,6 +1267,8 @@ public final  class viewamusementpark_impl extends GXDataArea
       divTableemployee_Internalname = "TABLEEMPLOYEE" ;
       lblGame_title_Internalname = "GAME_TITLE" ;
       divTablegame_Internalname = "TABLEGAME" ;
+      lblShow_title_Internalname = "SHOW_TITLE" ;
+      divTableshow_Internalname = "TABLESHOW" ;
       Tab_Internalname = "TAB" ;
       divMaintable_Internalname = "MAINTABLE" ;
       Form.setInternalname( "FORM" );
@@ -1186,7 +1289,7 @@ public final  class viewamusementpark_impl extends GXDataArea
       lblViewall_Visible = 1 ;
       Tab_Historymanagement = GXutil.toBoolean( -1) ;
       Tab_Class = "WWTab" ;
-      Tab_Pagecount = 3 ;
+      Tab_Pagecount = 4 ;
       Form.setHeaderrawhtml( "" );
       Form.setBackground( "" );
       Form.setTextcolor( 0 );
@@ -1269,6 +1372,9 @@ public final  class viewamusementpark_impl extends GXDataArea
       lblGame_title_Jsonclick = "" ;
       WebComp_Gamewc_Component = "" ;
       OldGamewc = "" ;
+      lblShow_title_Jsonclick = "" ;
+      WebComp_Showwc_Component = "" ;
+      OldShowwc = "" ;
       sEvt = "" ;
       EvtGridId = "" ;
       EvtRowId = "" ;
@@ -1299,6 +1405,7 @@ public final  class viewamusementpark_impl extends GXDataArea
       WebComp_Generalwc = new com.genexus.webpanels.GXWebComponentNull(remoteHandle, context);
       WebComp_Employeewc = new com.genexus.webpanels.GXWebComponentNull(remoteHandle, context);
       WebComp_Gamewc = new com.genexus.webpanels.GXWebComponentNull(remoteHandle, context);
+      WebComp_Showwc = new com.genexus.webpanels.GXWebComponentNull(remoteHandle, context);
    }
 
    private byte nGotPars ;
@@ -1361,6 +1468,11 @@ public final  class viewamusementpark_impl extends GXDataArea
    private String divTablegame_Internalname ;
    private String WebComp_Gamewc_Component ;
    private String OldGamewc ;
+   private String lblShow_title_Internalname ;
+   private String lblShow_title_Jsonclick ;
+   private String divTableshow_Internalname ;
+   private String WebComp_Showwc_Component ;
+   private String OldShowwc ;
    private String sEvt ;
    private String EvtGridId ;
    private String EvtRowId ;
@@ -1382,11 +1494,13 @@ public final  class viewamusementpark_impl extends GXDataArea
    private boolean bDynCreated_Generalwc ;
    private boolean bDynCreated_Employeewc ;
    private boolean bDynCreated_Gamewc ;
+   private boolean bDynCreated_Showwc ;
    private com.genexus.internet.MsgList BackMsgLst ;
    private com.genexus.internet.MsgList LclMsgLst ;
    private GXWebComponent WebComp_Generalwc ;
    private GXWebComponent WebComp_Employeewc ;
    private GXWebComponent WebComp_Gamewc ;
+   private GXWebComponent WebComp_Showwc ;
    private com.genexus.webpanels.GXUserControl ucTab ;
    private com.genexus.util.GXProperties forbiddenHiddens ;
    private IDataStoreProvider pr_default ;

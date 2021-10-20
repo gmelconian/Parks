@@ -1362,6 +1362,17 @@ public final  class show_impl extends GXDataArea
          AV11Pgmname = "Show" ;
          httpContext.ajax_rsp_assign_attri("", false, "AV11Pgmname", AV11Pgmname);
       }
+      if ( AnyError == 0 )
+      {
+         /* Using cursor T000413 */
+         pr_default.execute(11, new Object[] {Short.valueOf(A14ShowId)});
+         if ( (pr_default.getStatus(11) != 101) )
+         {
+            httpContext.GX_msglist.addItem(localUtil.getMessages().getMessage("GXM_del", new Object[] {"Show"}), "CannotDeleteReferencedRecord", 1, "");
+            AnyError = (short)(1) ;
+         }
+         pr_default.close(11);
+      }
    }
 
    public void endLevel044( )
@@ -1400,13 +1411,13 @@ public final  class show_impl extends GXDataArea
    public void scanStart044( )
    {
       /* Scan By routine */
-      /* Using cursor T000413 */
-      pr_default.execute(11);
+      /* Using cursor T000414 */
+      pr_default.execute(12);
       RcdFound4 = (short)(0) ;
-      if ( (pr_default.getStatus(11) != 101) )
+      if ( (pr_default.getStatus(12) != 101) )
       {
          RcdFound4 = (short)(1) ;
-         A14ShowId = T000413_A14ShowId[0] ;
+         A14ShowId = T000414_A14ShowId[0] ;
          httpContext.ajax_rsp_assign_attri("", false, "A14ShowId", GXutil.ltrimstr( DecimalUtil.doubleToDec(A14ShowId), 4, 0));
       }
       /* Load Subordinate Levels */
@@ -1415,19 +1426,19 @@ public final  class show_impl extends GXDataArea
    public void scanNext044( )
    {
       /* Scan next routine */
-      pr_default.readNext(11);
+      pr_default.readNext(12);
       RcdFound4 = (short)(0) ;
-      if ( (pr_default.getStatus(11) != 101) )
+      if ( (pr_default.getStatus(12) != 101) )
       {
          RcdFound4 = (short)(1) ;
-         A14ShowId = T000413_A14ShowId[0] ;
+         A14ShowId = T000414_A14ShowId[0] ;
          httpContext.ajax_rsp_assign_attri("", false, "A14ShowId", GXutil.ltrimstr( DecimalUtil.doubleToDec(A14ShowId), 4, 0));
       }
    }
 
    public void scanEnd044( )
    {
-      pr_default.close(11);
+      pr_default.close(12);
    }
 
    public void afterConfirm044( )
@@ -1516,7 +1527,7 @@ public final  class show_impl extends GXDataArea
       }
       httpContext.AddJavascriptSource("jquery.js", "?"+httpContext.getBuildNumber( 75940), false, true);
       httpContext.AddJavascriptSource("gxgral.js", "?"+httpContext.getBuildNumber( 75940), false, true);
-      httpContext.AddJavascriptSource("gxcfg.js", "?2021101118273193", false, true);
+      httpContext.AddJavascriptSource("gxcfg.js", "?2021102014431765", false, true);
       if ( httpContext.isSpaRequest( ) )
       {
          httpContext.enableOutput();
@@ -1707,7 +1718,7 @@ public final  class show_impl extends GXDataArea
       idxLst = 1 ;
       while ( idxLst <= Form.getJscriptsrc().getCount() )
       {
-         httpContext.AddJavascriptSource(GXutil.rtrim( Form.getJscriptsrc().item(idxLst)), "?2021101118273197", true, true);
+         httpContext.AddJavascriptSource(GXutil.rtrim( Form.getJscriptsrc().item(idxLst)), "?2021102014431773", true, true);
          idxLst = (int)(idxLst+1) ;
       }
       if ( ! outputEnabled )
@@ -1723,7 +1734,7 @@ public final  class show_impl extends GXDataArea
    public void include_jscripts( )
    {
       httpContext.AddJavascriptSource("messages.spa.js", "?"+httpContext.getCacheInvalidationToken( ), false, true);
-      httpContext.AddJavascriptSource("show.js", "?2021101118273198", false, true);
+      httpContext.AddJavascriptSource("show.js", "?2021102014431773", false, true);
       /* End function include_jscripts */
    }
 
@@ -1939,7 +1950,9 @@ public final  class show_impl extends GXDataArea
       T00042_A50ShowDate = new java.util.Date[] {GXutil.nullDate()} ;
       T00042_A51ShowSchedule = new java.util.Date[] {GXutil.nullDate()} ;
       T00049_A14ShowId = new short[1] ;
+      T000413_A7AmusementParkId = new short[1] ;
       T000413_A14ShowId = new short[1] ;
+      T000414_A14ShowId = new short[1] ;
       sDynURL = "" ;
       FormProcess = "" ;
       bodyStyle = "" ;
@@ -1976,7 +1989,10 @@ public final  class show_impl extends GXDataArea
             , new Object[] {
             }
             , new Object[] {
-            T000413_A14ShowId
+            T000413_A7AmusementParkId, T000413_A14ShowId
+            }
+            , new Object[] {
+            T000414_A14ShowId
             }
          }
       );
@@ -2116,7 +2132,9 @@ public final  class show_impl extends GXDataArea
    private java.util.Date[] T00042_A50ShowDate ;
    private java.util.Date[] T00042_A51ShowSchedule ;
    private short[] T00049_A14ShowId ;
+   private short[] T000413_A7AmusementParkId ;
    private short[] T000413_A14ShowId ;
+   private short[] T000414_A14ShowId ;
    private com.genexus.webpanels.GXWebForm Form ;
    private com.parks.SdtTransactionContext AV9TrnContext ;
 }
@@ -2137,7 +2155,8 @@ final  class show__default extends DataStoreHelperBase implements ILocalDataStor
          ,new UpdateCursor("T000410", "UPDATE `Show` SET `ShowName`=?, `ShowDate`=?, `ShowSchedule`=?  WHERE `ShowId` = ?", GX_NOMASK)
          ,new UpdateCursor("T000411", "UPDATE `Show` SET `ShowImage`=?, `ShowImage_GXI`=?  WHERE `ShowId` = ?", GX_NOMASK)
          ,new UpdateCursor("T000412", "DELETE FROM `Show`  WHERE `ShowId` = ?", GX_NOMASK)
-         ,new ForEachCursor("T000413", "SELECT `ShowId` FROM `Show` ORDER BY `ShowId` ",true, GX_NOMASK, false, this,100, GxCacheFrequency.OFF,false )
+         ,new ForEachCursor("T000413", "SELECT `AmusementParkId`, `ShowId` FROM `AmusementParkShow` WHERE `ShowId` = ?  LIMIT 1",true, GX_NOMASK, false, this,1, GxCacheFrequency.OFF,true )
+         ,new ForEachCursor("T000414", "SELECT `ShowId` FROM `Show` ORDER BY `ShowId` ",true, GX_NOMASK, false, this,100, GxCacheFrequency.OFF,false )
       };
    }
 
@@ -2184,6 +2203,10 @@ final  class show__default extends DataStoreHelperBase implements ILocalDataStor
                ((short[]) buf[0])[0] = rslt.getShort(1);
                return;
             case 11 :
+               ((short[]) buf[0])[0] = rslt.getShort(1);
+               ((short[]) buf[1])[0] = rslt.getShort(2);
+               return;
+            case 12 :
                ((short[]) buf[0])[0] = rslt.getShort(1);
                return;
       }
@@ -2232,6 +2255,9 @@ final  class show__default extends DataStoreHelperBase implements ILocalDataStor
                stmt.setShort(3, ((Number) parms[2]).shortValue());
                return;
             case 10 :
+               stmt.setShort(1, ((Number) parms[0]).shortValue());
+               return;
+            case 11 :
                stmt.setShort(1, ((Number) parms[0]).shortValue());
                return;
       }

@@ -250,7 +250,7 @@ public final  class technicianrepairwc_impl extends GXWebComponent
       }
       httpContext.AddJavascriptSource("jquery.js", "?"+httpContext.getBuildNumber( 75940), false, true);
       httpContext.AddJavascriptSource("gxgral.js", "?"+httpContext.getBuildNumber( 75940), false, true);
-      httpContext.AddJavascriptSource("gxcfg.js", "?20211071155380", false, true);
+      httpContext.AddJavascriptSource("gxcfg.js", "?2021102014431942", false, true);
       if ( httpContext.isSpaRequest( ) )
       {
          httpContext.enableOutput();
@@ -1653,7 +1653,7 @@ public final  class technicianrepairwc_impl extends GXWebComponent
       idxLst = 1 ;
       while ( idxLst <= Form.getJscriptsrc().getCount() )
       {
-         httpContext.AddJavascriptSource(GXutil.rtrim( Form.getJscriptsrc().item(idxLst)), "?20211071155446", true, true);
+         httpContext.AddJavascriptSource(GXutil.rtrim( Form.getJscriptsrc().item(idxLst)), "?202110201443205", true, true);
          idxLst = (int)(idxLst+1) ;
       }
       if ( ! outputEnabled )
@@ -1670,7 +1670,7 @@ public final  class technicianrepairwc_impl extends GXWebComponent
    {
       if ( nGXWrapped != 1 )
       {
-         httpContext.AddJavascriptSource("technicianrepairwc.js", "?20211071155446", false, true);
+         httpContext.AddJavascriptSource("technicianrepairwc.js", "?202110201443205", false, true);
       }
       /* End function include_jscripts */
    }

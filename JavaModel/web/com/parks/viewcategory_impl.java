@@ -189,7 +189,7 @@ public final  class viewcategory_impl extends GXDataArea
       }
       httpContext.AddJavascriptSource("jquery.js", "?"+httpContext.getBuildNumber( 75940), false, true);
       httpContext.AddJavascriptSource("gxgral.js", "?"+httpContext.getBuildNumber( 75940), false, true);
-      httpContext.AddJavascriptSource("gxcfg.js", "?20211071155591", false, true);
+      httpContext.AddJavascriptSource("gxcfg.js", "?2021102014432267", false, true);
       if ( httpContext.isSpaRequest( ) )
       {
          httpContext.enableOutput();
@@ -1027,7 +1027,7 @@ public final  class viewcategory_impl extends GXDataArea
       idxLst = 1 ;
       while ( idxLst <= Form.getJscriptsrc().getCount() )
       {
-         httpContext.AddJavascriptSource(GXutil.rtrim( Form.getJscriptsrc().item(idxLst)), "?20211071155618", true, true);
+         httpContext.AddJavascriptSource(GXutil.rtrim( Form.getJscriptsrc().item(idxLst)), "?2021102014432295", true, true);
          idxLst = (int)(idxLst+1) ;
       }
       if ( ! outputEnabled )
@@ -1043,7 +1043,7 @@ public final  class viewcategory_impl extends GXDataArea
    public void include_jscripts( )
    {
       httpContext.AddJavascriptSource("messages.spa.js", "?"+httpContext.getCacheInvalidationToken( ), false, true);
-      httpContext.AddJavascriptSource("viewcategory.js", "?20211071155618", false, true);
+      httpContext.AddJavascriptSource("viewcategory.js", "?2021102014432295", false, true);
       httpContext.AddJavascriptSource("Shared/HistoryManager/HistoryManager.js", "", false, true);
       httpContext.AddJavascriptSource("Shared/HistoryManager/rsh/json2005.js", "", false, true);
       httpContext.AddJavascriptSource("Shared/HistoryManager/rsh/rsh.js", "", false, true);

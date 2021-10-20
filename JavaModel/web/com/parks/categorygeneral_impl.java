@@ -214,7 +214,7 @@ public final  class categorygeneral_impl extends GXWebComponent
       }
       httpContext.AddJavascriptSource("jquery.js", "?"+httpContext.getBuildNumber( 75940), false, true);
       httpContext.AddJavascriptSource("gxgral.js", "?"+httpContext.getBuildNumber( 75940), false, true);
-      httpContext.AddJavascriptSource("gxcfg.js", "?20211071155280", false, true);
+      httpContext.AddJavascriptSource("gxcfg.js", "?2021102014431817", false, true);
       if ( httpContext.isSpaRequest( ) )
       {
          httpContext.enableOutput();
@@ -1035,7 +1035,7 @@ public final  class categorygeneral_impl extends GXWebComponent
       idxLst = 1 ;
       while ( idxLst <= Form.getJscriptsrc().getCount() )
       {
-         httpContext.AddJavascriptSource(GXutil.rtrim( Form.getJscriptsrc().item(idxLst)), "?20211071155299", true, true);
+         httpContext.AddJavascriptSource(GXutil.rtrim( Form.getJscriptsrc().item(idxLst)), "?2021102014431834", true, true);
          idxLst = (int)(idxLst+1) ;
       }
       if ( ! outputEnabled )
@@ -1050,7 +1050,7 @@ public final  class categorygeneral_impl extends GXWebComponent
 
    public void include_jscripts( )
    {
-      httpContext.AddJavascriptSource("categorygeneral.js", "?20211071155299", false, true);
+      httpContext.AddJavascriptSource("categorygeneral.js", "?2021102014431835", false, true);
       /* End function include_jscripts */
    }
 

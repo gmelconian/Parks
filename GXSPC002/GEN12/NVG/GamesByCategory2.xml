@@ -9,7 +9,7 @@
 <ObjDesc>Games By Category2</ObjDesc>
 <ObjPgmName>GamesByCategory2</ObjPgmName>
 <ObjClsName>Procedure</ObjClsName></Object>
-<Result>nogenreq</Result>
+<Result>genreq</Result>
 <Warnings></Warnings>
 <Errors></Errors>
 <OutputDevices>

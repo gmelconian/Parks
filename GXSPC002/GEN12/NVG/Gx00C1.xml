@@ -1,0 +1,123 @@
+
+<ObjectSpec>
+<SpecVersion>17_0_5-152925</SpecVersion>
+<Object>
+<ObjClsGuid>c9584656-94b6-4ccd-890f-332d11fc2c25</ObjClsGuid>
+<ObjCls>13</ObjCls>
+<ObjId>56</ObjId>
+<ObjName>Gx00C1</ObjName>
+<ObjDesc>Selection List Show</ObjDesc>
+<ObjPgmName>Gx00C1</ObjPgmName>
+<ObjClsName>Web Panel</ObjClsName></Object>
+<Result>genreq</Result>
+<Warnings></Warnings>
+<Errors></Errors>
+<Generator>
+<GenId>12</GenId>
+<GenName>Default (Java)</GenName></Generator>
+<FormClass>HTML</FormClass>
+<Parameters>
+<Parameter>
+<IO>in</IO>
+<Variable>
+<VarId>Pamusementparkid</VarId>
+<VarName>&amp;pAmusementParkId</VarName></Variable></Parameter>
+<Parameter>
+<IO>out</IO>
+<Variable>
+<VarId>Pshowid</VarId>
+<VarName>&amp;pShowId</VarName></Variable></Parameter></Parameters>
+<StandAloneRules></StandAloneRules>
+<Event>
+<EventName>Start</EventName></Event>
+<Event>
+<EventName>'Toggle'</EventName></Event>
+<Event>
+<EventName>Lblshowidfilter.Click</EventName></Event>
+<Event>
+<EventName>Load</EventName>
+<LoadMethod>Auto</LoadMethod>
+<ImplicitForEach>
+<LevelType>For Each</LevelType>
+<LevelBeginRow>0</LevelBeginRow>
+<BaseTable>
+<Table>
+<TableId>12</TableId>
+<TableName>AmusementParkShow</TableName>
+<Description>Show</Description></Table></BaseTable>
+<Order>
+<Attribute>
+<AttriId>7</AttriId>
+<AttriName>AmusementParkId</AttriName>
+<Description>Amusement Park Id</Description></Attribute>
+<Token>,</Token>
+<Attribute>
+<AttriId>14</AttriId>
+<AttriName>ShowId</AttriName>
+<Description>Show Id</Description></Attribute></Order>
+<Condition></Condition>
+<IndexName>IAMUSEMENTPARKSHOW</IndexName>
+<LevelOptions></LevelOptions>
+<Optimizations>
+<Optimization>
+<Type>ServerPaging</Type></Optimization></Optimizations>
+<OptimizedWhere>
+<StartFrom>
+<Condition>
+<Attribute>
+<AttriId>7</AttriId>
+<AttriName>AmusementParkId</AttriName>
+<Description>Amusement Park Id</Description></Attribute>
+<Sp></Sp>
+<Token>=</Token>
+<Sp></Sp>
+<Variable>
+<VarId>Pamusementparkid</VarId>
+<VarName>&amp;pAmusementParkId</VarName></Variable></Condition>
+<Condition>
+<Attribute>
+<AttriId>14</AttriId>
+<AttriName>ShowId</AttriName>
+<Description>Show Id</Description></Attribute>
+<Sp></Sp>
+<Token>&gt;=</Token>
+<Sp></Sp>
+<Variable>
+<VarId>Cshowid</VarId>
+<VarName>&amp;cShowId</VarName></Variable></Condition></StartFrom>
+<LoopWhile>
+<Condition>
+<Attribute>
+<AttriId>7</AttriId>
+<AttriName>AmusementParkId</AttriName>
+<Description>Amusement Park Id</Description></Attribute>
+<Sp></Sp>
+<Token>=</Token>
+<Sp></Sp>
+<Variable>
+<VarId>Pamusementparkid</VarId>
+<VarName>&amp;pAmusementParkId</VarName></Variable></Condition></LoopWhile></OptimizedWhere>
+<NonOptimizedWhere></NonOptimizedWhere>
+<NavigationTree>
+<Table>
+<TableId>12</TableId>
+<TableName>AmusementParkShow</TableName>
+<Description>Show</Description>
+<RecordsToRead>many</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>7</AttriId>
+<AttriName>AmusementParkId</AttriName>
+<Description>Amusement Park Id</Description></Attribute>
+<Attribute>
+<AttriId>14</AttriId>
+<AttriName>ShowId</AttriName>
+<Description>Show Id</Description></Attribute></KeyAttributes>
+<Tables></Tables></Table></NavigationTree>
+<TablesToUpdate></TablesToUpdate>
+<Formulas>
+<VerticalFormulas></VerticalFormulas>
+<AggSelFormulas></AggSelFormulas></Formulas></ImplicitForEach></Event>
+<Event>
+<EventName>Enter</EventName></Event>
+<Suggests></Suggests></ObjectSpec>

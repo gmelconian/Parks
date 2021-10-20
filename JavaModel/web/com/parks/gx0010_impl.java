@@ -223,7 +223,7 @@ public final  class gx0010_impl extends GXDataArea
       }
       httpContext.AddJavascriptSource("jquery.js", "?"+httpContext.getBuildNumber( 75940), false, true);
       httpContext.AddJavascriptSource("gxgral.js", "?"+httpContext.getBuildNumber( 75940), false, true);
-      httpContext.AddJavascriptSource("gxcfg.js", "?202110711551213", false, true);
+      httpContext.AddJavascriptSource("gxcfg.js", "?2021102014433081", false, true);
       if ( httpContext.isSpaRequest( ) )
       {
          httpContext.enableOutput();
@@ -1507,7 +1507,7 @@ public final  class gx0010_impl extends GXDataArea
       idxLst = 1 ;
       while ( idxLst <= Form.getJscriptsrc().getCount() )
       {
-         httpContext.AddJavascriptSource(GXutil.rtrim( Form.getJscriptsrc().item(idxLst)), "?202110711551277", true, true);
+         httpContext.AddJavascriptSource(GXutil.rtrim( Form.getJscriptsrc().item(idxLst)), "?2021102014433133", true, true);
          idxLst = (int)(idxLst+1) ;
       }
       if ( ! outputEnabled )
@@ -1523,7 +1523,7 @@ public final  class gx0010_impl extends GXDataArea
    public void include_jscripts( )
    {
       httpContext.AddJavascriptSource("messages.spa.js", "?"+httpContext.getCacheInvalidationToken( ), false, true);
-      httpContext.AddJavascriptSource("gx0010.js", "?202110711551277", false, true);
+      httpContext.AddJavascriptSource("gx0010.js", "?2021102014433133", false, true);
       /* End function include_jscripts */
    }
 

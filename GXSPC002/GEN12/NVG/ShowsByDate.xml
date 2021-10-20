@@ -10,20 +10,7 @@
 <ObjPgmName>ShowsByDate</ObjPgmName>
 <ObjClsName>Procedure</ObjClsName></Object>
 <Result>genreq</Result>
-<Warnings>
-<Warning>
-<MsgCode>spc0043</MsgCode>
-<Message>
-<Token></Token>
-<Attribute>
-<AttriId>7</AttriId>
-<AttriName>AmusementParkId</AttriName>
-<Description>Amusement Park Id</Description></Attribute>
-<Token> is not instantiated</Token>
-<Token> in group starting at line </Token>
-<Token>4</Token>
-<Token></Token>
-<Token>.</Token></Message></Warning></Warnings>
+<Warnings></Warnings>
 <Errors></Errors>
 <OutputDevices>
 <Device>File</Device></OutputDevices>
@@ -44,69 +31,4 @@
 <Variable>
 <VarId>Selecteddatefrom</VarId>
 <VarName>&amp;SelectedDateFrom</VarName></Variable></Parameter></Parameters>
-<Levels>
-<Level>
-<LevelNumber>2</LevelNumber>
-<Optimizations></Optimizations>
-<LevelType>For Each</LevelType>
-<LevelBeginRow>18</LevelBeginRow>
-<BaseTable>
-<Table>
-<TableId>4</TableId>
-<TableName>Show</TableName>
-<Description>Show</Description></Table></BaseTable>
-<Order>
-<Attribute>
-<AttriId>14</AttriId>
-<AttriName>ShowId</AttriName>
-<Description>Show Id</Description></Attribute></Order>
-<Condition></Condition>
-<IndexName>ISHOW</IndexName>
-<LevelOptions></LevelOptions>
-<OptimizedWhere>
-<StartFrom>
-<Condition>
-<Token>FirstRecord</Token></Condition></StartFrom>
-<LoopWhile>
-<Condition>
-<Token>NotEndOfTable</Token></Condition></LoopWhile></OptimizedWhere>
-<NonOptimizedWhere>
-<Condition>
-<Attribute>
-<AttriId>50</AttriId>
-<AttriName>ShowDate</AttriName>
-<Description>Show Date</Description></Attribute>
-<Sp></Sp>
-<Token>&gt;</Token>
-<Sp></Sp>
-<Variable>
-<VarId>Selecteddatefrom</VarId>
-<VarName>&amp;SelectedDateFrom</VarName></Variable></Condition>
-<Condition>
-<Attribute>
-<AttriId>7</AttriId>
-<AttriName>@AmusementParkId</AttriName>
-<Description>Amusement Park Id</Description></Attribute>
-<Sp></Sp>
-<Token>=</Token>
-<Sp></Sp>
-<Variable>
-<VarId>Selectedparkid</VarId>
-<VarName>&amp;SelectedParkID</VarName></Variable></Condition></NonOptimizedWhere>
-<NavigationTree>
-<Table>
-<TableId>4</TableId>
-<TableName>Show</TableName>
-<Description>Show</Description>
-<RecordsToRead>many</RecordsToRead>
-<KeyAttributes>
-<Attribute>
-<AttriId>14</AttriId>
-<AttriName>ShowId</AttriName>
-<Description>Show Id</Description></Attribute></KeyAttributes>
-<Tables></Tables></Table></NavigationTree>
-<TablesToUpdate></TablesToUpdate>
-<Formulas>
-<VerticalFormulas></VerticalFormulas>
-<AggSelFormulas></AggSelFormulas></Formulas>
-<Levels></Levels></Level></Levels></ObjectSpec>
+<Levels></Levels></ObjectSpec>

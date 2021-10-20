@@ -1,34 +1,45 @@
  
  
  
-pgm_main_i(proc,14,'AMUSEMENTPARKSLIST',[ 12,'AAMUSEMENTPARKSLIST','Amusement Parks List','','','','HTTP' ]).
-pgm_main_i(web,14,'HOME',[ 12,'HOME','Home','','','','' ]).
-pgm_main_i(proc,15,'GAMESBYCATEGORY',[ 12,'AGAMESBYCATEGORY','Games By Category','','','','HTTP' ]).
-pgm_main_i(proc,26,'TESTSRUNNER',[ 12,'ATESTSRUNNER','Tests Runner','','','','CLINE' ]).
-pgm_main_i(proc,31,'GAMESBYCATEGORY2',[ 12,'AGAMESBYCATEGORY2','Games By Category2','','','','HTTP' ]).
 pgm_main_i(proc,33,'SHOWSBYDATE',[ 12,'ASHOWSBYDATE','Shows By Date','','','','HTTP' ]).
+pgm_main_i(proc,15,'GAMESBYCATEGORY',[ 12,'AGAMESBYCATEGORY','Games By Category','','','','HTTP' ]).
+pgm_main_i(proc,14,'AMUSEMENTPARKSLIST',[ 12,'AAMUSEMENTPARKSLIST','Amusement Parks List','','','','HTTP' ]).
+pgm_main_i(proc,31,'GAMESBYCATEGORY2',[ 12,'AGAMESBYCATEGORY2','Games By Category2','','','','HTTP' ]).
+pgm_main_i(web,14,'HOME',[ 12,'HOME','Home','','','','' ]).
  
 pgm_prop_i(mnproc,1,'STRINGCONCATENATIONUNITTESTDATA','OutputSDT',o(26,'StringConcatenationUnitTestSDT')).
-pgm_prop_i(web,2,'RECENTLINKS','WEB_COMP','Yes').
-pgm_prop_i(web,2,'RECENTLINKS','URLAccess','No').
 pgm_prop_i(web,5,'RWDRECENTLINKS','WEB_COMP','Yes').
 pgm_prop_i(web,5,'RWDRECENTLINKS','URLAccess','No').
 pgm_prop_i(web,16,'TABBEDVIEW','WEB_COMP','Yes').
 pgm_prop_i(web,16,'TABBEDVIEW','URLAccess','No').
+pgm_prop_i(web,2,'RECENTLINKS','WEB_COMP','Yes').
+pgm_prop_i(web,2,'RECENTLINKS','URLAccess','No').
 pgm_prop_i(web,29,'COUNTRYCITYWC','WEB_COMP','Yes').
 pgm_prop_i(web,29,'COUNTRYCITYWC','URLAccess','No').
+pgm_prop_i(web,53,'AMUSEMENTPARKSHOWWC','WEB_COMP','Yes').
+pgm_prop_i(web,53,'AMUSEMENTPARKSHOWWC','URLAccess','No').
+pgm_prop_i(proc,33,'ASHOWSBYDATE','CALL_PROTOCOL','HTTP').
+pgm_prop_i(proc,33,'SHOWSBYDATE','CALL_PROTOCOL','HTTP').
+pgm_prop_i(proc,15,'AGAMESBYCATEGORY','CALL_PROTOCOL','HTTP').
+pgm_prop_i(proc,15,'GAMESBYCATEGORY','CALL_PROTOCOL','HTTP').
 pgm_prop_i(proc,14,'AAMUSEMENTPARKSLIST','CALL_PROTOCOL','HTTP').
 pgm_prop_i(proc,14,'AMUSEMENTPARKSLIST','CALL_PROTOCOL','HTTP').
+pgm_prop_i(proc,31,'AGAMESBYCATEGORY2','CALL_PROTOCOL','HTTP').
+pgm_prop_i(proc,31,'GAMESBYCATEGORY2','CALL_PROTOCOL','HTTP').
 pgm_prop_i(web,50,'REPAIRKINDWC','WEB_COMP','Yes').
 pgm_prop_i(web,50,'REPAIRKINDWC','URLAccess','No').
 pgm_prop_i(web,20,'AMUSEMENTPARKEMPLOYEEWC','WEB_COMP','Yes').
 pgm_prop_i(web,20,'AMUSEMENTPARKEMPLOYEEWC','URLAccess','No').
-pgm_prop_i(web,32,'EMPLOYEEGENERAL','WEB_COMP','Yes').
-pgm_prop_i(web,32,'EMPLOYEEGENERAL','URLAccess','No').
 pgm_prop_i(web,19,'AMUSEMENTPARKGENERAL','WEB_COMP','Yes').
 pgm_prop_i(web,19,'AMUSEMENTPARKGENERAL','URLAccess','No').
+pgm_prop_i(web,54,'SHOWSHOWWC','WEB_COMP','Yes').
+pgm_prop_i(web,54,'SHOWSHOWWC','URLAccess','No').
 pgm_prop_i(web,28,'COUNTRYGENERAL','WEB_COMP','Yes').
 pgm_prop_i(web,28,'COUNTRYGENERAL','URLAccess','No').
+pgm_prop_i(web,38,'SHOWGENERAL','WEB_COMP','Yes').
+pgm_prop_i(web,38,'SHOWGENERAL','URLAccess','No').
+pgm_prop_i(web,32,'EMPLOYEEGENERAL','WEB_COMP','Yes').
+pgm_prop_i(web,32,'EMPLOYEEGENERAL','URLAccess','No').
 pgm_prop_i(web,35,'GAMEGENERAL','WEB_COMP','Yes').
 pgm_prop_i(web,35,'GAMEGENERAL','URLAccess','No').
 pgm_prop_i(web,25,'CATEGORYGAMEWC','WEB_COMP','Yes').
@@ -37,30 +48,21 @@ pgm_prop_i(web,24,'CATEGORYGENERAL','WEB_COMP','Yes').
 pgm_prop_i(web,24,'CATEGORYGENERAL','URLAccess','No').
 pgm_prop_i(web,21,'AMUSEMENTPARKGAMEWC','WEB_COMP','Yes').
 pgm_prop_i(web,21,'AMUSEMENTPARKGAMEWC','URLAccess','No').
-pgm_prop_i(web,48,'TECHNICIANREPAIRWC','WEB_COMP','Yes').
-pgm_prop_i(web,48,'TECHNICIANREPAIRWC','URLAccess','No').
-pgm_prop_i(web,39,'GAMEREPAIRWC','WEB_COMP','Yes').
-pgm_prop_i(web,39,'GAMEREPAIRWC','URLAccess','No').
+pgm_prop_i(trn,6,'CATEGORY',idISBUSINESSCOMPONENT,'-1').
 pgm_prop_i(web,49,'TECHNICIANREPAIR1WC','WEB_COMP','Yes').
 pgm_prop_i(web,49,'TECHNICIANREPAIR1WC','URLAccess','No').
-pgm_prop_i(web,47,'TECHNICIANGENERAL','WEB_COMP','Yes').
-pgm_prop_i(web,47,'TECHNICIANGENERAL','URLAccess','No').
-pgm_prop_i(web,3,'PROMPTMASTERPAGE','WEB_COMP','Master').
-pgm_prop_i(web,1,'APPMASTERPAGE','WEB_COMP','Master').
-pgm_prop_i(web,4,'RWDMASTERPAGE','WEB_COMP','Master').
-pgm_prop_i(web,6,'RWDPROMPTMASTERPAGE','WEB_COMP','Master').
 pgm_prop_i(web,44,'REPAIRGENERAL','WEB_COMP','Yes').
 pgm_prop_i(web,44,'REPAIRGENERAL','URLAccess','No').
-pgm_prop_i(mnproc,2,'STRINGCONCATENATIONUNITTESTDATA','OutputSDT',o(26,'StringConcatenationUnitTestSDT')).
-pgm_prop_i(proc,15,'AGAMESBYCATEGORY','CALL_PROTOCOL','HTTP').
-pgm_prop_i(proc,15,'GAMESBYCATEGORY','CALL_PROTOCOL','HTTP').
-pgm_prop_i(proc,31,'AGAMESBYCATEGORY2','CALL_PROTOCOL','HTTP').
-pgm_prop_i(proc,31,'GAMESBYCATEGORY2','CALL_PROTOCOL','HTTP').
-pgm_prop_i(web,38,'SHOWGENERAL','WEB_COMP','Yes').
-pgm_prop_i(web,38,'SHOWGENERAL','URLAccess','No').
-pgm_prop_i(proc,33,'ASHOWSBYDATE','CALL_PROTOCOL','HTTP').
-pgm_prop_i(proc,33,'SHOWSBYDATE','CALL_PROTOCOL','HTTP').
-pgm_prop_i(trn,6,'CATEGORY',idISBUSINESSCOMPONENT,'-1').
+pgm_prop_i(web,48,'TECHNICIANREPAIRWC','WEB_COMP','Yes').
+pgm_prop_i(web,48,'TECHNICIANREPAIRWC','URLAccess','No').
+pgm_prop_i(web,1,'APPMASTERPAGE','WEB_COMP','Master').
+pgm_prop_i(web,3,'PROMPTMASTERPAGE','WEB_COMP','Master').
+pgm_prop_i(web,39,'GAMEREPAIRWC','WEB_COMP','Yes').
+pgm_prop_i(web,39,'GAMEREPAIRWC','URLAccess','No').
+pgm_prop_i(web,47,'TECHNICIANGENERAL','WEB_COMP','Yes').
+pgm_prop_i(web,47,'TECHNICIANGENERAL','URLAccess','No').
+pgm_prop_i(web,4,'RWDMASTERPAGE','WEB_COMP','Master').
+pgm_prop_i(web,6,'RWDPROMPTMASTERPAGE','WEB_COMP','Master').
  
 model_wrkinfo_i([ 'Java Environment','JavaModel' ]).
  
@@ -107,8 +109,9 @@ datastore_i(1,'HelpKeyword','15').
 datastore_i(1,'DBMS',18).
 datastore_i(1,'NAME','Default').
  
-subview_i(2,502,9).
+subview_i(2,513,9).
  
+subtype_group_i(2,1,[ 'TechnicianAlternate',[ [ 35,30 ],[ 36,31 ],[ 37,32 ],[ 38,33 ] ] ]).
  
 culture_id_i(spa).
  

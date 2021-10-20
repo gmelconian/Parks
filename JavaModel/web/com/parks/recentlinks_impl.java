@@ -246,7 +246,7 @@ public final  class recentlinks_impl extends GXWebComponent
       }
       httpContext.AddJavascriptSource("jquery.js", "?"+httpContext.getBuildNumber( 75940), false, true);
       httpContext.AddJavascriptSource("gxgral.js", "?"+httpContext.getBuildNumber( 75940), false, true);
-      httpContext.AddJavascriptSource("gxcfg.js", "?202110711545980", false, true);
+      httpContext.AddJavascriptSource("gxcfg.js", "?202110201443147", false, true);
       if ( httpContext.isSpaRequest( ) )
       {
          httpContext.enableOutput();
@@ -1316,7 +1316,7 @@ public final  class recentlinks_impl extends GXWebComponent
       idxLst = 1 ;
       while ( idxLst <= Form.getJscriptsrc().getCount() )
       {
-         httpContext.AddJavascriptSource(GXutil.rtrim( Form.getJscriptsrc().item(idxLst)), "?2021107115500", true, true);
+         httpContext.AddJavascriptSource(GXutil.rtrim( Form.getJscriptsrc().item(idxLst)), "?2021102014431428", true, true);
          idxLst = (int)(idxLst+1) ;
       }
       if ( ! outputEnabled )
@@ -1333,7 +1333,7 @@ public final  class recentlinks_impl extends GXWebComponent
    {
       if ( nGXWrapped != 1 )
       {
-         httpContext.AddJavascriptSource("recentlinks.js", "?2021107115501", false, true);
+         httpContext.AddJavascriptSource("recentlinks.js", "?2021102014431428", false, true);
       }
       /* End function include_jscripts */
    }

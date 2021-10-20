@@ -14,11 +14,327 @@ public final  class GxWebStd
       httpContext.ajax_rsp_assign_hidden(sCtrlName, sValue);
    }
 
-   public static void gx_boolean_hidden_field( HttpContext httpContext ,
-                                               String sCtrlName ,
-                                               boolean bValue )
+   public static void gx_html_headers( HttpContext httpContext ,
+                                       int nContentType ,
+                                       String sCacheCtrl ,
+                                       String sCacheExp ,
+                                       com.genexus.webpanels.HTMLChoice rMeta ,
+                                       com.genexus.webpanels.HTMLChoice rMetaequiv ,
+                                       boolean bIsRwd )
    {
-      httpContext.ajax_rsp_assign_boolean_hidden(sCtrlName, bValue);
+      byte wbTemp;
+      byte idxLst;
+      boolean addContentType;
+      com.parks.GxWebStd.set_html_headers( httpContext, nContentType, sCacheCtrl, sCacheExp);
+      httpContext.setStream();
+      if ( nContentType == 0 )
+      {
+         httpContext.writeTextNL( httpContext.htmlDocType( )) ;
+         httpContext.writeTextNL( "<html lang=\"es\""+">") ;
+         httpContext.writeTextNL( "<head>") ;
+         if ( bIsRwd )
+         {
+            GXWebForm.addResponsiveMetaHeaders(rMeta);
+         }
+         idxLst = (byte)(1) ;
+         while ( idxLst <= rMeta.getItemCount() )
+         {
+            httpContext.writeText( "<meta name=\""+GXutil.rtrim( rMeta.getItemValue(idxLst))+"\" content=\"") ;
+            httpContext.writeValue( GXutil.rtrim( rMeta.getItemText(idxLst))) ;
+            httpContext.writeTextNL( "\""+httpContext.htmlEndTag( HTMLElement.META)) ;
+            idxLst = (byte)(idxLst+1) ;
+         }
+         httpContext.writeTextNL( "<!--[if IE]><meta http-equiv=\"page-enter\" content=\"blendTrans(Duration=0.1)\""+httpContext.htmlEndTag( HTMLElement.META)+"<![endif]-->") ;
+         httpContext.writeTextNL( "<meta name=\"fragment\" content=\"!\""+httpContext.htmlEndTag( HTMLElement.META)) ;
+         idxLst = (byte)(1) ;
+         addContentType = true ;
+         while ( idxLst <= rMetaequiv.getItemCount() )
+         {
+            if ( GXutil.strcmp(GXutil.lower( rMetaequiv.getItemValue(idxLst)), "content-type") == 0 )
+            {
+               addContentType = false ;
+               wbTemp = httpContext.setContentType( rMetaequiv.getItemText(idxLst)) ;
+            }
+            idxLst = (byte)(idxLst+1) ;
+         }
+         if ( addContentType )
+         {
+            httpContext.writeTextNL( "<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\""+httpContext.htmlEndTag( HTMLElement.META)) ;
+         }
+         idxLst = (byte)(1) ;
+         while ( idxLst <= rMetaequiv.getItemCount() )
+         {
+            httpContext.writeText( "<meta http-equiv=\""+GXutil.rtrim( rMetaequiv.getItemValue(idxLst))+"\" content=\"") ;
+            httpContext.writeValue( GXutil.rtrim( rMetaequiv.getItemText(idxLst))) ;
+            httpContext.writeTextNL( "\""+httpContext.htmlEndTag( HTMLElement.META)) ;
+            idxLst = (byte)(idxLst+1) ;
+         }
+      }
+   }
+
+   public static void classAttribute( HttpContext httpContext ,
+                                      String sClass )
+   {
+      if ( ! (GXutil.strcmp("", sClass)==0) )
+      {
+         httpContext.writeText( " class=\"") ;
+         httpContext.writeValue( GXutil.ltrim( sClass)) ;
+         httpContext.writeText( "\" ") ;
+      }
+   }
+
+   public static void gx_div_start( HttpContext httpContext ,
+                                    String sInternalName ,
+                                    int nVisible ,
+                                    int nWidth ,
+                                    String sWidthUnit ,
+                                    int nHeight ,
+                                    String sHeightUnit ,
+                                    String sClassString ,
+                                    String sAlign ,
+                                    String sVAlign ,
+                                    String sTags ,
+                                    String sExtraStyle ,
+                                    String sHtmlTag )
+   {
+      String sOStyle;
+      boolean bHAlignedVar;
+      boolean bVAlignedVar;
+      bHAlignedVar = (boolean)(!(GXutil.strcmp("", sAlign)==0)&&(GXutil.strcmp(GXutil.lower( sAlign), "left")!=0)) ;
+      bVAlignedVar = (boolean)(!(GXutil.strcmp("", sVAlign)==0)&&(GXutil.strcmp(GXutil.lower( sVAlign), "top")!=0)) ;
+      httpContext.writeText( "<"+sHtmlTag+" ") ;
+      if ( ! (GXutil.strcmp("", sInternalName)==0) )
+      {
+         httpContext.writeText( "id=\""+sInternalName+"\" ") ;
+      }
+      com.parks.GxWebStd.classAttribute( httpContext, sClassString);
+      sOStyle = "" ;
+      if ( nVisible == 0 )
+      {
+         sOStyle = "display:none;" ;
+      }
+      if ( ! (0==nWidth) )
+      {
+         sOStyle += " width:" + GXutil.ltrimstr( DecimalUtil.doubleToDec(nWidth), 10, 0) + sWidthUnit + ";" ;
+      }
+      if ( ! (0==nHeight) )
+      {
+         sOStyle += " height:" + GXutil.ltrimstr( DecimalUtil.doubleToDec(nHeight), 10, 0) + sHeightUnit + ";" ;
+      }
+      if ( ! (GXutil.strcmp("", sExtraStyle)==0) )
+      {
+         sOStyle += GXutil.CssPrettify( sExtraStyle+";") ;
+      }
+      com.parks.GxWebStd.styleAttribute( httpContext, sOStyle);
+      if ( ! (GXutil.strcmp("", sTags)==0) )
+      {
+         httpContext.writeText( sTags) ;
+      }
+      if ( bHAlignedVar )
+      {
+         httpContext.writeText( " data-align=\"") ;
+         httpContext.writeText( GXutil.lower( sAlign)) ;
+         httpContext.writeText( "\"") ;
+      }
+      if ( bVAlignedVar )
+      {
+         httpContext.writeText( " data-valign=\"") ;
+         httpContext.writeText( GXutil.lower( sVAlign)) ;
+         httpContext.writeText( "\"") ;
+      }
+      httpContext.writeText( ">") ;
+      if ( bHAlignedVar || bVAlignedVar )
+      {
+         httpContext.writeText( "<div data-align-outer=\"\"><div data-align-inner=\"\">") ;
+      }
+   }
+
+   public static void gx_msg_list( HttpContext httpContext ,
+                                   String sCtrlName ,
+                                   int nDisplayMode ,
+                                   String sStyleString ,
+                                   String sClassString ,
+                                   String sCmpCtx ,
+                                   String sInMaster )
+   {
+      int i;
+      httpContext.writeText( "<div>") ;
+      sClassString += " gx_ev" ;
+      if ( nDisplayMode == 1 )
+      {
+         sClassString += " ErrorViewerBullet" ;
+      }
+      httpContext.writeText( "<span") ;
+      com.parks.GxWebStd.classAttribute( httpContext, sClassString);
+      com.parks.GxWebStd.styleAttribute( httpContext, sStyleString);
+      httpContext.writeText( " data-gx-id=\""+sCmpCtx+"gxErrorViewer\"") ;
+      httpContext.writeText( ">") ;
+      if ( ! httpContext.isSpaRequest( ) )
+      {
+         i = 1 ;
+         while ( i <= httpContext.GX_msglist.getItemCount() )
+         {
+            httpContext.writeText( "<span") ;
+            com.parks.GxWebStd.classAttribute( httpContext, ((httpContext.GX_msglist.getItemType((short)(i))==1) ? "gx-error-message" : "gx-warning-message"));
+            httpContext.writeText( ">") ;
+            httpContext.writeText( WebUtils.htmlEncode( httpContext.GX_msglist.getItemText((short)(i)))) ;
+            httpContext.writeText( "</span>") ;
+            i = (int)(i+1) ;
+         }
+      }
+      httpContext.writeText( "</span>") ;
+      httpContext.writeText( "</div>") ;
+   }
+
+   public static void gx_div_end( HttpContext httpContext ,
+                                  String sAlign ,
+                                  String sVAlign ,
+                                  String sHtmlTag )
+   {
+      boolean bHAlignedVar;
+      boolean bVAlignedVar;
+      bHAlignedVar = (boolean)(!(GXutil.strcmp("", sAlign)==0)&&(GXutil.strcmp(GXutil.lower( sAlign), "left")!=0)) ;
+      bVAlignedVar = (boolean)(!(GXutil.strcmp("", sVAlign)==0)&&(GXutil.strcmp(GXutil.lower( sVAlign), "top")!=0)) ;
+      if ( bHAlignedVar || bVAlignedVar )
+      {
+         httpContext.writeText( "</div></div>") ;
+      }
+      httpContext.writeText( "</"+sHtmlTag+">") ;
+   }
+
+   public static void gx_table_start( HttpContext httpContext ,
+                                      String sCtrlName ,
+                                      String sHTMLid ,
+                                      String sHTMLTags ,
+                                      String sClassString ,
+                                      int nBorder ,
+                                      String sAlign ,
+                                      String sTooltiptext ,
+                                      int nCellpadding ,
+                                      int nCellspacing ,
+                                      String sStyleString ,
+                                      String sRules ,
+                                      String sCaption ,
+                                      int nParentIsFreeStyle )
+   {
+      if ( httpContext.isSpaRequest( ) )
+      {
+         httpContext.ajax_rsp_assign_prefixed_prop(sCtrlName, "Tooltiptext", sTooltiptext);
+      }
+      httpContext.writeText( "<table") ;
+      if ( ! (GXutil.strcmp("", sCtrlName)==0) )
+      {
+         httpContext.writeText( " id=\""+sHTMLid+"\"") ;
+      }
+      if ( ! (GXutil.strcmp("", sHTMLTags)==0) )
+      {
+         httpContext.writeText( sHTMLTags) ;
+      }
+      if ( GXutil.strcmp(sAlign, "") != 0 )
+      {
+         if ( GXutil.strcmp(sAlign, "left") == 0 )
+         {
+            sStyleString = "margin-right:auto;" + sStyleString ;
+         }
+         else
+         {
+            if ( GXutil.strcmp(sAlign, "center") == 0 )
+            {
+               sStyleString = "margin-left:auto; margin-right: auto;" + sStyleString ;
+            }
+            else
+            {
+               if ( GXutil.strcmp(sAlign, "right") == 0 )
+               {
+                  sStyleString = "margin-left:auto;" + sStyleString ;
+               }
+            }
+         }
+      }
+      com.parks.GxWebStd.classAttribute( httpContext, sClassString);
+      if ( ! (0==nBorder) )
+      {
+         httpContext.writeText( " border=\"") ;
+         httpContext.writeText( GXutil.str( nBorder, 3, 0)) ;
+         httpContext.writeText( "\"") ;
+      }
+      httpContext.writeText( " data-cellpadding=\"") ;
+      httpContext.writeText( GXutil.ltrimstr( DecimalUtil.doubleToDec(nCellpadding), 10, 0)) ;
+      httpContext.writeText( "\"") ;
+      httpContext.writeText( " data-cellspacing=\"") ;
+      httpContext.writeText( GXutil.ltrim( GXutil.ltrimstr( DecimalUtil.doubleToDec(nCellspacing), 5, 0))) ;
+      httpContext.writeText( "\"") ;
+      if ( ( GXutil.strcmp(sRules, "") != 0 ) && ( GXutil.strcmp(sRules, "none") != 0 ) )
+      {
+         httpContext.writeText( " rules=\"") ;
+         httpContext.writeText( sRules) ;
+         httpContext.writeText( "\"") ;
+      }
+      if ( GXutil.strcmp(sTooltiptext, "") != 0 )
+      {
+         httpContext.writeText( " title=\"") ;
+         httpContext.writeValue( GXutil.trim( sTooltiptext)) ;
+         httpContext.writeText( "\"") ;
+      }
+      if ( nParentIsFreeStyle == 0 )
+      {
+         com.parks.GxWebStd.styleAttribute( httpContext, sStyleString);
+      }
+      httpContext.writeText( ">") ;
+      if ( GXutil.strcmp(sCaption, "") != 0 )
+      {
+         httpContext.writeText( "<caption>"+sCaption+"</caption>") ;
+      }
+   }
+
+   public static void gx_label_element( HttpContext httpContext ,
+                                        String sReferencedControl ,
+                                        String sLabelCaption ,
+                                        String sLabelClass ,
+                                        int nLabelPosition ,
+                                        boolean bDataAttSupported ,
+                                        String sExtraStyle )
+   {
+      if ( (GXutil.strcmp("", sReferencedControl)==0) )
+      {
+         httpContext.writeText( "<span ") ;
+      }
+      else
+      {
+         httpContext.writeText( "<label ") ;
+      }
+      httpContext.writeText( " class=\"gx-label ") ;
+      httpContext.writeText( sLabelClass) ;
+      httpContext.writeText( " control-label") ;
+      if ( ( nLabelPosition == 0 ) && ! bDataAttSupported )
+      {
+         httpContext.writeText( " gx-sr-only ") ;
+      }
+      httpContext.writeText( "\"") ;
+      if ( ! (GXutil.strcmp("", sReferencedControl)==0) )
+      {
+         httpContext.writeText( " for=\"") ;
+         httpContext.writeText( sReferencedControl) ;
+         httpContext.writeText( "\"") ;
+      }
+      if ( ( nLabelPosition == 0 ) && bDataAttSupported )
+      {
+         httpContext.writeTextNL( " data-gx-sr-only ") ;
+      }
+      if ( ! (GXutil.strcmp("", sExtraStyle)==0) )
+      {
+         com.parks.GxWebStd.styleAttribute( httpContext, GXutil.CssPrettify( sExtraStyle));
+      }
+      httpContext.writeText( ">") ;
+      httpContext.writeText( sLabelCaption) ;
+      if ( (GXutil.strcmp("", sReferencedControl)==0) )
+      {
+         httpContext.writeText( "</span>") ;
+      }
+      else
+      {
+         httpContext.writeText( "</label>") ;
+      }
    }
 
    public static void gx_single_line_edit1( HttpContext httpContext ,
@@ -369,6 +685,642 @@ public final  class GxWebStd
       }
    }
 
+   public static boolean gx_redirect( HttpContext httpContext )
+   {
+      if ( httpContext.willRedirect( ) )
+      {
+         httpContext.redirect( httpContext.wjLoc );
+         httpContext.dispatchAjaxCommands();
+         return true ;
+      }
+      else if ( httpContext.nUserReturn == 1 )
+      {
+         if ( httpContext.isAjaxRequest( ) )
+         {
+            httpContext.ajax_rsp_command_close();
+            httpContext.dispatchAjaxCommands();
+         }
+         else
+         {
+            if ( (GXutil.strcmp("", httpContext.getReferer( ))==0) || httpContext.isLocalStorageSupported( ) )
+            {
+               httpContext.setStream();
+               if ( httpContext.isSpaRequest( true) )
+               {
+                  httpContext.setHeader("X-SPA-RETURN", httpContext.getWebReturnParmsJS( ));
+                  httpContext.setHeader("X-SPA-RETURN-MD", httpContext.getWebReturnParmsMetadataJS( ));
+               }
+               else
+               {
+                  httpContext.writeText( httpContext.htmlDocType( )) ;
+                  httpContext.writeText( "<html><head><meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\"><title>Close window</title>") ;
+                  httpContext.AddJavascriptSource("jquery.js", "?"+httpContext.getBuildNumber( 75940), false, true);
+                  httpContext.AddJavascriptSource("gxgral.js", "?"+httpContext.getBuildNumber( 75940), false, true);
+                  httpContext.writeText( "</head><body><script type=\"text/javascript\">") ;
+                  httpContext.writeText( "gx.fn.closeWindowServerScript(") ;
+                  httpContext.writeText( httpContext.getWebReturnParmsJS( )) ;
+                  httpContext.writeText( ", ") ;
+                  httpContext.writeText( httpContext.getWebReturnParmsMetadataJS( )) ;
+                  if ( httpContext.isLocalStorageSupported( ) )
+                  {
+                     httpContext.writeText( ", true") ;
+                  }
+                  else
+                  {
+                     httpContext.writeText( ", false") ;
+                  }
+                  httpContext.writeText( ");</script></body></html>") ;
+               }
+            }
+            else
+            {
+               httpContext.redirect( httpContext.getReferer( ) );
+               httpContext.windowClosed();
+            }
+         }
+         return true ;
+      }
+      else
+      {
+         return false ;
+      }
+   }
+
+   public static void set_html_headers( HttpContext httpContext ,
+                                        int nContentType ,
+                                        String sCacheCtrl ,
+                                        String sCacheExp )
+   {
+      byte wbTemp;
+      if ( nContentType != 1 )
+      {
+         if ( httpContext.isAjaxRequest( ) && ! httpContext.isMultipartContent( ) )
+         {
+            wbTemp = httpContext.setContentType( "application/json") ;
+         }
+         else
+         {
+            wbTemp = httpContext.setContentType( "text/html") ;
+         }
+      }
+      if ( (GXutil.strcmp("", sCacheCtrl)==0) )
+      {
+         wbTemp = httpContext.setHeader( "pragma", "no-cache") ;
+         wbTemp = httpContext.setHeader( "Cache-Control", "no-store") ;
+      }
+      else
+      {
+         wbTemp = httpContext.setHeader( "Cache-Control", sCacheCtrl) ;
+         wbTemp = httpContext.setHeader( "Cache-Control", sCacheExp) ;
+      }
+   }
+
+   public static void gx_button_ctrl( HttpContext httpContext ,
+                                      String sCtrlName ,
+                                      String sJsCode ,
+                                      String sCaption ,
+                                      String sUserOnClickCode ,
+                                      int nJScriptCode ,
+                                      String sTooltipText ,
+                                      String sAccesskey ,
+                                      String sStyleString ,
+                                      String sClassString ,
+                                      int nVisible ,
+                                      int nEnabled ,
+                                      String sBorderStyle ,
+                                      String sEventName ,
+                                      String sTags ,
+                                      String sJsDynCode ,
+                                      int nReset ,
+                                      String sCallerPgm )
+   {
+      String sEventJsCode;
+      String sCapAKey;
+      String sClassRoundedBtn;
+      if ( httpContext.isSpaRequest( ) )
+      {
+         httpContext.ajax_rsp_assign_prefixed_prop(sCtrlName, "Tooltiptext", sTooltipText);
+      }
+      sStyleString += ((nVisible!=0) ? "" : ";display:none;") ;
+      sClassRoundedBtn = "BaseRBtn " + "R" + sClassString ;
+      if ( GXutil.strcmp(sBorderStyle, "rounded") == 0 )
+      {
+         sClassString = "BtnText" ;
+         httpContext.writeText( "<span onclick=\"gx.evt.doClick(") ;
+         httpContext.writeText( "'") ;
+         httpContext.writeValue( GXutil.trim( sCtrlName)) ;
+         httpContext.writeText( "', event") ;
+         httpContext.writeText( ")\" ") ;
+         com.parks.GxWebStd.styleAttribute( httpContext, sStyleString);
+         com.parks.GxWebStd.classAttribute( httpContext, sClassRoundedBtn);
+         httpContext.writeText( "><span class=\"BtnLeft\"><span class=\"BtnRight\"><span class=\"BtnBackground\">") ;
+      }
+      httpContext.writeText( "<input type=") ;
+      if ( nReset == 1 )
+      {
+         httpContext.writeText( "\"submit\"") ;
+      }
+      else if ( nReset == 0 )
+      {
+         httpContext.writeText( "\"reset\"") ;
+      }
+      else
+      {
+         httpContext.writeText( "\"button\"") ;
+      }
+      sCapAKey = GXutil.accessKey( sCaption) ;
+      sCaption = GXutil.accessKeyCaption( sCaption) ;
+      if ( (GXutil.strcmp("", sCapAKey)==0) )
+      {
+         sCapAKey = GXutil.accessKey( sTooltipText) ;
+         sTooltipText = GXutil.accessKeyCaption( sTooltipText) ;
+      }
+      if ( ! (GXutil.strcmp("", sCapAKey)==0) )
+      {
+         sAccesskey = sCapAKey ;
+      }
+      httpContext.writeText( " data-gx-button") ;
+      httpContext.writeText( " name=\"") ;
+      httpContext.writeValue( GXutil.trim( sCtrlName)) ;
+      httpContext.writeText( "\"") ;
+      httpContext.writeText( " id=\"") ;
+      httpContext.writeValue( GXutil.trim( sCtrlName)) ;
+      httpContext.writeText( "\"") ;
+      if ( ! (GXutil.strcmp("", sCaption)==0) )
+      {
+         httpContext.writeText( " value=\"") ;
+         httpContext.writeValue( GXutil.trim( sCaption)) ;
+         httpContext.writeText( "\"") ;
+      }
+      if ( ! (GXutil.strcmp("", sTooltipText)==0) )
+      {
+         httpContext.writeText( " title=\"") ;
+         httpContext.writeValue( GXutil.trim( sTooltipText)) ;
+         httpContext.writeText( "\"") ;
+      }
+      if ( GXutil.len( sAccesskey) != 0 )
+      {
+         httpContext.writeText( " accesskey=\"") ;
+         httpContext.writeValue( GXutil.trim( sAccesskey)) ;
+         httpContext.writeText( "\"") ;
+      }
+      com.parks.GxWebStd.classAttribute( httpContext, sClassString);
+      com.parks.GxWebStd.styleAttribute( httpContext, sStyleString);
+      if ( nEnabled == 0 )
+      {
+         httpContext.writeText( " disabled=\"disabled\"") ;
+      }
+      /* Initialize internal JScript code according to EventNo */
+      if ( nJScriptCode == 4 )
+      {
+         sEventJsCode = sJsDynCode ;
+      }
+      else if ( nJScriptCode == 1 )
+      {
+         sEventJsCode = "gx.fn.closeWindow();" + "return false;" ;
+      }
+      else if ( nJScriptCode == 3 )
+      {
+         sEventJsCode = "gx.util.help(" + "'" + httpContext.convertURL( "Help/"+"Spanish/"+GXutil.lower( sCallerPgm)) + "');" + "return false;" ;
+      }
+      else if ( nJScriptCode == 7 )
+      {
+         sEventJsCode = "gx.evt.checkCtrlFocus(this);" + "gx.evt.execCliEvt(" + sEventName + ",this);" ;
+      }
+      else if ( nJScriptCode == 8 )
+      {
+         sEventJsCode = "gx.evt.execEvt(" + sEventName + ",this);" + "return false;" ;
+      }
+      else if ( nJScriptCode == 6 )
+      {
+         sEventJsCode = "gx.evt.execEvt(" + sEventName + ",this);" ;
+      }
+      else if ( nJScriptCode == 5 )
+      {
+         sEventJsCode = "gx.evt.execEvt(" + sEventName + ",this);" ;
+      }
+      else if ( nJScriptCode == 0 )
+      {
+         sEventJsCode = "" ;
+      }
+      else
+      {
+         sEventJsCode = "" ;
+      }
+      sEventJsCode = sJsCode + sEventJsCode ;
+      com.parks.GxWebStd.gx_on_js_event( httpContext, nJScriptCode, sEventJsCode, sUserOnClickCode);
+      httpContext.writeText( " ") ;
+      httpContext.writeText( sTags) ;
+      httpContext.writeText( httpContext.htmlEndTag( HTMLElement.INPUT)) ;
+      if ( GXutil.strcmp(sBorderStyle, "rounded") == 0 )
+      {
+         httpContext.writeText( "</span></span></span></span>") ;
+      }
+   }
+
+   public static void gx_on_js_event( HttpContext httpContext ,
+                                      int nJScriptCode ,
+                                      String sGXOnClickCode ,
+                                      String sUserOnClickCode )
+   {
+      if ( ! (GXutil.strcmp("", sUserOnClickCode)==0) )
+      {
+         if ( ! (0==nJScriptCode) )
+         {
+            httpContext.writeText( " data-gx-evt=\"") ;
+            httpContext.writeText( GXutil.trim( GXutil.str( nJScriptCode, 10, 0))) ;
+            httpContext.writeText( "\"") ;
+         }
+         else
+         {
+            httpContext.writeText( " data-gx-evt=\"") ;
+            httpContext.writeText( GXutil.trim( GXutil.str( nJScriptCode, 10, 0))) ;
+            httpContext.writeText( "\"") ;
+         }
+         if ( ( nJScriptCode == 4 ) || ( nJScriptCode == 3 ) )
+         {
+            httpContext.writeText( " data-gx-evt-code=\"") ;
+            httpContext.writeText( sGXOnClickCode) ;
+            httpContext.writeText( "\"") ;
+         }
+         httpContext.writeText( " data-gx-evt-condition=\"") ;
+         httpContext.writeText( sUserOnClickCode) ;
+         httpContext.writeText( "\"") ;
+      }
+      else
+      {
+         if ( ! (0==nJScriptCode) )
+         {
+            httpContext.writeText( " data-gx-evt=\"") ;
+            httpContext.writeText( GXutil.trim( GXutil.str( nJScriptCode, 10, 0))) ;
+            httpContext.writeText( "\"") ;
+            if ( ( nJScriptCode == 4 ) || ( nJScriptCode == 3 ) )
+            {
+               httpContext.writeText( " data-gx-evt-code=\"") ;
+               httpContext.writeText( sGXOnClickCode) ;
+               httpContext.writeText( "\"") ;
+            }
+         }
+      }
+   }
+
+   public static void gx_ctrl_attribute( HttpContext httpContext ,
+                                         String sControlName ,
+                                         String sAttName ,
+                                         String sAttValue ,
+                                         boolean bCustomEvent ,
+                                         boolean bMaskedEvent )
+   {
+      if ( bCustomEvent )
+      {
+         httpContext.writeText( " ") ;
+         httpContext.writeValue( sAttName) ;
+         httpContext.writeText( "=\"") ;
+         httpContext.writeText( "if(") ;
+         if ( ! (GXutil.strcmp("", sAttValue)==0) )
+         {
+            httpContext.writeText( "gx.evt.jsEvent(this)") ;
+            httpContext.writeText( ") {") ;
+            httpContext.writeText( sAttValue) ;
+            httpContext.writeText( "} else return false;\"") ;
+         }
+         else
+         {
+            httpContext.writeText( "!(") ;
+            httpContext.writeText( "gx.evt.jsEvent(this)") ;
+            httpContext.writeText( ")) return false;\"") ;
+         }
+      }
+      else
+      {
+         if ( ! (GXutil.strcmp("", sAttValue)==0) )
+         {
+            if ( bMaskedEvent )
+            {
+               httpContext.writeText( " data-msk-att=\"") ;
+               httpContext.writeValue( sAttName) ;
+               httpContext.writeText( "\" data-") ;
+            }
+            else
+            {
+               httpContext.writeText( " ") ;
+            }
+            httpContext.writeValue( sAttName) ;
+            httpContext.writeText( "=\"") ;
+            httpContext.writeText( sAttValue) ;
+            httpContext.writeText( "\" ") ;
+         }
+      }
+   }
+
+   public static void gx_bitmap( HttpContext httpContext ,
+                                 String sInternalName ,
+                                 String sImageURL ,
+                                 String sLinkURL ,
+                                 String sLinkTarget ,
+                                 String sAccesskey ,
+                                 String sThemeName ,
+                                 int nVisible ,
+                                 int nEnabled ,
+                                 String sAlternateText ,
+                                 String sTooltipText ,
+                                 int nBorderWidth ,
+                                 int nAutoresize ,
+                                 int nWidth ,
+                                 String nWidthUnit ,
+                                 int nHeight ,
+                                 String nHeightUnit ,
+                                 int nVerticalSpace ,
+                                 int nHorizontalSpace ,
+                                 int nJScriptCode ,
+                                 String sUserOnClickCode ,
+                                 String sEventName ,
+                                 String sStyleString ,
+                                 String sClassString ,
+                                 String sColumnClassString ,
+                                 String sColumnHeaderClassString ,
+                                 String sAlign ,
+                                 String sInputTags ,
+                                 String sImageTags ,
+                                 String sUseMap ,
+                                 String sJsDynCode ,
+                                 int nReadOnly ,
+                                 boolean bIsBlob ,
+                                 boolean bIsAttribute ,
+                                 String sImgSrcSet ,
+                                 String sCallerPgm )
+   {
+      String ClassHTML;
+      ClassHTML = sClassString ;
+      if ( bIsAttribute && ( GXutil.len( sClassString) != 0 ) && ( GXutil.strSearch( sClassString, "Readonly", 1) != 1 ) )
+      {
+         ClassHTML = "Readonly" + sClassString ;
+      }
+      if ( ( nReadOnly == 1 ) || ( nEnabled == 0 ) )
+      {
+         com.parks.GxWebStd.gx_bitmap_readonly( httpContext, sInternalName, sImageURL, sLinkURL, sLinkTarget, sAccesskey, sThemeName, nVisible, nEnabled, sAlternateText, sTooltipText, nBorderWidth, nAutoresize, nWidth, nWidthUnit, nHeight, nHeightUnit, nVerticalSpace, nHorizontalSpace, nJScriptCode, sUserOnClickCode, sEventName, sStyleString, ClassHTML, sColumnClassString, sColumnHeaderClassString, sAlign, sImageTags, sUseMap, sJsDynCode, sCallerPgm, sImgSrcSet);
+      }
+      else
+      {
+         com.parks.GxWebStd.gx_multimedia_upload_start( httpContext, sInternalName, nVisible, nWidth, sStyleString);
+         httpContext.writeText( "<a class=\"action change-action\" gxfocusable=\"1\" href=\"\"") ;
+         httpContext.writeText( sInputTags) ;
+         httpContext.writeText( ">") ;
+         httpContext.writeText( httpContext.getMessage( "GXM_multimediachange", "")) ;
+         httpContext.writeText( "</a>") ;
+         httpContext.writeText( "<a gxfocusable=\"1\" href=\"\" class=\"action clear-action\"></a>") ;
+         httpContext.writeText( "<a target=\"_blank\">") ;
+         httpContext.writeText( "<img id=\"Object_") ;
+         httpContext.writeValue( sInternalName) ;
+         httpContext.writeText( "\"") ;
+         httpContext.writeText( " class=\"") ;
+         httpContext.writeValue( GXutil.trim( ClassHTML)) ;
+         httpContext.writeText( "\"") ;
+         httpContext.writeText( " alt=\"") ;
+         httpContext.writeValue( GXutil.trim( ((GXutil.strcmp("", sAlternateText)==0) ? sTooltipText : sAlternateText))) ;
+         httpContext.writeText( "\"") ;
+         httpContext.writeText( " src=\"") ;
+         if ( ! (GXutil.strcmp("", sImageURL)==0) )
+         {
+            httpContext.writeText( httpContext.convertURL( sImageURL)) ;
+         }
+         httpContext.writeText( "\"") ;
+         httpContext.writeText( httpContext.htmlEndTag( HTMLElement.IMG)) ;
+         httpContext.writeText( "<span class=\"") ;
+         httpContext.writeText( "gx-image-placeholder") ;
+         httpContext.writeText( "\">") ;
+         httpContext.writeText( "</span>") ;
+         httpContext.writeText( "</a>") ;
+         com.parks.GxWebStd.gx_multimedia_upload_end( httpContext, sInternalName, sImageURL, sTooltipText, nWidth, nWidthUnit, nHeight, nHeightUnit, sUserOnClickCode, sEventName, sStyleString, sClassString, "", "", sAlign, sInputTags, nReadOnly, bIsBlob, "image/*", sCallerPgm);
+      }
+   }
+
+   public static void gx_label_ctrl( HttpContext httpContext ,
+                                     String sInternalName ,
+                                     String sCaption ,
+                                     String sLinkURL ,
+                                     String sLinkTarget ,
+                                     String sUserOnClickCode ,
+                                     String sEventName ,
+                                     String sTags ,
+                                     String sClassString ,
+                                     int nJScriptCode ,
+                                     String sTooltipText ,
+                                     int nVisible ,
+                                     int nEnabled ,
+                                     int nRTEnabled ,
+                                     short nFormat ,
+                                     String sCallerPgm )
+   {
+      String sEventJsCode;
+      String sDataLink;
+      String sStyle;
+      if ( ( nEnabled != 0 ) || ( nRTEnabled != 0 ) )
+      {
+         /* Initialize internal JScript code according to EventNo */
+         if ( nJScriptCode == 1 )
+         {
+            sEventJsCode = "gx.fn.closeWindow();" ;
+         }
+         else if ( nJScriptCode == 3 )
+         {
+            sEventJsCode = "gx.util.help(" + "'" + httpContext.convertURL( "Help/"+"Spanish/"+GXutil.lower( sCallerPgm)) + "');" ;
+         }
+         else if ( nJScriptCode == 7 )
+         {
+            sEventJsCode = "" + "gx.evt.execCliEvt(" + sEventName + ",this);" ;
+         }
+         else if ( nJScriptCode == 8 )
+         {
+            sEventJsCode = "gx.evt.execEvt(" + sEventName + ",this);" ;
+         }
+         else if ( nJScriptCode == 6 )
+         {
+            sEventJsCode = "gx.evt.execEvt(" + sEventName + ",this);" ;
+         }
+         else if ( nJScriptCode == 5 )
+         {
+            sEventJsCode = "gx.evt.execEvt(" + sEventName + ",this);" ;
+         }
+         else if ( nJScriptCode == 0 )
+         {
+            sEventJsCode = "" ;
+         }
+         else
+         {
+            sEventJsCode = "" ;
+         }
+      }
+      else
+      {
+         sEventJsCode = "" ;
+      }
+      if ( httpContext.isSpaRequest( ) )
+      {
+         httpContext.ajax_rsp_assign_prefixed_prop(sInternalName, "Caption", sCaption);
+         httpContext.ajax_rsp_assign_prefixed_prop(sInternalName, "Tooltiptext", sTooltipText);
+      }
+      sTooltipText = ((GXutil.strcmp(sTooltipText, "")==0) ? "" : " title=\""+WebUtils.htmlEncode( sTooltipText)+"\"") ;
+      String gxDataAtt = " data-gxformat=\""+GXutil.str( nFormat, 1, 0)+"\" ";
+      if ( ( nFormat == 1 ) && ( ! (GXutil.strcmp("", sEventJsCode)==0) || ! (GXutil.strcmp("", sUserOnClickCode)==0) || ! (GXutil.strcmp("", sLinkURL)==0) ) )
+      {
+         sDataLink = " data-gxlink=1 " ;
+      }
+      else
+      {
+         sDataLink = "" ;
+      }
+      if ( nEnabled == 0 )
+      {
+         sClassString += " gx-disabled" ;
+      }
+      if ( nFormat == 1 )
+      {
+         /* HTML Format */
+         sStyle = ((nVisible!=0) ? ";display:inline;" : ";display:none;") + sTags ;
+         httpContext.writeText( "<div") ;
+         com.parks.GxWebStd.classAttribute( httpContext, sClassString);
+         com.parks.GxWebStd.styleAttribute( httpContext, sStyle);
+         httpContext.writeText( " id=\""+sInternalName+"\" "+sTooltipText+gxDataAtt+sDataLink) ;
+         httpContext.writeText( ">") ;
+      }
+      else if ( nFormat != 2 )
+      {
+         if ( ( nFormat == 0 ) || ( nFormat == 2 ) )
+         {
+            gxDataAtt = "" ;
+         }
+         sStyle = ((nVisible!=0) ? "" : ";display:none;") + sTags ;
+         httpContext.writeText( "<span") ;
+         com.parks.GxWebStd.classAttribute( httpContext, sClassString);
+         com.parks.GxWebStd.styleAttribute( httpContext, sStyle);
+         httpContext.writeText( " id=\""+sInternalName+"\" "+sTooltipText+gxDataAtt+sDataLink) ;
+         httpContext.writeText( ">") ;
+      }
+      if ( ( nEnabled != 0 ) || ( nRTEnabled != 0 ) )
+      {
+         com.parks.GxWebStd.gx_start_js_anchor( httpContext, nJScriptCode, sEventJsCode, sUserOnClickCode, sLinkURL, sLinkTarget, "");
+      }
+      if ( nFormat == 0 )
+      {
+         /* Text Format */
+         httpContext.writeValueEnter( sCaption) ;
+      }
+      else
+      {
+         if ( nFormat == 3 )
+         {
+            /* Text with meaningful spaces */
+            httpContext.writeValueSpace( sCaption) ;
+         }
+         else if ( ( nFormat != 2 ) || ( nVisible != 0 ) )
+         {
+            httpContext.writeText( sCaption) ;
+         }
+      }
+      if ( ( nEnabled != 0 ) || ( nRTEnabled != 0 ) )
+      {
+         com.parks.GxWebStd.gx_end_js_anchor( httpContext, sEventJsCode, sUserOnClickCode, sLinkURL);
+      }
+      if ( nFormat == 1 )
+      {
+         httpContext.writeText( "</div>") ;
+      }
+      else if ( nFormat != 2 )
+      {
+         httpContext.writeText( "</span>") ;
+      }
+   }
+
+   public static void gx_start_js_anchor( HttpContext httpContext ,
+                                          int nJScriptCode ,
+                                          String sGXOnClickCode ,
+                                          String sUserOnClickCode ,
+                                          String sLinkURL ,
+                                          String sLinkTarget ,
+                                          String sClassString )
+   {
+      if ( ! (GXutil.strcmp("", sUserOnClickCode)==0) )
+      {
+         if ( ! (0==nJScriptCode) )
+         {
+            httpContext.writeText( "<a href=\"#\" data-gx-evt=\"") ;
+            httpContext.writeText( GXutil.trim( GXutil.str( nJScriptCode, 10, 0))) ;
+            httpContext.writeText( "\"") ;
+         }
+         else
+         {
+            httpContext.writeText( "<a href=\"#\" data-gx-evt=\"") ;
+            httpContext.writeText( GXutil.trim( GXutil.str( nJScriptCode, 10, 0))) ;
+            httpContext.writeText( "\"") ;
+         }
+         if ( ( nJScriptCode == 4 ) || ( nJScriptCode == 3 ) )
+         {
+            httpContext.writeText( " data-gx-evt-code=\"") ;
+            httpContext.writeText( sGXOnClickCode) ;
+            httpContext.writeText( "\"") ;
+         }
+         if ( ! (GXutil.strcmp("", sClassString)==0) )
+         {
+            httpContext.writeText( " class=\"") ;
+            httpContext.writeText( sClassString) ;
+            httpContext.writeText( "\"") ;
+         }
+         httpContext.writeText( " data-gx-evt-condition=\"") ;
+         httpContext.writeText( sUserOnClickCode) ;
+         httpContext.writeText( "\"") ;
+         httpContext.writeText( ">") ;
+      }
+      else
+      {
+         if ( ! (0==nJScriptCode) )
+         {
+            httpContext.writeText( "<a href=\"#\" data-gx-evt=\"") ;
+            httpContext.writeText( GXutil.trim( GXutil.str( nJScriptCode, 10, 0))) ;
+            httpContext.writeText( "\"") ;
+            if ( ( nJScriptCode == 4 ) || ( nJScriptCode == 3 ) )
+            {
+               httpContext.writeText( " data-gx-evt-code=\"") ;
+               httpContext.writeText( sGXOnClickCode) ;
+               httpContext.writeText( "\"") ;
+            }
+            if ( ! (GXutil.strcmp("", sClassString)==0) )
+            {
+               httpContext.writeText( " class=\"") ;
+               httpContext.writeText( sClassString) ;
+               httpContext.writeText( "\"") ;
+            }
+            httpContext.writeText( ">") ;
+         }
+         else
+         {
+            com.parks.GxWebStd.gx_link_start( httpContext, sLinkURL, sLinkTarget, sClassString);
+         }
+      }
+   }
+
+   public static void gx_end_js_anchor( HttpContext httpContext ,
+                                        String sGXOnClickCode ,
+                                        String sUserOnClickCode ,
+                                        String sLinkURL )
+   {
+      if ( ! ( (GXutil.strcmp("", sGXOnClickCode)==0) && (GXutil.strcmp("", sUserOnClickCode)==0) ) )
+      {
+         httpContext.writeText( "</a>") ;
+      }
+      else
+      {
+         com.parks.GxWebStd.gx_link_end( httpContext, sLinkURL);
+      }
+   }
+
+   public static void gx_boolean_hidden_field( HttpContext httpContext ,
+                                               String sCtrlName ,
+                                               boolean bValue )
+   {
+      httpContext.ajax_rsp_assign_boolean_hidden(sCtrlName, bValue);
+   }
+
    public static void gx_blob_field( HttpContext httpContext ,
                                      String sInternalName ,
                                      String sValue ,
@@ -618,281 +1570,6 @@ public final  class GxWebStd
          httpContext.writeText( httpContext.htmlEndTag( HTMLElement.INPUT)) ;
       }
       httpContext.writeText( "</div></div>") ;
-   }
-
-   public static void gx_button_ctrl( HttpContext httpContext ,
-                                      String sCtrlName ,
-                                      String sJsCode ,
-                                      String sCaption ,
-                                      String sUserOnClickCode ,
-                                      int nJScriptCode ,
-                                      String sTooltipText ,
-                                      String sAccesskey ,
-                                      String sStyleString ,
-                                      String sClassString ,
-                                      int nVisible ,
-                                      int nEnabled ,
-                                      String sBorderStyle ,
-                                      String sEventName ,
-                                      String sTags ,
-                                      String sJsDynCode ,
-                                      int nReset ,
-                                      String sCallerPgm )
-   {
-      String sEventJsCode;
-      String sCapAKey;
-      String sClassRoundedBtn;
-      if ( httpContext.isSpaRequest( ) )
-      {
-         httpContext.ajax_rsp_assign_prefixed_prop(sCtrlName, "Tooltiptext", sTooltipText);
-      }
-      sStyleString += ((nVisible!=0) ? "" : ";display:none;") ;
-      sClassRoundedBtn = "BaseRBtn " + "R" + sClassString ;
-      if ( GXutil.strcmp(sBorderStyle, "rounded") == 0 )
-      {
-         sClassString = "BtnText" ;
-         httpContext.writeText( "<span onclick=\"gx.evt.doClick(") ;
-         httpContext.writeText( "'") ;
-         httpContext.writeValue( GXutil.trim( sCtrlName)) ;
-         httpContext.writeText( "', event") ;
-         httpContext.writeText( ")\" ") ;
-         com.parks.GxWebStd.styleAttribute( httpContext, sStyleString);
-         com.parks.GxWebStd.classAttribute( httpContext, sClassRoundedBtn);
-         httpContext.writeText( "><span class=\"BtnLeft\"><span class=\"BtnRight\"><span class=\"BtnBackground\">") ;
-      }
-      httpContext.writeText( "<input type=") ;
-      if ( nReset == 1 )
-      {
-         httpContext.writeText( "\"submit\"") ;
-      }
-      else if ( nReset == 0 )
-      {
-         httpContext.writeText( "\"reset\"") ;
-      }
-      else
-      {
-         httpContext.writeText( "\"button\"") ;
-      }
-      sCapAKey = GXutil.accessKey( sCaption) ;
-      sCaption = GXutil.accessKeyCaption( sCaption) ;
-      if ( (GXutil.strcmp("", sCapAKey)==0) )
-      {
-         sCapAKey = GXutil.accessKey( sTooltipText) ;
-         sTooltipText = GXutil.accessKeyCaption( sTooltipText) ;
-      }
-      if ( ! (GXutil.strcmp("", sCapAKey)==0) )
-      {
-         sAccesskey = sCapAKey ;
-      }
-      httpContext.writeText( " data-gx-button") ;
-      httpContext.writeText( " name=\"") ;
-      httpContext.writeValue( GXutil.trim( sCtrlName)) ;
-      httpContext.writeText( "\"") ;
-      httpContext.writeText( " id=\"") ;
-      httpContext.writeValue( GXutil.trim( sCtrlName)) ;
-      httpContext.writeText( "\"") ;
-      if ( ! (GXutil.strcmp("", sCaption)==0) )
-      {
-         httpContext.writeText( " value=\"") ;
-         httpContext.writeValue( GXutil.trim( sCaption)) ;
-         httpContext.writeText( "\"") ;
-      }
-      if ( ! (GXutil.strcmp("", sTooltipText)==0) )
-      {
-         httpContext.writeText( " title=\"") ;
-         httpContext.writeValue( GXutil.trim( sTooltipText)) ;
-         httpContext.writeText( "\"") ;
-      }
-      if ( GXutil.len( sAccesskey) != 0 )
-      {
-         httpContext.writeText( " accesskey=\"") ;
-         httpContext.writeValue( GXutil.trim( sAccesskey)) ;
-         httpContext.writeText( "\"") ;
-      }
-      com.parks.GxWebStd.classAttribute( httpContext, sClassString);
-      com.parks.GxWebStd.styleAttribute( httpContext, sStyleString);
-      if ( nEnabled == 0 )
-      {
-         httpContext.writeText( " disabled=\"disabled\"") ;
-      }
-      /* Initialize internal JScript code according to EventNo */
-      if ( nJScriptCode == 4 )
-      {
-         sEventJsCode = sJsDynCode ;
-      }
-      else if ( nJScriptCode == 1 )
-      {
-         sEventJsCode = "gx.fn.closeWindow();" + "return false;" ;
-      }
-      else if ( nJScriptCode == 3 )
-      {
-         sEventJsCode = "gx.util.help(" + "'" + httpContext.convertURL( "Help/"+"Spanish/"+GXutil.lower( sCallerPgm)) + "');" + "return false;" ;
-      }
-      else if ( nJScriptCode == 7 )
-      {
-         sEventJsCode = "gx.evt.checkCtrlFocus(this);" + "gx.evt.execCliEvt(" + sEventName + ",this);" ;
-      }
-      else if ( nJScriptCode == 8 )
-      {
-         sEventJsCode = "gx.evt.execEvt(" + sEventName + ",this);" + "return false;" ;
-      }
-      else if ( nJScriptCode == 6 )
-      {
-         sEventJsCode = "gx.evt.execEvt(" + sEventName + ",this);" ;
-      }
-      else if ( nJScriptCode == 5 )
-      {
-         sEventJsCode = "gx.evt.execEvt(" + sEventName + ",this);" ;
-      }
-      else if ( nJScriptCode == 0 )
-      {
-         sEventJsCode = "" ;
-      }
-      else
-      {
-         sEventJsCode = "" ;
-      }
-      sEventJsCode = sJsCode + sEventJsCode ;
-      com.parks.GxWebStd.gx_on_js_event( httpContext, nJScriptCode, sEventJsCode, sUserOnClickCode);
-      httpContext.writeText( " ") ;
-      httpContext.writeText( sTags) ;
-      httpContext.writeText( httpContext.htmlEndTag( HTMLElement.INPUT)) ;
-      if ( GXutil.strcmp(sBorderStyle, "rounded") == 0 )
-      {
-         httpContext.writeText( "</span></span></span></span>") ;
-      }
-   }
-
-   public static void gx_on_js_event( HttpContext httpContext ,
-                                      int nJScriptCode ,
-                                      String sGXOnClickCode ,
-                                      String sUserOnClickCode )
-   {
-      if ( ! (GXutil.strcmp("", sUserOnClickCode)==0) )
-      {
-         if ( ! (0==nJScriptCode) )
-         {
-            httpContext.writeText( " data-gx-evt=\"") ;
-            httpContext.writeText( GXutil.trim( GXutil.str( nJScriptCode, 10, 0))) ;
-            httpContext.writeText( "\"") ;
-         }
-         else
-         {
-            httpContext.writeText( " data-gx-evt=\"") ;
-            httpContext.writeText( GXutil.trim( GXutil.str( nJScriptCode, 10, 0))) ;
-            httpContext.writeText( "\"") ;
-         }
-         if ( ( nJScriptCode == 4 ) || ( nJScriptCode == 3 ) )
-         {
-            httpContext.writeText( " data-gx-evt-code=\"") ;
-            httpContext.writeText( sGXOnClickCode) ;
-            httpContext.writeText( "\"") ;
-         }
-         httpContext.writeText( " data-gx-evt-condition=\"") ;
-         httpContext.writeText( sUserOnClickCode) ;
-         httpContext.writeText( "\"") ;
-      }
-      else
-      {
-         if ( ! (0==nJScriptCode) )
-         {
-            httpContext.writeText( " data-gx-evt=\"") ;
-            httpContext.writeText( GXutil.trim( GXutil.str( nJScriptCode, 10, 0))) ;
-            httpContext.writeText( "\"") ;
-            if ( ( nJScriptCode == 4 ) || ( nJScriptCode == 3 ) )
-            {
-               httpContext.writeText( " data-gx-evt-code=\"") ;
-               httpContext.writeText( sGXOnClickCode) ;
-               httpContext.writeText( "\"") ;
-            }
-         }
-      }
-   }
-
-   public static void gx_ctrl_attribute( HttpContext httpContext ,
-                                         String sControlName ,
-                                         String sAttName ,
-                                         String sAttValue ,
-                                         boolean bCustomEvent ,
-                                         boolean bMaskedEvent )
-   {
-      if ( bCustomEvent )
-      {
-         httpContext.writeText( " ") ;
-         httpContext.writeValue( sAttName) ;
-         httpContext.writeText( "=\"") ;
-         httpContext.writeText( "if(") ;
-         if ( ! (GXutil.strcmp("", sAttValue)==0) )
-         {
-            httpContext.writeText( "gx.evt.jsEvent(this)") ;
-            httpContext.writeText( ") {") ;
-            httpContext.writeText( sAttValue) ;
-            httpContext.writeText( "} else return false;\"") ;
-         }
-         else
-         {
-            httpContext.writeText( "!(") ;
-            httpContext.writeText( "gx.evt.jsEvent(this)") ;
-            httpContext.writeText( ")) return false;\"") ;
-         }
-      }
-      else
-      {
-         if ( ! (GXutil.strcmp("", sAttValue)==0) )
-         {
-            if ( bMaskedEvent )
-            {
-               httpContext.writeText( " data-msk-att=\"") ;
-               httpContext.writeValue( sAttName) ;
-               httpContext.writeText( "\" data-") ;
-            }
-            else
-            {
-               httpContext.writeText( " ") ;
-            }
-            httpContext.writeValue( sAttName) ;
-            httpContext.writeText( "=\"") ;
-            httpContext.writeText( sAttValue) ;
-            httpContext.writeText( "\" ") ;
-         }
-      }
-   }
-
-   public static void gx_msg_list( HttpContext httpContext ,
-                                   String sCtrlName ,
-                                   int nDisplayMode ,
-                                   String sStyleString ,
-                                   String sClassString ,
-                                   String sCmpCtx ,
-                                   String sInMaster )
-   {
-      int i;
-      httpContext.writeText( "<div>") ;
-      sClassString += " gx_ev" ;
-      if ( nDisplayMode == 1 )
-      {
-         sClassString += " ErrorViewerBullet" ;
-      }
-      httpContext.writeText( "<span") ;
-      com.parks.GxWebStd.classAttribute( httpContext, sClassString);
-      com.parks.GxWebStd.styleAttribute( httpContext, sStyleString);
-      httpContext.writeText( " data-gx-id=\""+sCmpCtx+"gxErrorViewer\"") ;
-      httpContext.writeText( ">") ;
-      if ( ! httpContext.isSpaRequest( ) )
-      {
-         i = 1 ;
-         while ( i <= httpContext.GX_msglist.getItemCount() )
-         {
-            httpContext.writeText( "<span") ;
-            com.parks.GxWebStd.classAttribute( httpContext, ((httpContext.GX_msglist.getItemType((short)(i))==1) ? "gx-error-message" : "gx-warning-message"));
-            httpContext.writeText( ">") ;
-            httpContext.writeText( WebUtils.htmlEncode( httpContext.GX_msglist.getItemText((short)(i)))) ;
-            httpContext.writeText( "</span>") ;
-            i = (int)(i+1) ;
-         }
-      }
-      httpContext.writeText( "</span>") ;
-      httpContext.writeText( "</div>") ;
    }
 
    public static void gx_combobox_ctrl( HttpContext httpContext ,
@@ -1498,88 +2175,6 @@ public final  class GxWebStd
       httpContext.writeText( "</label></span>") ;
    }
 
-   public static void gx_bitmap( HttpContext httpContext ,
-                                 String sInternalName ,
-                                 String sImageURL ,
-                                 String sLinkURL ,
-                                 String sLinkTarget ,
-                                 String sAccesskey ,
-                                 String sThemeName ,
-                                 int nVisible ,
-                                 int nEnabled ,
-                                 String sAlternateText ,
-                                 String sTooltipText ,
-                                 int nBorderWidth ,
-                                 int nAutoresize ,
-                                 int nWidth ,
-                                 String nWidthUnit ,
-                                 int nHeight ,
-                                 String nHeightUnit ,
-                                 int nVerticalSpace ,
-                                 int nHorizontalSpace ,
-                                 int nJScriptCode ,
-                                 String sUserOnClickCode ,
-                                 String sEventName ,
-                                 String sStyleString ,
-                                 String sClassString ,
-                                 String sColumnClassString ,
-                                 String sColumnHeaderClassString ,
-                                 String sAlign ,
-                                 String sInputTags ,
-                                 String sImageTags ,
-                                 String sUseMap ,
-                                 String sJsDynCode ,
-                                 int nReadOnly ,
-                                 boolean bIsBlob ,
-                                 boolean bIsAttribute ,
-                                 String sImgSrcSet ,
-                                 String sCallerPgm )
-   {
-      String ClassHTML;
-      ClassHTML = sClassString ;
-      if ( bIsAttribute && ( GXutil.len( sClassString) != 0 ) && ( GXutil.strSearch( sClassString, "Readonly", 1) != 1 ) )
-      {
-         ClassHTML = "Readonly" + sClassString ;
-      }
-      if ( ( nReadOnly == 1 ) || ( nEnabled == 0 ) )
-      {
-         com.parks.GxWebStd.gx_bitmap_readonly( httpContext, sInternalName, sImageURL, sLinkURL, sLinkTarget, sAccesskey, sThemeName, nVisible, nEnabled, sAlternateText, sTooltipText, nBorderWidth, nAutoresize, nWidth, nWidthUnit, nHeight, nHeightUnit, nVerticalSpace, nHorizontalSpace, nJScriptCode, sUserOnClickCode, sEventName, sStyleString, ClassHTML, sColumnClassString, sColumnHeaderClassString, sAlign, sImageTags, sUseMap, sJsDynCode, sCallerPgm, sImgSrcSet);
-      }
-      else
-      {
-         com.parks.GxWebStd.gx_multimedia_upload_start( httpContext, sInternalName, nVisible, nWidth, sStyleString);
-         httpContext.writeText( "<a class=\"action change-action\" gxfocusable=\"1\" href=\"\"") ;
-         httpContext.writeText( sInputTags) ;
-         httpContext.writeText( ">") ;
-         httpContext.writeText( httpContext.getMessage( "GXM_multimediachange", "")) ;
-         httpContext.writeText( "</a>") ;
-         httpContext.writeText( "<a gxfocusable=\"1\" href=\"\" class=\"action clear-action\"></a>") ;
-         httpContext.writeText( "<a target=\"_blank\">") ;
-         httpContext.writeText( "<img id=\"Object_") ;
-         httpContext.writeValue( sInternalName) ;
-         httpContext.writeText( "\"") ;
-         httpContext.writeText( " class=\"") ;
-         httpContext.writeValue( GXutil.trim( ClassHTML)) ;
-         httpContext.writeText( "\"") ;
-         httpContext.writeText( " alt=\"") ;
-         httpContext.writeValue( GXutil.trim( ((GXutil.strcmp("", sAlternateText)==0) ? sTooltipText : sAlternateText))) ;
-         httpContext.writeText( "\"") ;
-         httpContext.writeText( " src=\"") ;
-         if ( ! (GXutil.strcmp("", sImageURL)==0) )
-         {
-            httpContext.writeText( httpContext.convertURL( sImageURL)) ;
-         }
-         httpContext.writeText( "\"") ;
-         httpContext.writeText( httpContext.htmlEndTag( HTMLElement.IMG)) ;
-         httpContext.writeText( "<span class=\"") ;
-         httpContext.writeText( "gx-image-placeholder") ;
-         httpContext.writeText( "\">") ;
-         httpContext.writeText( "</span>") ;
-         httpContext.writeText( "</a>") ;
-         com.parks.GxWebStd.gx_multimedia_upload_end( httpContext, sInternalName, sImageURL, sTooltipText, nWidth, nWidthUnit, nHeight, nHeightUnit, sUserOnClickCode, sEventName, sStyleString, sClassString, "", "", sAlign, sInputTags, nReadOnly, bIsBlob, "image/*", sCallerPgm);
-      }
-   }
-
    public static void gx_bitmap_readonly( HttpContext httpContext ,
                                           String sInternalName ,
                                           String sImageURL ,
@@ -2125,508 +2720,6 @@ public final  class GxWebStd
       }
    }
 
-   public static void gx_label_ctrl( HttpContext httpContext ,
-                                     String sInternalName ,
-                                     String sCaption ,
-                                     String sLinkURL ,
-                                     String sLinkTarget ,
-                                     String sUserOnClickCode ,
-                                     String sEventName ,
-                                     String sTags ,
-                                     String sClassString ,
-                                     int nJScriptCode ,
-                                     String sTooltipText ,
-                                     int nVisible ,
-                                     int nEnabled ,
-                                     int nRTEnabled ,
-                                     short nFormat ,
-                                     String sCallerPgm )
-   {
-      String sEventJsCode;
-      String sDataLink;
-      String sStyle;
-      if ( ( nEnabled != 0 ) || ( nRTEnabled != 0 ) )
-      {
-         /* Initialize internal JScript code according to EventNo */
-         if ( nJScriptCode == 1 )
-         {
-            sEventJsCode = "gx.fn.closeWindow();" ;
-         }
-         else if ( nJScriptCode == 3 )
-         {
-            sEventJsCode = "gx.util.help(" + "'" + httpContext.convertURL( "Help/"+"Spanish/"+GXutil.lower( sCallerPgm)) + "');" ;
-         }
-         else if ( nJScriptCode == 7 )
-         {
-            sEventJsCode = "" + "gx.evt.execCliEvt(" + sEventName + ",this);" ;
-         }
-         else if ( nJScriptCode == 8 )
-         {
-            sEventJsCode = "gx.evt.execEvt(" + sEventName + ",this);" ;
-         }
-         else if ( nJScriptCode == 6 )
-         {
-            sEventJsCode = "gx.evt.execEvt(" + sEventName + ",this);" ;
-         }
-         else if ( nJScriptCode == 5 )
-         {
-            sEventJsCode = "gx.evt.execEvt(" + sEventName + ",this);" ;
-         }
-         else if ( nJScriptCode == 0 )
-         {
-            sEventJsCode = "" ;
-         }
-         else
-         {
-            sEventJsCode = "" ;
-         }
-      }
-      else
-      {
-         sEventJsCode = "" ;
-      }
-      if ( httpContext.isSpaRequest( ) )
-      {
-         httpContext.ajax_rsp_assign_prefixed_prop(sInternalName, "Caption", sCaption);
-         httpContext.ajax_rsp_assign_prefixed_prop(sInternalName, "Tooltiptext", sTooltipText);
-      }
-      sTooltipText = ((GXutil.strcmp(sTooltipText, "")==0) ? "" : " title=\""+WebUtils.htmlEncode( sTooltipText)+"\"") ;
-      String gxDataAtt = " data-gxformat=\""+GXutil.str( nFormat, 1, 0)+"\" ";
-      if ( ( nFormat == 1 ) && ( ! (GXutil.strcmp("", sEventJsCode)==0) || ! (GXutil.strcmp("", sUserOnClickCode)==0) || ! (GXutil.strcmp("", sLinkURL)==0) ) )
-      {
-         sDataLink = " data-gxlink=1 " ;
-      }
-      else
-      {
-         sDataLink = "" ;
-      }
-      if ( nEnabled == 0 )
-      {
-         sClassString += " gx-disabled" ;
-      }
-      if ( nFormat == 1 )
-      {
-         /* HTML Format */
-         sStyle = ((nVisible!=0) ? ";display:inline;" : ";display:none;") + sTags ;
-         httpContext.writeText( "<div") ;
-         com.parks.GxWebStd.classAttribute( httpContext, sClassString);
-         com.parks.GxWebStd.styleAttribute( httpContext, sStyle);
-         httpContext.writeText( " id=\""+sInternalName+"\" "+sTooltipText+gxDataAtt+sDataLink) ;
-         httpContext.writeText( ">") ;
-      }
-      else if ( nFormat != 2 )
-      {
-         if ( ( nFormat == 0 ) || ( nFormat == 2 ) )
-         {
-            gxDataAtt = "" ;
-         }
-         sStyle = ((nVisible!=0) ? "" : ";display:none;") + sTags ;
-         httpContext.writeText( "<span") ;
-         com.parks.GxWebStd.classAttribute( httpContext, sClassString);
-         com.parks.GxWebStd.styleAttribute( httpContext, sStyle);
-         httpContext.writeText( " id=\""+sInternalName+"\" "+sTooltipText+gxDataAtt+sDataLink) ;
-         httpContext.writeText( ">") ;
-      }
-      if ( ( nEnabled != 0 ) || ( nRTEnabled != 0 ) )
-      {
-         com.parks.GxWebStd.gx_start_js_anchor( httpContext, nJScriptCode, sEventJsCode, sUserOnClickCode, sLinkURL, sLinkTarget, "");
-      }
-      if ( nFormat == 0 )
-      {
-         /* Text Format */
-         httpContext.writeValueEnter( sCaption) ;
-      }
-      else
-      {
-         if ( nFormat == 3 )
-         {
-            /* Text with meaningful spaces */
-            httpContext.writeValueSpace( sCaption) ;
-         }
-         else if ( ( nFormat != 2 ) || ( nVisible != 0 ) )
-         {
-            httpContext.writeText( sCaption) ;
-         }
-      }
-      if ( ( nEnabled != 0 ) || ( nRTEnabled != 0 ) )
-      {
-         com.parks.GxWebStd.gx_end_js_anchor( httpContext, sEventJsCode, sUserOnClickCode, sLinkURL);
-      }
-      if ( nFormat == 1 )
-      {
-         httpContext.writeText( "</div>") ;
-      }
-      else if ( nFormat != 2 )
-      {
-         httpContext.writeText( "</span>") ;
-      }
-   }
-
-   public static void gx_start_js_anchor( HttpContext httpContext ,
-                                          int nJScriptCode ,
-                                          String sGXOnClickCode ,
-                                          String sUserOnClickCode ,
-                                          String sLinkURL ,
-                                          String sLinkTarget ,
-                                          String sClassString )
-   {
-      if ( ! (GXutil.strcmp("", sUserOnClickCode)==0) )
-      {
-         if ( ! (0==nJScriptCode) )
-         {
-            httpContext.writeText( "<a href=\"#\" data-gx-evt=\"") ;
-            httpContext.writeText( GXutil.trim( GXutil.str( nJScriptCode, 10, 0))) ;
-            httpContext.writeText( "\"") ;
-         }
-         else
-         {
-            httpContext.writeText( "<a href=\"#\" data-gx-evt=\"") ;
-            httpContext.writeText( GXutil.trim( GXutil.str( nJScriptCode, 10, 0))) ;
-            httpContext.writeText( "\"") ;
-         }
-         if ( ( nJScriptCode == 4 ) || ( nJScriptCode == 3 ) )
-         {
-            httpContext.writeText( " data-gx-evt-code=\"") ;
-            httpContext.writeText( sGXOnClickCode) ;
-            httpContext.writeText( "\"") ;
-         }
-         if ( ! (GXutil.strcmp("", sClassString)==0) )
-         {
-            httpContext.writeText( " class=\"") ;
-            httpContext.writeText( sClassString) ;
-            httpContext.writeText( "\"") ;
-         }
-         httpContext.writeText( " data-gx-evt-condition=\"") ;
-         httpContext.writeText( sUserOnClickCode) ;
-         httpContext.writeText( "\"") ;
-         httpContext.writeText( ">") ;
-      }
-      else
-      {
-         if ( ! (0==nJScriptCode) )
-         {
-            httpContext.writeText( "<a href=\"#\" data-gx-evt=\"") ;
-            httpContext.writeText( GXutil.trim( GXutil.str( nJScriptCode, 10, 0))) ;
-            httpContext.writeText( "\"") ;
-            if ( ( nJScriptCode == 4 ) || ( nJScriptCode == 3 ) )
-            {
-               httpContext.writeText( " data-gx-evt-code=\"") ;
-               httpContext.writeText( sGXOnClickCode) ;
-               httpContext.writeText( "\"") ;
-            }
-            if ( ! (GXutil.strcmp("", sClassString)==0) )
-            {
-               httpContext.writeText( " class=\"") ;
-               httpContext.writeText( sClassString) ;
-               httpContext.writeText( "\"") ;
-            }
-            httpContext.writeText( ">") ;
-         }
-         else
-         {
-            com.parks.GxWebStd.gx_link_start( httpContext, sLinkURL, sLinkTarget, sClassString);
-         }
-      }
-   }
-
-   public static void gx_end_js_anchor( HttpContext httpContext ,
-                                        String sGXOnClickCode ,
-                                        String sUserOnClickCode ,
-                                        String sLinkURL )
-   {
-      if ( ! ( (GXutil.strcmp("", sGXOnClickCode)==0) && (GXutil.strcmp("", sUserOnClickCode)==0) ) )
-      {
-         httpContext.writeText( "</a>") ;
-      }
-      else
-      {
-         com.parks.GxWebStd.gx_link_end( httpContext, sLinkURL);
-      }
-   }
-
-   public static void gx_label_element( HttpContext httpContext ,
-                                        String sReferencedControl ,
-                                        String sLabelCaption ,
-                                        String sLabelClass ,
-                                        int nLabelPosition ,
-                                        boolean bDataAttSupported ,
-                                        String sExtraStyle )
-   {
-      if ( (GXutil.strcmp("", sReferencedControl)==0) )
-      {
-         httpContext.writeText( "<span ") ;
-      }
-      else
-      {
-         httpContext.writeText( "<label ") ;
-      }
-      httpContext.writeText( " class=\"gx-label ") ;
-      httpContext.writeText( sLabelClass) ;
-      httpContext.writeText( " control-label") ;
-      if ( ( nLabelPosition == 0 ) && ! bDataAttSupported )
-      {
-         httpContext.writeText( " gx-sr-only ") ;
-      }
-      httpContext.writeText( "\"") ;
-      if ( ! (GXutil.strcmp("", sReferencedControl)==0) )
-      {
-         httpContext.writeText( " for=\"") ;
-         httpContext.writeText( sReferencedControl) ;
-         httpContext.writeText( "\"") ;
-      }
-      if ( ( nLabelPosition == 0 ) && bDataAttSupported )
-      {
-         httpContext.writeTextNL( " data-gx-sr-only ") ;
-      }
-      if ( ! (GXutil.strcmp("", sExtraStyle)==0) )
-      {
-         com.parks.GxWebStd.styleAttribute( httpContext, GXutil.CssPrettify( sExtraStyle));
-      }
-      httpContext.writeText( ">") ;
-      httpContext.writeText( sLabelCaption) ;
-      if ( (GXutil.strcmp("", sReferencedControl)==0) )
-      {
-         httpContext.writeText( "</span>") ;
-      }
-      else
-      {
-         httpContext.writeText( "</label>") ;
-      }
-   }
-
-   public static boolean gx_redirect( HttpContext httpContext )
-   {
-      if ( httpContext.willRedirect( ) )
-      {
-         httpContext.redirect( httpContext.wjLoc );
-         httpContext.dispatchAjaxCommands();
-         return true ;
-      }
-      else if ( httpContext.nUserReturn == 1 )
-      {
-         if ( httpContext.isAjaxRequest( ) )
-         {
-            httpContext.ajax_rsp_command_close();
-            httpContext.dispatchAjaxCommands();
-         }
-         else
-         {
-            if ( (GXutil.strcmp("", httpContext.getReferer( ))==0) || httpContext.isLocalStorageSupported( ) )
-            {
-               httpContext.setStream();
-               if ( httpContext.isSpaRequest( true) )
-               {
-                  httpContext.setHeader("X-SPA-RETURN", httpContext.getWebReturnParmsJS( ));
-                  httpContext.setHeader("X-SPA-RETURN-MD", httpContext.getWebReturnParmsMetadataJS( ));
-               }
-               else
-               {
-                  httpContext.writeText( httpContext.htmlDocType( )) ;
-                  httpContext.writeText( "<html><head><meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\"><title>Close window</title>") ;
-                  httpContext.AddJavascriptSource("jquery.js", "?"+httpContext.getBuildNumber( 75940), false, true);
-                  httpContext.AddJavascriptSource("gxgral.js", "?"+httpContext.getBuildNumber( 75940), false, true);
-                  httpContext.writeText( "</head><body><script type=\"text/javascript\">") ;
-                  httpContext.writeText( "gx.fn.closeWindowServerScript(") ;
-                  httpContext.writeText( httpContext.getWebReturnParmsJS( )) ;
-                  httpContext.writeText( ", ") ;
-                  httpContext.writeText( httpContext.getWebReturnParmsMetadataJS( )) ;
-                  if ( httpContext.isLocalStorageSupported( ) )
-                  {
-                     httpContext.writeText( ", true") ;
-                  }
-                  else
-                  {
-                     httpContext.writeText( ", false") ;
-                  }
-                  httpContext.writeText( ");</script></body></html>") ;
-               }
-            }
-            else
-            {
-               httpContext.redirect( httpContext.getReferer( ) );
-               httpContext.windowClosed();
-            }
-         }
-         return true ;
-      }
-      else
-      {
-         return false ;
-      }
-   }
-
-   public static void gx_table_start( HttpContext httpContext ,
-                                      String sCtrlName ,
-                                      String sHTMLid ,
-                                      String sHTMLTags ,
-                                      String sClassString ,
-                                      int nBorder ,
-                                      String sAlign ,
-                                      String sTooltiptext ,
-                                      int nCellpadding ,
-                                      int nCellspacing ,
-                                      String sStyleString ,
-                                      String sRules ,
-                                      String sCaption ,
-                                      int nParentIsFreeStyle )
-   {
-      if ( httpContext.isSpaRequest( ) )
-      {
-         httpContext.ajax_rsp_assign_prefixed_prop(sCtrlName, "Tooltiptext", sTooltiptext);
-      }
-      httpContext.writeText( "<table") ;
-      if ( ! (GXutil.strcmp("", sCtrlName)==0) )
-      {
-         httpContext.writeText( " id=\""+sHTMLid+"\"") ;
-      }
-      if ( ! (GXutil.strcmp("", sHTMLTags)==0) )
-      {
-         httpContext.writeText( sHTMLTags) ;
-      }
-      if ( GXutil.strcmp(sAlign, "") != 0 )
-      {
-         if ( GXutil.strcmp(sAlign, "left") == 0 )
-         {
-            sStyleString = "margin-right:auto;" + sStyleString ;
-         }
-         else
-         {
-            if ( GXutil.strcmp(sAlign, "center") == 0 )
-            {
-               sStyleString = "margin-left:auto; margin-right: auto;" + sStyleString ;
-            }
-            else
-            {
-               if ( GXutil.strcmp(sAlign, "right") == 0 )
-               {
-                  sStyleString = "margin-left:auto;" + sStyleString ;
-               }
-            }
-         }
-      }
-      com.parks.GxWebStd.classAttribute( httpContext, sClassString);
-      if ( ! (0==nBorder) )
-      {
-         httpContext.writeText( " border=\"") ;
-         httpContext.writeText( GXutil.str( nBorder, 3, 0)) ;
-         httpContext.writeText( "\"") ;
-      }
-      httpContext.writeText( " data-cellpadding=\"") ;
-      httpContext.writeText( GXutil.ltrimstr( DecimalUtil.doubleToDec(nCellpadding), 10, 0)) ;
-      httpContext.writeText( "\"") ;
-      httpContext.writeText( " data-cellspacing=\"") ;
-      httpContext.writeText( GXutil.ltrim( GXutil.ltrimstr( DecimalUtil.doubleToDec(nCellspacing), 5, 0))) ;
-      httpContext.writeText( "\"") ;
-      if ( ( GXutil.strcmp(sRules, "") != 0 ) && ( GXutil.strcmp(sRules, "none") != 0 ) )
-      {
-         httpContext.writeText( " rules=\"") ;
-         httpContext.writeText( sRules) ;
-         httpContext.writeText( "\"") ;
-      }
-      if ( GXutil.strcmp(sTooltiptext, "") != 0 )
-      {
-         httpContext.writeText( " title=\"") ;
-         httpContext.writeValue( GXutil.trim( sTooltiptext)) ;
-         httpContext.writeText( "\"") ;
-      }
-      if ( nParentIsFreeStyle == 0 )
-      {
-         com.parks.GxWebStd.styleAttribute( httpContext, sStyleString);
-      }
-      httpContext.writeText( ">") ;
-      if ( GXutil.strcmp(sCaption, "") != 0 )
-      {
-         httpContext.writeText( "<caption>"+sCaption+"</caption>") ;
-      }
-   }
-
-   public static void gx_html_headers( HttpContext httpContext ,
-                                       int nContentType ,
-                                       String sCacheCtrl ,
-                                       String sCacheExp ,
-                                       com.genexus.webpanels.HTMLChoice rMeta ,
-                                       com.genexus.webpanels.HTMLChoice rMetaequiv ,
-                                       boolean bIsRwd )
-   {
-      byte wbTemp;
-      byte idxLst;
-      boolean addContentType;
-      com.parks.GxWebStd.set_html_headers( httpContext, nContentType, sCacheCtrl, sCacheExp);
-      httpContext.setStream();
-      if ( nContentType == 0 )
-      {
-         httpContext.writeTextNL( httpContext.htmlDocType( )) ;
-         httpContext.writeTextNL( "<html lang=\"es\""+">") ;
-         httpContext.writeTextNL( "<head>") ;
-         if ( bIsRwd )
-         {
-            GXWebForm.addResponsiveMetaHeaders(rMeta);
-         }
-         idxLst = (byte)(1) ;
-         while ( idxLst <= rMeta.getItemCount() )
-         {
-            httpContext.writeText( "<meta name=\""+GXutil.rtrim( rMeta.getItemValue(idxLst))+"\" content=\"") ;
-            httpContext.writeValue( GXutil.rtrim( rMeta.getItemText(idxLst))) ;
-            httpContext.writeTextNL( "\""+httpContext.htmlEndTag( HTMLElement.META)) ;
-            idxLst = (byte)(idxLst+1) ;
-         }
-         httpContext.writeTextNL( "<!--[if IE]><meta http-equiv=\"page-enter\" content=\"blendTrans(Duration=0.1)\""+httpContext.htmlEndTag( HTMLElement.META)+"<![endif]-->") ;
-         httpContext.writeTextNL( "<meta name=\"fragment\" content=\"!\""+httpContext.htmlEndTag( HTMLElement.META)) ;
-         idxLst = (byte)(1) ;
-         addContentType = true ;
-         while ( idxLst <= rMetaequiv.getItemCount() )
-         {
-            if ( GXutil.strcmp(GXutil.lower( rMetaequiv.getItemValue(idxLst)), "content-type") == 0 )
-            {
-               addContentType = false ;
-               wbTemp = httpContext.setContentType( rMetaequiv.getItemText(idxLst)) ;
-            }
-            idxLst = (byte)(idxLst+1) ;
-         }
-         if ( addContentType )
-         {
-            httpContext.writeTextNL( "<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\""+httpContext.htmlEndTag( HTMLElement.META)) ;
-         }
-         idxLst = (byte)(1) ;
-         while ( idxLst <= rMetaequiv.getItemCount() )
-         {
-            httpContext.writeText( "<meta http-equiv=\""+GXutil.rtrim( rMetaequiv.getItemValue(idxLst))+"\" content=\"") ;
-            httpContext.writeValue( GXutil.rtrim( rMetaequiv.getItemText(idxLst))) ;
-            httpContext.writeTextNL( "\""+httpContext.htmlEndTag( HTMLElement.META)) ;
-            idxLst = (byte)(idxLst+1) ;
-         }
-      }
-   }
-
-   public static void set_html_headers( HttpContext httpContext ,
-                                        int nContentType ,
-                                        String sCacheCtrl ,
-                                        String sCacheExp )
-   {
-      byte wbTemp;
-      if ( nContentType != 1 )
-      {
-         if ( httpContext.isAjaxRequest( ) && ! httpContext.isMultipartContent( ) )
-         {
-            wbTemp = httpContext.setContentType( "application/json") ;
-         }
-         else
-         {
-            wbTemp = httpContext.setContentType( "text/html") ;
-         }
-      }
-      if ( (GXutil.strcmp("", sCacheCtrl)==0) )
-      {
-         wbTemp = httpContext.setHeader( "pragma", "no-cache") ;
-         wbTemp = httpContext.setHeader( "Cache-Control", "no-store") ;
-      }
-      else
-      {
-         wbTemp = httpContext.setHeader( "Cache-Control", sCacheCtrl) ;
-         wbTemp = httpContext.setHeader( "Cache-Control", sCacheExp) ;
-      }
-   }
-
    public static void gx_html_textarea( HttpContext httpContext ,
                                         String sCtrlName ,
                                         String sValue ,
@@ -2874,88 +2967,6 @@ public final  class GxWebStd
       httpContext.writeText( "</legend>") ;
    }
 
-   public static void gx_div_start( HttpContext httpContext ,
-                                    String sInternalName ,
-                                    int nVisible ,
-                                    int nWidth ,
-                                    String sWidthUnit ,
-                                    int nHeight ,
-                                    String sHeightUnit ,
-                                    String sClassString ,
-                                    String sAlign ,
-                                    String sVAlign ,
-                                    String sTags ,
-                                    String sExtraStyle ,
-                                    String sHtmlTag )
-   {
-      String sOStyle;
-      boolean bHAlignedVar;
-      boolean bVAlignedVar;
-      bHAlignedVar = (boolean)(!(GXutil.strcmp("", sAlign)==0)&&(GXutil.strcmp(GXutil.lower( sAlign), "left")!=0)) ;
-      bVAlignedVar = (boolean)(!(GXutil.strcmp("", sVAlign)==0)&&(GXutil.strcmp(GXutil.lower( sVAlign), "top")!=0)) ;
-      httpContext.writeText( "<"+sHtmlTag+" ") ;
-      if ( ! (GXutil.strcmp("", sInternalName)==0) )
-      {
-         httpContext.writeText( "id=\""+sInternalName+"\" ") ;
-      }
-      com.parks.GxWebStd.classAttribute( httpContext, sClassString);
-      sOStyle = "" ;
-      if ( nVisible == 0 )
-      {
-         sOStyle = "display:none;" ;
-      }
-      if ( ! (0==nWidth) )
-      {
-         sOStyle += " width:" + GXutil.ltrimstr( DecimalUtil.doubleToDec(nWidth), 10, 0) + sWidthUnit + ";" ;
-      }
-      if ( ! (0==nHeight) )
-      {
-         sOStyle += " height:" + GXutil.ltrimstr( DecimalUtil.doubleToDec(nHeight), 10, 0) + sHeightUnit + ";" ;
-      }
-      if ( ! (GXutil.strcmp("", sExtraStyle)==0) )
-      {
-         sOStyle += GXutil.CssPrettify( sExtraStyle+";") ;
-      }
-      com.parks.GxWebStd.styleAttribute( httpContext, sOStyle);
-      if ( ! (GXutil.strcmp("", sTags)==0) )
-      {
-         httpContext.writeText( sTags) ;
-      }
-      if ( bHAlignedVar )
-      {
-         httpContext.writeText( " data-align=\"") ;
-         httpContext.writeText( GXutil.lower( sAlign)) ;
-         httpContext.writeText( "\"") ;
-      }
-      if ( bVAlignedVar )
-      {
-         httpContext.writeText( " data-valign=\"") ;
-         httpContext.writeText( GXutil.lower( sVAlign)) ;
-         httpContext.writeText( "\"") ;
-      }
-      httpContext.writeText( ">") ;
-      if ( bHAlignedVar || bVAlignedVar )
-      {
-         httpContext.writeText( "<div data-align-outer=\"\"><div data-align-inner=\"\">") ;
-      }
-   }
-
-   public static void gx_div_end( HttpContext httpContext ,
-                                  String sAlign ,
-                                  String sVAlign ,
-                                  String sHtmlTag )
-   {
-      boolean bHAlignedVar;
-      boolean bVAlignedVar;
-      bHAlignedVar = (boolean)(!(GXutil.strcmp("", sAlign)==0)&&(GXutil.strcmp(GXutil.lower( sAlign), "left")!=0)) ;
-      bVAlignedVar = (boolean)(!(GXutil.strcmp("", sVAlign)==0)&&(GXutil.strcmp(GXutil.lower( sVAlign), "top")!=0)) ;
-      if ( bHAlignedVar || bVAlignedVar )
-      {
-         httpContext.writeText( "</div></div>") ;
-      }
-      httpContext.writeText( "</"+sHtmlTag+">") ;
-   }
-
    public static void gx_embedded_page( HttpContext httpContext ,
                                         String sInternalName ,
                                         String sSrc ,
@@ -3057,17 +3068,6 @@ public final  class GxWebStd
       {
          httpContext.writeText( " style=\"") ;
          httpContext.writeValue( GXutil.ltrim( GXutil.CssPrettify( sStyle))) ;
-         httpContext.writeText( "\" ") ;
-      }
-   }
-
-   public static void classAttribute( HttpContext httpContext ,
-                                      String sClass )
-   {
-      if ( ! (GXutil.strcmp("", sClass)==0) )
-      {
-         httpContext.writeText( " class=\"") ;
-         httpContext.writeValue( GXutil.ltrim( sClass)) ;
          httpContext.writeText( "\" ") ;
       }
    }

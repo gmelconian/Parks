@@ -21,8 +21,12 @@ public final  class aamusementparkslist_impl extends GXWebReport
       }
       GXKey = httpContext.decrypt64( httpContext.getCookie( "GX_SESSION_ID"), context.getServerKey( )) ;
       entryPointCalled = false ;
-      gxfirstwebparm = httpContext.GetNextPar( ) ;
+      gxfirstwebparm = httpContext.GetFirstPar( "CountryId") ;
       toggleJsOutput = httpContext.isJsOutputEnabled( ) ;
+      if ( ! entryPointCalled )
+      {
+         AV8CountryId = (short)(GXutil.lval( gxfirstwebparm)) ;
+      }
       if ( toggleJsOutput )
       {
       }
@@ -98,6 +102,62 @@ public final  class aamusementparkslist_impl extends GXWebReport
             pr_default.readNext(0);
          }
          pr_default.close(0);
+         /* Using cursor P000E3 */
+         pr_default.execute(1);
+         while ( (pr_default.getStatus(1) != 101) )
+         {
+            A12CountryId = P000E3_A12CountryId[0] ;
+            A40000AmusementParkPhoto_GXI = P000E3_A40000AmusementParkPhoto_GXI[0] ;
+            A13CountryName = P000E3_A13CountryName[0] ;
+            A11AmusementParkPhoto = P000E3_A11AmusementParkPhoto[0] ;
+            A8AmusementParkName = P000E3_A8AmusementParkName[0] ;
+            A7AmusementParkId = P000E3_A7AmusementParkId[0] ;
+            A10AmusementParkAddress = P000E3_A10AmusementParkAddress[0] ;
+            A13CountryName = P000E3_A13CountryName[0] ;
+            h0E0( false, 100) ;
+            getPrinter().GxAttris("Microsoft Sans Serif", 8, false, false, false, false, 0, 0, 0, 0, 0, 255, 255, 255) ;
+            getPrinter().GxDrawText(GXutil.ltrim( localUtil.format( DecimalUtil.doubleToDec(A7AmusementParkId), "ZZZ9")), 58, Gx_line+33, 84, Gx_line+48, 2+256, 0, 0, 0) ;
+            getPrinter().GxDrawText(GXutil.rtrim( localUtil.format( A8AmusementParkName, "")), 233, Gx_line+33, 358, Gx_line+48, 0, 0, 0, 0) ;
+            sImgUrl = ((GXutil.strcmp("", A11AmusementParkPhoto)==0) ? A40000AmusementParkPhoto_GXI : A11AmusementParkPhoto) ;
+            getPrinter().GxDrawBitMap(sImgUrl, 692, Gx_line+17, 809, Gx_line+84) ;
+            getPrinter().GxDrawText(GXutil.rtrim( localUtil.format( A13CountryName, "")), 500, Gx_line+33, 608, Gx_line+48, 0, 0, 0, 0) ;
+            Gx_OldLine = Gx_line ;
+            Gx_line = (int)(Gx_line+100) ;
+            pr_default.readNext(1);
+         }
+         pr_default.close(1);
+         /* Using cursor P000E4 */
+         pr_default.execute(2);
+         while ( (pr_default.getStatus(2) != 101) )
+         {
+            A12CountryId = P000E4_A12CountryId[0] ;
+            A19CategoryId = P000E4_A19CategoryId[0] ;
+            n19CategoryId = P000E4_n19CategoryId[0] ;
+            A40000AmusementParkPhoto_GXI = P000E4_A40000AmusementParkPhoto_GXI[0] ;
+            A11AmusementParkPhoto = P000E4_A11AmusementParkPhoto[0] ;
+            A8AmusementParkName = P000E4_A8AmusementParkName[0] ;
+            A7AmusementParkId = P000E4_A7AmusementParkId[0] ;
+            A20CategoryName = P000E4_A20CategoryName[0] ;
+            A13CountryName = P000E4_A13CountryName[0] ;
+            A17GameId = P000E4_A17GameId[0] ;
+            A20CategoryName = P000E4_A20CategoryName[0] ;
+            A12CountryId = P000E4_A12CountryId[0] ;
+            A40000AmusementParkPhoto_GXI = P000E4_A40000AmusementParkPhoto_GXI[0] ;
+            A11AmusementParkPhoto = P000E4_A11AmusementParkPhoto[0] ;
+            A8AmusementParkName = P000E4_A8AmusementParkName[0] ;
+            A13CountryName = P000E4_A13CountryName[0] ;
+            h0E0( false, 100) ;
+            getPrinter().GxAttris("Microsoft Sans Serif", 8, false, false, false, false, 0, 0, 0, 0, 0, 255, 255, 255) ;
+            getPrinter().GxDrawText(GXutil.ltrim( localUtil.format( DecimalUtil.doubleToDec(A7AmusementParkId), "ZZZ9")), 58, Gx_line+33, 84, Gx_line+48, 2+256, 0, 0, 0) ;
+            getPrinter().GxDrawText(GXutil.rtrim( localUtil.format( A8AmusementParkName, "")), 233, Gx_line+33, 358, Gx_line+48, 0, 0, 0, 0) ;
+            sImgUrl = ((GXutil.strcmp("", A11AmusementParkPhoto)==0) ? A40000AmusementParkPhoto_GXI : A11AmusementParkPhoto) ;
+            getPrinter().GxDrawBitMap(sImgUrl, 692, Gx_line+17, 809, Gx_line+84) ;
+            getPrinter().GxDrawText(GXutil.rtrim( localUtil.format( A13CountryName, "")), 500, Gx_line+33, 608, Gx_line+48, 0, 0, 0, 0) ;
+            Gx_OldLine = Gx_line ;
+            Gx_line = (int)(Gx_line+100) ;
+            pr_default.readNext(2);
+         }
+         pr_default.close(2);
          /* Print footer for last page */
          ToSkip = (int)(P_lines+1) ;
          h0E0( true, 0) ;
@@ -222,10 +282,35 @@ public final  class aamusementparkslist_impl extends GXWebReport
       A11AmusementParkPhoto = "" ;
       A8AmusementParkName = "" ;
       sImgUrl = "" ;
+      P000E3_A12CountryId = new short[1] ;
+      P000E3_A40000AmusementParkPhoto_GXI = new String[] {""} ;
+      P000E3_A13CountryName = new String[] {""} ;
+      P000E3_A11AmusementParkPhoto = new String[] {""} ;
+      P000E3_A8AmusementParkName = new String[] {""} ;
+      P000E3_A7AmusementParkId = new short[1] ;
+      P000E3_A10AmusementParkAddress = new String[] {""} ;
+      A10AmusementParkAddress = "" ;
+      P000E4_A12CountryId = new short[1] ;
+      P000E4_A19CategoryId = new short[1] ;
+      P000E4_n19CategoryId = new boolean[] {false} ;
+      P000E4_A40000AmusementParkPhoto_GXI = new String[] {""} ;
+      P000E4_A11AmusementParkPhoto = new String[] {""} ;
+      P000E4_A8AmusementParkName = new String[] {""} ;
+      P000E4_A7AmusementParkId = new short[1] ;
+      P000E4_A20CategoryName = new String[] {""} ;
+      P000E4_A13CountryName = new String[] {""} ;
+      P000E4_A17GameId = new short[1] ;
+      A20CategoryName = "" ;
       pr_default = new DataStoreProvider(context, remoteHandle, new com.parks.aamusementparkslist__default(),
          new Object[] {
              new Object[] {
             P000E2_A12CountryId, P000E2_A13CountryName, P000E2_A40000AmusementParkPhoto_GXI, P000E2_A11AmusementParkPhoto, P000E2_A8AmusementParkName, P000E2_A7AmusementParkId
+            }
+            , new Object[] {
+            P000E3_A12CountryId, P000E3_A40000AmusementParkPhoto_GXI, P000E3_A13CountryName, P000E3_A11AmusementParkPhoto, P000E3_A8AmusementParkName, P000E3_A7AmusementParkId, P000E3_A10AmusementParkAddress
+            }
+            , new Object[] {
+            P000E4_A12CountryId, P000E4_A19CategoryId, P000E4_n19CategoryId, P000E4_A40000AmusementParkPhoto_GXI, P000E4_A11AmusementParkPhoto, P000E4_A8AmusementParkName, P000E4_A7AmusementParkId, P000E4_A20CategoryName, P000E4_A13CountryName, P000E4_A17GameId
             }
          }
       );
@@ -235,8 +320,11 @@ public final  class aamusementparkslist_impl extends GXWebReport
    }
 
    private short gxcookieaux ;
+   private short AV8CountryId ;
    private short A12CountryId ;
    private short A7AmusementParkId ;
+   private short A19CategoryId ;
+   private short A17GameId ;
    private short Gx_err ;
    private int M_top ;
    private int M_bot ;
@@ -250,9 +338,12 @@ public final  class aamusementparkslist_impl extends GXWebReport
    private String A13CountryName ;
    private String A8AmusementParkName ;
    private String sImgUrl ;
+   private String A20CategoryName ;
    private boolean entryPointCalled ;
    private boolean toggleJsOutput ;
+   private boolean n19CategoryId ;
    private String A40000AmusementParkPhoto_GXI ;
+   private String A10AmusementParkAddress ;
    private String A11AmusementParkPhoto ;
    private IDataStoreProvider pr_default ;
    private short[] P000E2_A12CountryId ;
@@ -261,6 +352,23 @@ public final  class aamusementparkslist_impl extends GXWebReport
    private String[] P000E2_A11AmusementParkPhoto ;
    private String[] P000E2_A8AmusementParkName ;
    private short[] P000E2_A7AmusementParkId ;
+   private short[] P000E3_A12CountryId ;
+   private String[] P000E3_A40000AmusementParkPhoto_GXI ;
+   private String[] P000E3_A13CountryName ;
+   private String[] P000E3_A11AmusementParkPhoto ;
+   private String[] P000E3_A8AmusementParkName ;
+   private short[] P000E3_A7AmusementParkId ;
+   private String[] P000E3_A10AmusementParkAddress ;
+   private short[] P000E4_A12CountryId ;
+   private short[] P000E4_A19CategoryId ;
+   private boolean[] P000E4_n19CategoryId ;
+   private String[] P000E4_A40000AmusementParkPhoto_GXI ;
+   private String[] P000E4_A11AmusementParkPhoto ;
+   private String[] P000E4_A8AmusementParkName ;
+   private short[] P000E4_A7AmusementParkId ;
+   private String[] P000E4_A20CategoryName ;
+   private String[] P000E4_A13CountryName ;
+   private short[] P000E4_A17GameId ;
 }
 
 final  class aamusementparkslist__default extends DataStoreHelperBase implements ILocalDataStoreHelper
@@ -269,6 +377,8 @@ final  class aamusementparkslist__default extends DataStoreHelperBase implements
    {
       return new Cursor[] {
           new ForEachCursor("P000E2", "SELECT T1.`CountryId`, T2.`CountryName`, T1.`AmusementParkPhoto_GXI`, T1.`AmusementParkPhoto`, T1.`AmusementParkName`, T1.`AmusementParkId` FROM (`AmusementPark` T1 INNER JOIN `Country` T2 ON T2.`CountryId` = T1.`CountryId`) WHERE T2.`CountryName` = 'Uruguay' ORDER BY T2.`CountryName` ",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100, GxCacheFrequency.OFF,false )
+         ,new ForEachCursor("P000E3", "SELECT T1.`CountryId`, T1.`AmusementParkPhoto_GXI`, T2.`CountryName`, T1.`AmusementParkPhoto`, T1.`AmusementParkName`, T1.`AmusementParkId`, T1.`AmusementParkAddress` FROM (`AmusementPark` T1 INNER JOIN `Country` T2 ON T2.`CountryId` = T1.`CountryId`) ORDER BY T1.`AmusementParkAddress` ",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100, GxCacheFrequency.OFF,false )
+         ,new ForEachCursor("P000E4", "SELECT T3.`CountryId`, T1.`CategoryId`, T3.`AmusementParkPhoto_GXI`, T3.`AmusementParkPhoto`, T3.`AmusementParkName`, T1.`AmusementParkId`, T2.`CategoryName`, T4.`CountryName`, T1.`GameId` FROM (((`Game` T1 LEFT JOIN `Category` T2 ON T2.`CategoryId` = T1.`CategoryId`) INNER JOIN `AmusementPark` T3 ON T3.`AmusementParkId` = T1.`AmusementParkId`) INNER JOIN `Country` T4 ON T4.`CountryId` = T3.`CountryId`) ORDER BY T4.`CountryName`, T2.`CategoryName` ",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100, GxCacheFrequency.OFF,false )
       };
    }
 
@@ -285,6 +395,27 @@ final  class aamusementparkslist__default extends DataStoreHelperBase implements
                ((String[]) buf[3])[0] = rslt.getMultimediaFile(4, rslt.getVarchar(3));
                ((String[]) buf[4])[0] = rslt.getString(5, 50);
                ((short[]) buf[5])[0] = rslt.getShort(6);
+               return;
+            case 1 :
+               ((short[]) buf[0])[0] = rslt.getShort(1);
+               ((String[]) buf[1])[0] = rslt.getMultimediaUri(2);
+               ((String[]) buf[2])[0] = rslt.getString(3, 50);
+               ((String[]) buf[3])[0] = rslt.getMultimediaFile(4, rslt.getVarchar(2));
+               ((String[]) buf[4])[0] = rslt.getString(5, 50);
+               ((short[]) buf[5])[0] = rslt.getShort(6);
+               ((String[]) buf[6])[0] = rslt.getVarchar(7);
+               return;
+            case 2 :
+               ((short[]) buf[0])[0] = rslt.getShort(1);
+               ((short[]) buf[1])[0] = rslt.getShort(2);
+               ((boolean[]) buf[2])[0] = rslt.wasNull();
+               ((String[]) buf[3])[0] = rslt.getMultimediaUri(3);
+               ((String[]) buf[4])[0] = rslt.getMultimediaFile(4, rslt.getVarchar(3));
+               ((String[]) buf[5])[0] = rslt.getString(5, 50);
+               ((short[]) buf[6])[0] = rslt.getShort(6);
+               ((String[]) buf[7])[0] = rslt.getString(7, 50);
+               ((String[]) buf[8])[0] = rslt.getString(8, 50);
+               ((short[]) buf[9])[0] = rslt.getShort(9);
                return;
       }
    }

@@ -214,7 +214,7 @@ public final  class repairgeneral_impl extends GXWebComponent
       }
       httpContext.AddJavascriptSource("jquery.js", "?"+httpContext.getBuildNumber( 75940), false, true);
       httpContext.AddJavascriptSource("gxgral.js", "?"+httpContext.getBuildNumber( 75940), false, true);
-      httpContext.AddJavascriptSource("gxcfg.js", "?20211071155577", false, true);
+      httpContext.AddJavascriptSource("gxcfg.js", "?2021102014432032", false, true);
       if ( httpContext.isSpaRequest( ) )
       {
          httpContext.enableOutput();
@@ -1409,7 +1409,7 @@ public final  class repairgeneral_impl extends GXWebComponent
       idxLst = 1 ;
       while ( idxLst <= Form.getJscriptsrc().getCount() )
       {
-         httpContext.AddJavascriptSource(GXutil.rtrim( Form.getJscriptsrc().item(idxLst)), "?20211071155657", true, true);
+         httpContext.AddJavascriptSource(GXutil.rtrim( Form.getJscriptsrc().item(idxLst)), "?202110201443218", true, true);
          idxLst = (int)(idxLst+1) ;
       }
       if ( ! outputEnabled )
@@ -1424,7 +1424,7 @@ public final  class repairgeneral_impl extends GXWebComponent
 
    public void include_jscripts( )
    {
-      httpContext.AddJavascriptSource("repairgeneral.js", "?20211071155657", false, true);
+      httpContext.AddJavascriptSource("repairgeneral.js", "?202110201443218", false, true);
       /* End function include_jscripts */
    }
 

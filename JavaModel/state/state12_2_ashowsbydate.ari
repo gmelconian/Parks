@@ -24,7 +24,7 @@ ij_main_object(ashowsbydate,'Shows By Date','','""','HTTP',default).
  
  
  
-ij_object_dependency(ashowsbydate,[ ashowsbydate__default ],[ ashowsbydate_impl ],[ 'GxWebStd' ],33).
+ij_object_dependency(ashowsbydate,[],[ ashowsbydate_impl ],[ 'GxWebStd' ],33).
  
  
  

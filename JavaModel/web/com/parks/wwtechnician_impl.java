@@ -210,7 +210,7 @@ public final  class wwtechnician_impl extends GXDataArea
       }
       httpContext.AddJavascriptSource("jquery.js", "?"+httpContext.getBuildNumber( 75940), false, true);
       httpContext.AddJavascriptSource("gxgral.js", "?"+httpContext.getBuildNumber( 75940), false, true);
-      httpContext.AddJavascriptSource("gxcfg.js", "?20211071155915", false, true);
+      httpContext.AddJavascriptSource("gxcfg.js", "?2021102014432699", false, true);
       if ( httpContext.isSpaRequest( ) )
       {
          httpContext.enableOutput();
@@ -1340,7 +1340,7 @@ public final  class wwtechnician_impl extends GXDataArea
       idxLst = 1 ;
       while ( idxLst <= Form.getJscriptsrc().getCount() )
       {
-         httpContext.AddJavascriptSource(GXutil.rtrim( Form.getJscriptsrc().item(idxLst)), "?20211071155959", true, true);
+         httpContext.AddJavascriptSource(GXutil.rtrim( Form.getJscriptsrc().item(idxLst)), "?2021102014432745", true, true);
          idxLst = (int)(idxLst+1) ;
       }
       if ( ! outputEnabled )
@@ -1358,7 +1358,7 @@ public final  class wwtechnician_impl extends GXDataArea
       if ( nGXWrapped != 1 )
       {
          httpContext.AddJavascriptSource("messages.spa.js", "?"+httpContext.getCacheInvalidationToken( ), false, true);
-         httpContext.AddJavascriptSource("wwtechnician.js", "?20211071155959", false, true);
+         httpContext.AddJavascriptSource("wwtechnician.js", "?2021102014432745", false, true);
       }
       /* End function include_jscripts */
    }

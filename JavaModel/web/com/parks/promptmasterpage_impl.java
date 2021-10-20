@@ -94,7 +94,7 @@ public final  class promptmasterpage_impl extends GXMasterPage
       {
          httpContext.disableOutput();
       }
-      httpContext.AddJavascriptSource("promptmasterpage.js", "?20211071155518", false, true);
+      httpContext.AddJavascriptSource("promptmasterpage.js", "?2021102014431985", false, true);
       httpContext.writeTextNL( "</body>") ;
       httpContext.writeTextNL( "</html>") ;
       if ( httpContext.isSpaRequest( ) )
@@ -825,7 +825,7 @@ public final  class promptmasterpage_impl extends GXMasterPage
       idxLst = 1 ;
       while ( idxLst <= (getDataAreaObject() == null ? Form : getDataAreaObject().getForm()).getJscriptsrc().getCount() )
       {
-         httpContext.AddJavascriptSource(GXutil.rtrim( (getDataAreaObject() == null ? Form : getDataAreaObject().getForm()).getJscriptsrc().item(idxLst)), "?20211071155527", true, true);
+         httpContext.AddJavascriptSource(GXutil.rtrim( (getDataAreaObject() == null ? Form : getDataAreaObject().getForm()).getJscriptsrc().item(idxLst)), "?2021102014431993", true, true);
          idxLst = (int)(idxLst+1) ;
       }
       if ( ! outputEnabled )
@@ -842,7 +842,7 @@ public final  class promptmasterpage_impl extends GXMasterPage
    {
       if ( nGXWrapped != 1 )
       {
-         httpContext.AddJavascriptSource("promptmasterpage.js", "?20211071155528", false, true);
+         httpContext.AddJavascriptSource("promptmasterpage.js", "?2021102014431994", false, true);
       }
       /* End function include_jscripts */
    }

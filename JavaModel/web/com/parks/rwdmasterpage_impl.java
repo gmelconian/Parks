@@ -101,7 +101,7 @@ public final  class rwdmasterpage_impl extends GXMasterPage
       {
          WebComp_Wcrecentlinks.componentjscripts();
       }
-      httpContext.AddJavascriptSource("rwdmasterpage.js", "?20211071155720", false, true);
+      httpContext.AddJavascriptSource("rwdmasterpage.js", "?202110201443214", false, true);
       httpContext.writeTextNL( "</body>") ;
       httpContext.writeTextNL( "</html>") ;
       if ( httpContext.isSpaRequest( ) )
@@ -673,7 +673,7 @@ public final  class rwdmasterpage_impl extends GXMasterPage
       idxLst = 1 ;
       while ( idxLst <= (getDataAreaObject() == null ? Form : getDataAreaObject().getForm()).getJscriptsrc().getCount() )
       {
-         httpContext.AddJavascriptSource(GXutil.rtrim( (getDataAreaObject() == null ? Form : getDataAreaObject().getForm()).getJscriptsrc().item(idxLst)), "?20211071155730", true, true);
+         httpContext.AddJavascriptSource(GXutil.rtrim( (getDataAreaObject() == null ? Form : getDataAreaObject().getForm()).getJscriptsrc().item(idxLst)), "?2021102014432112", true, true);
          idxLst = (int)(idxLst+1) ;
       }
       if ( ! outputEnabled )
@@ -688,7 +688,7 @@ public final  class rwdmasterpage_impl extends GXMasterPage
 
    public void include_jscripts( )
    {
-      httpContext.AddJavascriptSource("rwdmasterpage.js", "?20211071155731", false, true);
+      httpContext.AddJavascriptSource("rwdmasterpage.js", "?2021102014432112", false, true);
       /* End function include_jscripts */
    }
 

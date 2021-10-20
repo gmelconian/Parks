@@ -250,7 +250,7 @@ public final  class amusementparkgamewc_impl extends GXWebComponent
       }
       httpContext.AddJavascriptSource("jquery.js", "?"+httpContext.getBuildNumber( 75940), false, true);
       httpContext.AddJavascriptSource("gxgral.js", "?"+httpContext.getBuildNumber( 75940), false, true);
-      httpContext.AddJavascriptSource("gxcfg.js", "?20211071155348", false, true);
+      httpContext.AddJavascriptSource("gxcfg.js", "?2021102014431849", false, true);
       if ( httpContext.isSpaRequest( ) )
       {
          httpContext.enableOutput();
@@ -1579,7 +1579,7 @@ public final  class amusementparkgamewc_impl extends GXWebComponent
       idxLst = 1 ;
       while ( idxLst <= Form.getJscriptsrc().getCount() )
       {
-         httpContext.AddJavascriptSource(GXutil.rtrim( Form.getJscriptsrc().item(idxLst)), "?20211071155398", true, true);
+         httpContext.AddJavascriptSource(GXutil.rtrim( Form.getJscriptsrc().item(idxLst)), "?2021102014431894", true, true);
          idxLst = (int)(idxLst+1) ;
       }
       if ( ! outputEnabled )
@@ -1596,7 +1596,7 @@ public final  class amusementparkgamewc_impl extends GXWebComponent
    {
       if ( nGXWrapped != 1 )
       {
-         httpContext.AddJavascriptSource("amusementparkgamewc.js", "?20211071155398", false, true);
+         httpContext.AddJavascriptSource("amusementparkgamewc.js", "?2021102014431895", false, true);
       }
       /* End function include_jscripts */
    }

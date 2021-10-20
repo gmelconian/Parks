@@ -214,7 +214,7 @@ public final  class techniciangeneral_impl extends GXWebComponent
       }
       httpContext.AddJavascriptSource("jquery.js", "?"+httpContext.getBuildNumber( 75940), false, true);
       httpContext.AddJavascriptSource("gxgral.js", "?"+httpContext.getBuildNumber( 75940), false, true);
-      httpContext.AddJavascriptSource("gxcfg.js", "?20211071155484", false, true);
+      httpContext.AddJavascriptSource("gxcfg.js", "?202110201443223", false, true);
       if ( httpContext.isSpaRequest( ) )
       {
          httpContext.enableOutput();
@@ -1184,7 +1184,7 @@ public final  class techniciangeneral_impl extends GXWebComponent
       idxLst = 1 ;
       while ( idxLst <= Form.getJscriptsrc().getCount() )
       {
-         httpContext.AddJavascriptSource(GXutil.rtrim( Form.getJscriptsrc().item(idxLst)), "?20211071155522", true, true);
+         httpContext.AddJavascriptSource(GXutil.rtrim( Form.getJscriptsrc().item(idxLst)), "?2021102014432239", true, true);
          idxLst = (int)(idxLst+1) ;
       }
       if ( ! outputEnabled )
@@ -1199,7 +1199,7 @@ public final  class techniciangeneral_impl extends GXWebComponent
 
    public void include_jscripts( )
    {
-      httpContext.AddJavascriptSource("techniciangeneral.js", "?20211071155522", false, true);
+      httpContext.AddJavascriptSource("techniciangeneral.js", "?2021102014432240", false, true);
       /* End function include_jscripts */
    }
 

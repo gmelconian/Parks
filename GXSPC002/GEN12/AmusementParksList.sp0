@@ -58,8 +58,8 @@ rule_i(0,datastore(1,'DBMS',18)).
 rule_i(0,datastore(1,'NAME','Default')).
 rule_i(0,prop(idNULLS_BEHAVIOR,idNB_Current)).
 rule_i(0,maingen(12)).
-rule_i(0,parm([],[])).
-rule_i(0,parmio([])).
+rule_i(0,parm([ 'CountryId' ],[])).
+rule_i(0,parmio([ [ 'CountryId',out ] ])).
 rule_i(0,stub(proc)).
  
 a_i(1,1,f,'Err',[],[ [],[ t('0',3) ] ]).
@@ -72,8 +72,9 @@ v_i(f,o,1,'Err').
  
  
  
-attri_i('Errmsg',[ 'Gx_emsg',char,70,0,'',1,'Error text','',3 ]).
-attri_i('Err',[ 'Gx_err',int,3,0,'ZZ9',1,'Error code','',2 ]).
+attri_i('Errmsg',[ 'Gx_emsg',char,70,0,'',1,'Error text','',4 ]).
+attri_i('Err',[ 'Gx_err',int,3,0,'ZZ9',1,'Error code','',3 ]).
+attri_i('CountryId',[ 'CountryId',int,4,0,'',0,'','',2 ]).
  
  
  
@@ -107,7 +108,7 @@ break_i(1,rpt,0,[],[ [],[],[] ]).
  
 b_group_i(1,1,lit,0,1,0).
  
-b_line_i(1,1,1,cmd,1,[ t('',163,1,0),t('AAmusementParksList',3,1,0),t(12,3,1,0),t('',3,1,0),t(',',7,1,0),t(')',4,1,0) ]).
+b_line_i(1,1,1,cmd,1,[ t('',163,1,0),t('AAmusementParksList',3,1,0),t(12,3,1,0),t('',3,1,0),t(',',7,1,0),t('CountryId',23,1,0),t(')',4,1,0) ]).
  
  
  
@@ -160,7 +161,7 @@ calling_main_i(1,14).
  
  
  
-pgm_parm_i(proc,14,'AAMUSEMENTPARKSLIST',[],[]).
+pgm_parm_i(proc,14,'AAMUSEMENTPARKSLIST',[ [ int,4,0,0 ] ],[ [ 'CountryId',out,[] ] ]).
  
 pgm_callprotocol_i(proc,0,'AMUSEMENTPARKSLIST','INTERNAL','').
 pgm_callprotocol_i(proc,14,'AAMUSEMENTPARKSLIST','HTTP','Unsecure').
