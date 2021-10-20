@@ -107,21 +107,23 @@ rule_i(0,prop('Theme',o(25,'Carmine'))).
 rule_i(0,prop('Folder',o(8,'WebPanel'))).
 rule_i(0,prop('ObjDesc','WWShows By Date')).
 rule_i(0,prop('ObjName','WWShowsByDate')).
-rule_i(0,dyncombo(t(7,2),[ 7,8,sort,2 ])).
 rule_i(0,maingen(12)).
 rule_i(2,rule([ a(1,msg([ t('"Campo Selected Date From fuera de rango"',3) ],[ t('OutOfRange',3) ])) ],[ t('NOT',8),t('(',0),t('null(',1),t('Selecteddatefrom',2),t(')',4),t('.OR.',9),t('Selecteddatefrom',2),t(>=,10),t('ymdtod(',1),t('1000',3),t(',',7),t('01',3),t(',',7),t('01',3),t(')',4),t(')',4) ],[ insert,update ],[ 'Selecteddatefrom' ])).
 rule_i(0,rule([ a(22,[ '''Shows per park''','''Shows per park''','' ]) ],[],[],[])).
  
-a_i(1,1,f,'Err',[],[ [],[ t('0',3) ] ]).
-a_i(2,2,t,2,[],[ [],'IAMUSEMENTPARK',[] ]).
-a_i(3,2,b,0,[],[ [],[ a(1,msg([ t('"Campo Selected Date From fuera de rango"',3) ],[ t('OutOfRange',3) ])) ],[ t('NOT',8),t('(',0),t('null(',1),t('Selecteddatefrom',2),t(')',4),t('.OR.',9),t('Selecteddatefrom',2),t(>=,10),t('ymdtod(',1),t('1000',3),t(',',7),t('01',3),t(',',7),t('01',3),t(')',4),t(')',4) ] ]).
+a_i(1,2,d,t(7,2),[],[ 7,8,[ [ [ 2,7 ],[ 2,8 ] ],n,[ [ 2,many ] ],[],[],[ 8 ],[],[],[] ],empty,'Select' ]).
+a_i(2,1,f,'Err',[],[ [],[ t('0',3) ] ]).
+a_i(3,2,t,2,[],[ [],'IAMUSEMENTPARK',[] ]).
+a_i(4,2,b,0,[],[ [],[ a(1,msg([ t('"Campo Selected Date From fuera de rango"',3) ],[ t('OutOfRange',3) ])) ],[ t('NOT',8),t('(',0),t('null(',1),t('Selecteddatefrom',2),t(')',4),t('.OR.',9),t('Selecteddatefrom',2),t(>=,10),t('ymdtod(',1),t('1000',3),t(',',7),t('01',3),t(',',7),t('01',3),t(')',4),t(')',4) ] ]).
  
-v_i(f,i,1,[]).
-v_i(f,o,1,'Err').
-v_i(t,i,2,[]).
-v_i(t,o,2,7).
-v_i(b,i,3,'Selecteddatefrom').
-v_i(b,o,3,[]).
+v_i(d,i,1,[]).
+v_i(d,o,1,7).
+v_i(f,i,2,[]).
+v_i(f,o,2,'Err').
+v_i(t,i,3,[]).
+v_i(t,o,3,7).
+v_i(b,i,4,'Selecteddatefrom').
+v_i(b,o,4,[]).
  
  
  
@@ -285,8 +287,9 @@ html_comp_i(8,'Controlitemvalues',7,d,[ num ]).
 html_comp_i(8,'Controlitemdescription',8,v,[ num ]).
 html_comp_i(8,'Controlsortdescription',-1,d,[ bool ]).
 html_comp_i(8,'Controlwhere','',d,[ str ]).
-html_comp_i(8,'Controlrestrictedby','',d,[ str ]).
-html_comp_i(8,'Addemptyitem',0,d,[ bool ]).
+html_comp_i(8,'Controlrestrictedby','$[]$',v,[ str ]).
+html_comp_i(8,'Addemptyitem',-1,v,[ bool ]).
+html_comp_i(8,'Emptyitemtext','Select',v,[ str ]).
 html_comp_i(8,'Notifycontextchange',0,d,[ bool ]).
 html_comp_i(8,'Emptyasnull','Yes',d,[ str ]).
 html_comp_i(8,'Readonly',-1,v,[ bool ]).
@@ -425,7 +428,6 @@ lit_i(1,1,window,[ rect(0,0,1000,1000),ctlname('Form') ]).
  
  
  
-ctrl_info_i(1,8,[ [ 7,8,sort,[],[],noempty,'' ] ]).
  
  
  

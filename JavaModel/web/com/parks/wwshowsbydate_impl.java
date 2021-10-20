@@ -54,6 +54,17 @@ public final  class wwshowsbydate_impl extends GXDataArea
             dyncall( httpContext.GetNextPar( )) ;
             return  ;
          }
+         else if ( GXutil.strcmp(gxfirstwebparm, "gxajaxCallCrl"+"_"+"AMUSEMENTPARKID") == 0 )
+         {
+            httpContext.setAjaxCallMode();
+            if ( ! httpContext.IsValidAjaxCall( true) )
+            {
+               GxWebError = (byte)(1) ;
+               return  ;
+            }
+            gxdlaamusementparkid1G2( ) ;
+            return  ;
+         }
          else if ( GXutil.strcmp(gxfirstwebparm, "gxajaxEvt") == 0 )
          {
             httpContext.setAjaxEventMode();
@@ -178,7 +189,7 @@ public final  class wwshowsbydate_impl extends GXDataArea
       }
       httpContext.AddJavascriptSource("jquery.js", "?"+httpContext.getBuildNumber( 75940), false, true);
       httpContext.AddJavascriptSource("gxgral.js", "?"+httpContext.getBuildNumber( 75940), false, true);
-      httpContext.AddJavascriptSource("gxcfg.js", "?2021101118273034", false, true);
+      httpContext.AddJavascriptSource("gxcfg.js", "?2021102014432557", false, true);
       if ( httpContext.isSpaRequest( ) )
       {
          httpContext.enableOutput();
@@ -523,14 +534,14 @@ public final  class wwshowsbydate_impl extends GXDataArea
       /* End function dynload_actions */
    }
 
-   public void gxdlaamusementparkid1G1( )
+   public void gxdlaamusementparkid1G2( )
    {
       if ( ! httpContext.isAjaxRequest( ) )
       {
          httpContext.GX_webresponse.addHeader("Cache-Control", "no-store");
       }
       addString( "[[") ;
-      gxdlaamusementparkid_data1G1( ) ;
+      gxdlaamusementparkid_data1G2( ) ;
       gxdynajaxindex = 1 ;
       while ( gxdynajaxindex <= gxdynajaxctrlcodr.getCount() )
       {
@@ -546,10 +557,10 @@ public final  class wwshowsbydate_impl extends GXDataArea
       addString( "]") ;
    }
 
-   public void gxaamusementparkid_html1G1( )
+   public void gxaamusementparkid_html1G2( )
    {
       short gxdynajaxvalue;
-      gxdlaamusementparkid_data1G1( ) ;
+      gxdlaamusementparkid_data1G2( ) ;
       gxdynajaxindex = 1 ;
       if ( ! ( gxdyncontrolsrefreshing && httpContext.isAjaxRequest( ) ) )
       {
@@ -563,10 +574,12 @@ public final  class wwshowsbydate_impl extends GXDataArea
       }
    }
 
-   protected void gxdlaamusementparkid_data1G1( )
+   protected void gxdlaamusementparkid_data1G2( )
    {
       gxdynajaxctrlcodr.removeAllItems();
       gxdynajaxctrldescr.removeAllItems();
+      gxdynajaxctrlcodr.add(GXutil.ltrimstr( DecimalUtil.doubleToDec(0), 9, 0));
+      gxdynajaxctrldescr.add("Select");
       /* Using cursor H001G2 */
       pr_default.execute(0);
       while ( (pr_default.getStatus(0) != 101) )
@@ -586,22 +599,7 @@ public final  class wwshowsbydate_impl extends GXDataArea
    {
       if ( httpContext.isAjaxRequest( ) )
       {
-         dynAmusementParkId.setName( "AMUSEMENTPARKID" );
-         dynAmusementParkId.setWebtags( "" );
-         dynAmusementParkId.removeAllItems();
-         /* Using cursor H001G3 */
-         pr_default.execute(1);
-         while ( (pr_default.getStatus(1) != 101) )
-         {
-            dynAmusementParkId.addItem(GXutil.trim( GXutil.str( H001G3_A7AmusementParkId[0], 4, 0)), H001G3_A8AmusementParkName[0], (short)(0));
-            pr_default.readNext(1);
-         }
-         pr_default.close(1);
-         if ( dynAmusementParkId.getItemCount() > 0 )
-         {
-            A7AmusementParkId = (short)(GXutil.lval( dynAmusementParkId.getValidValue(GXutil.trim( GXutil.str( A7AmusementParkId, 4, 0))))) ;
-            httpContext.ajax_rsp_assign_attri("", false, "A7AmusementParkId", GXutil.ltrimstr( DecimalUtil.doubleToDec(A7AmusementParkId), 4, 0));
-         }
+         gxaamusementparkid_html1G2( ) ;
          dynload_actions( ) ;
          before_start_formulas( ) ;
       }
@@ -647,17 +645,18 @@ public final  class wwshowsbydate_impl extends GXDataArea
       gxdyncontrolsrefreshing = false ;
       if ( ! httpContext.willRedirect( ) && ( httpContext.nUserReturn != 1 ) )
       {
-         /* Using cursor H001G4 */
-         pr_default.execute(2);
-         while ( (pr_default.getStatus(2) != 101) )
+         /* Using cursor H001G3 */
+         pr_default.execute(1);
+         while ( (pr_default.getStatus(1) != 101) )
          {
-            A7AmusementParkId = H001G4_A7AmusementParkId[0] ;
+            A7AmusementParkId = H001G3_A7AmusementParkId[0] ;
             httpContext.ajax_rsp_assign_attri("", false, "A7AmusementParkId", GXutil.ltrimstr( DecimalUtil.doubleToDec(A7AmusementParkId), 4, 0));
+            gxaamusementparkid_html1G2( ) ;
             /* Execute user event: Load */
             e121G2 ();
-            pr_default.readNext(2);
+            pr_default.readNext(1);
          }
-         pr_default.close(2);
+         pr_default.close(1);
          wb1G0( ) ;
       }
    }
@@ -671,6 +670,7 @@ public final  class wwshowsbydate_impl extends GXDataArea
    public void before_start_formulas( )
    {
       Gx_err = (short)(0) ;
+      gxaamusementparkid_html1G2( ) ;
       fix_multi_value_controls( ) ;
    }
 
@@ -705,6 +705,7 @@ public final  class wwshowsbydate_impl extends GXDataArea
          /* Read subfile selected row values. */
          /* Read hidden variables. */
          GXKey = httpContext.decrypt64( httpContext.getCookie( "GX_SESSION_ID"), context.getServerKey( )) ;
+         gxaamusementparkid_html1G2( ) ;
       }
       else
       {
@@ -785,7 +786,7 @@ public final  class wwshowsbydate_impl extends GXDataArea
       idxLst = 1 ;
       while ( idxLst <= Form.getJscriptsrc().getCount() )
       {
-         httpContext.AddJavascriptSource(GXutil.rtrim( Form.getJscriptsrc().item(idxLst)), "?2021101118273043", true, true);
+         httpContext.AddJavascriptSource(GXutil.rtrim( Form.getJscriptsrc().item(idxLst)), "?2021102014432570", true, true);
          idxLst = (int)(idxLst+1) ;
       }
       if ( ! outputEnabled )
@@ -801,7 +802,7 @@ public final  class wwshowsbydate_impl extends GXDataArea
    public void include_jscripts( )
    {
       httpContext.AddJavascriptSource("messages.spa.js", "?"+httpContext.getCacheInvalidationToken( ), false, true);
-      httpContext.AddJavascriptSource("wwshowsbydate.js", "?2021101118273043", false, true);
+      httpContext.AddJavascriptSource("wwshowsbydate.js", "?2021102014432570", false, true);
       /* End function include_jscripts */
    }
 
@@ -842,20 +843,6 @@ public final  class wwshowsbydate_impl extends GXDataArea
    {
       dynAmusementParkId.setName( "AMUSEMENTPARKID" );
       dynAmusementParkId.setWebtags( "" );
-      dynAmusementParkId.removeAllItems();
-      /* Using cursor H001G5 */
-      pr_default.execute(3);
-      while ( (pr_default.getStatus(3) != 101) )
-      {
-         dynAmusementParkId.addItem(GXutil.trim( GXutil.str( H001G5_A7AmusementParkId[0], 4, 0)), H001G5_A8AmusementParkName[0], (short)(0));
-         pr_default.readNext(3);
-      }
-      pr_default.close(3);
-      if ( dynAmusementParkId.getItemCount() > 0 )
-      {
-         A7AmusementParkId = (short)(GXutil.lval( dynAmusementParkId.getValidValue(GXutil.trim( GXutil.str( A7AmusementParkId, 4, 0))))) ;
-         httpContext.ajax_rsp_assign_attri("", false, "A7AmusementParkId", GXutil.ltrimstr( DecimalUtil.doubleToDec(A7AmusementParkId), 4, 0));
-      }
       /* End function init_web_controls */
    }
 
@@ -927,25 +914,15 @@ public final  class wwshowsbydate_impl extends GXDataArea
       H001G2_A7AmusementParkId = new short[1] ;
       H001G2_A8AmusementParkName = new String[] {""} ;
       H001G3_A7AmusementParkId = new short[1] ;
-      H001G3_A8AmusementParkName = new String[] {""} ;
-      H001G4_A7AmusementParkId = new short[1] ;
       BackMsgLst = new com.genexus.internet.MsgList();
       LclMsgLst = new com.genexus.internet.MsgList();
-      H001G5_A7AmusementParkId = new short[1] ;
-      H001G5_A8AmusementParkName = new String[] {""} ;
       pr_default = new DataStoreProvider(context, remoteHandle, new com.parks.wwshowsbydate__default(),
          new Object[] {
              new Object[] {
             H001G2_A7AmusementParkId, H001G2_A8AmusementParkName
             }
             , new Object[] {
-            H001G3_A7AmusementParkId, H001G3_A8AmusementParkName
-            }
-            , new Object[] {
-            H001G4_A7AmusementParkId
-            }
-            , new Object[] {
-            H001G5_A7AmusementParkId, H001G5_A8AmusementParkName
+            H001G3_A7AmusementParkId
             }
          }
       );
@@ -1006,10 +983,6 @@ public final  class wwshowsbydate_impl extends GXDataArea
    private short[] H001G2_A7AmusementParkId ;
    private String[] H001G2_A8AmusementParkName ;
    private short[] H001G3_A7AmusementParkId ;
-   private String[] H001G3_A8AmusementParkName ;
-   private short[] H001G4_A7AmusementParkId ;
-   private short[] H001G5_A7AmusementParkId ;
-   private String[] H001G5_A8AmusementParkName ;
    private com.genexus.webpanels.GXWebForm Form ;
 }
 
@@ -1019,9 +992,7 @@ final  class wwshowsbydate__default extends DataStoreHelperBase implements ILoca
    {
       return new Cursor[] {
           new ForEachCursor("H001G2", "SELECT `AmusementParkId`, `AmusementParkName` FROM `AmusementPark` ORDER BY `AmusementParkName` ",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,0, GxCacheFrequency.OFF,false )
-         ,new ForEachCursor("H001G3", "SELECT `AmusementParkId`, `AmusementParkName` FROM `AmusementPark` ORDER BY `AmusementParkName` ",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,0, GxCacheFrequency.OFF,false )
-         ,new ForEachCursor("H001G4", "SELECT `AmusementParkId` FROM `AmusementPark` ORDER BY `AmusementParkId` ",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100, GxCacheFrequency.OFF,false )
-         ,new ForEachCursor("H001G5", "SELECT `AmusementParkId`, `AmusementParkName` FROM `AmusementPark` ORDER BY `AmusementParkName` ",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,0, GxCacheFrequency.OFF,false )
+         ,new ForEachCursor("H001G3", "SELECT `AmusementParkId` FROM `AmusementPark` ORDER BY `AmusementParkId` ",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100, GxCacheFrequency.OFF,false )
       };
    }
 
@@ -1037,14 +1008,6 @@ final  class wwshowsbydate__default extends DataStoreHelperBase implements ILoca
                return;
             case 1 :
                ((short[]) buf[0])[0] = rslt.getShort(1);
-               ((String[]) buf[1])[0] = rslt.getString(2, 50);
-               return;
-            case 2 :
-               ((short[]) buf[0])[0] = rslt.getShort(1);
-               return;
-            case 3 :
-               ((short[]) buf[0])[0] = rslt.getShort(1);
-               ((String[]) buf[1])[0] = rslt.getString(2, 50);
                return;
       }
    }

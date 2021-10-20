@@ -2,16 +2,16 @@ spec_i([ web,44,'Repair General','RepairGeneral',0,spa,'17_0_5-152925' ]).
  
 struct_i(2,1,[ 'Pgmname',27 ],[]).
  
-level_i(2,[ 8,[ [ 8,many ],[ 5,one ],[ 9,one ],[ 511,one ],[ 2000,one ] ],[],[],[ [ [ 8,5,9,511,2000 ],[ 27,38,37,36,35,32,31,30,18,17,42,29,28,41,39,34,40 ] ] ],[ [ [ 8,5,9,511,2000 ],[] ] ],[ 27 ],'IREPAIR',[ 8,[ [ [],27,27 ] ] ],[] ]).
+level_i(2,[ 8,[ [ 8,many ],[ 5,one ],[ 9,one ],[ 513,one ],[ 2000,one ] ],[],[],[ [ [ 8,5,9,513,2000 ],[ 27,38,37,36,35,32,31,30,18,17,42,29,28,41,39,34,40 ] ] ],[ [ [ 8,5,9,513,2000 ],[] ] ],[ 27 ],'IREPAIR',[ 8,[ [ [],27,27 ] ] ],[] ]).
  
-tw_i(2,[ [ 5,[ [ 8,17,17 ] ] ],[ 9,[ [ 8,30,30 ] ] ],[ 511,[ [ 8,35,30 ] ] ],[ 2000,[ [ 8,oe([ t(27,2) ]),27 ] ] ] ]).
+tw_i(2,[ [ 5,[ [ 8,17,17 ] ] ],[ 9,[ [ 8,30,30 ] ] ],[ 513,[ [ 8,35,30 ] ] ],[ 2000,[ [ 8,oe([ t(27,2) ]),27 ] ] ] ]).
  
 lwi_i(2,[ [] ]).
  
  
  
  
-ta_i(2,[ [ [ 8,27 ],[ 511,38 ],[ 511,37 ],[ 511,36 ],[ 8,35 ],[ 9,32 ],[ 9,31 ],[ 8,30 ],[ 5,18 ],[ 8,17 ],[ 2000,se(42,[ [ 2000,42 ] ],[ t('coalesce(',1),t(42,2),t(',',7),t('0',3),t(')',4) ]) ],[ 8,29 ],[ 8,28 ],[ 8,39 ],[ 8,34 ] ] ]).
+ta_i(2,[ [ [ 8,27 ],[ 513,38 ],[ 513,37 ],[ 513,36 ],[ 8,35 ],[ 9,32 ],[ 9,31 ],[ 8,30 ],[ 5,18 ],[ 8,17 ],[ 2000,se(42,[ [ 2000,42 ] ],[ t('coalesce(',1),t(42,2),t(',',7),t('0',3),t(')',4) ]) ],[ 8,29 ],[ 8,28 ],[ 8,39 ],[ 8,34 ] ] ]).
  
 las_i(2,[ [ 27,38,37,36,35,32,31,30,18,17,42,29,28,41,39,34,40 ] ]).
  
@@ -135,7 +135,7 @@ a_i(4,1,f,'Err',[],[ [],[ t('0',3) ] ]).
 a_i(5,2,t,8,[],[ [ [ [],27,27 ] ],'IREPAIR',[] ]).
 a_i(6,2,r,5,[],[ [ [ 8,17,17 ] ],'IGAME',[] ]).
 a_i(7,2,r,9,[],[ [ [ 8,30,30 ] ],'ITECHNICIAN',[] ]).
-a_i(8,2,r,511,[],[ [ [ 8,35,30 ] ],'ITECHNICIAN',[] ]).
+a_i(8,2,r,513,[],[ [ [ 8,35,30 ] ],'ITECHNICIAN',[] ]).
 a_i(9,2,r,2000,[],[ [ [ 8,oe([ t(27,2) ]),27 ] ],'IREPAIR',[] ]).
  
 v_i(f,i,1,28).
@@ -205,14 +205,14 @@ table_i(10,[ 'RepairKind',[ 27,43 ],'Kind','RepairKind' ]).
 table_i(2000,[ 'Repair',[ 42,27 ],'Repair','Repair' ]).
 table_i(5,[ 'Game',[ 17,18 ],'Game','Game' ]).
 table_i(9,[ 'Technician',[ 30,31,32 ],'Technician','Technician' ]).
-table_i(511,[ 'Technician',[ 35,36,37,38 ],'Technician','Technician' ]).
+table_i(513,[ 'Technician',[ 35,36,37,38 ],'Technician','Technician' ]).
 table_i(8,[ 'Repair',[ 27,28,29,17,30,34,35,39 ],'Repair','Repair' ]).
  
 index_i(10,[ 'IREPAIRKIND',u,[ 27,43 ],'IRepairKind' ]).
 index_i(8,[ 'IREPAIR',u,[ 27 ],'IRepair' ]).
 index_i(5,[ 'IGAME',u,[ 17 ],'IGame' ]).
 index_i(9,[ 'ITECHNICIAN',u,[ 30 ],'ITechnician' ]).
-index_i(511,[ 'ITECHNICIAN',u,[ 35 ],'ITechnician' ]).
+index_i(513,[ 'ITECHNICIAN',u,[ 35 ],'ITechnician' ]).
 index_i(2000,[ 'IREPAIR',u,[ 27 ],'IRepair' ]).
  
 lv_i(2,2000,8).
@@ -242,10 +242,10 @@ start_i(2,0,0,[ [ [ 27,2,27,= ] ],one ]).
 end_i(2,0,0,[ [ [ t(27,2),t(=,10),t(27,23) ] ] ]).
  
  
-map_i(511,a,38,[ 'TechnicianPhone' ]).
-map_i(511,a,37,[ 'TechnicianLastName' ]).
-map_i(511,a,36,[ 'TechnicianName' ]).
-map_i(511,a,35,[ 'TechnicianId' ]).
+map_i(513,a,38,[ 'TechnicianPhone' ]).
+map_i(513,a,37,[ 'TechnicianLastName' ]).
+map_i(513,a,36,[ 'TechnicianName' ]).
+map_i(513,a,35,[ 'TechnicianId' ]).
  
  
 enumerated_i(2,44,90).
@@ -1991,15 +1991,15 @@ att_prop_i(2,43,'DownloadOffline','0',d).
 att_prop_i(2,43,'VarServiceExtName','',d).
 att_prop_i(2,43,'FullName','RepairKindId',v).
  
-tbl_prop_i(2,8,'AllDirSuper',[ [ 9,[ 30 ] ],[ 511,[ 35 ] ],[ 5,[ 17 ] ] ],v).
+tbl_prop_i(2,8,'AllDirSuper',[ [ 9,[ 30 ] ],[ 513,[ 35 ] ],[ 5,[ 17 ] ] ],v).
 tbl_prop_i(2,10,'AllDirSuper',[ [ 8,[ 27 ] ] ],v).
 tbl_prop_i(2,2000,'DirSubor',[ [ 10,[ 27 ] ] ],v).
-tbl_prop_i(2,511,'DirSubor',[ [ 8,[ 30 ] ],[ 8,[ 35 ] ] ],v).
+tbl_prop_i(2,513,'DirSubor',[ [ 8,[ 30 ] ],[ 8,[ 35 ] ] ],v).
 tbl_prop_i(2,9,'DirSubor',[ [ 8,[ 30 ] ],[ 8,[ 35 ] ] ],v).
 tbl_prop_i(2,5,'DirSubor',[ [ 8,[ 17 ] ] ],v).
 tbl_prop_i(2,8,'DirSubor',[ [ 10,[ 27 ] ] ],v).
-tbl_prop_i(2,2000,'DirSuper',[ [ 9,[ 30 ] ],[ 511,[ 35 ] ],[ 5,[ 17 ] ] ],v).
-tbl_prop_i(2,8,'DirSuper',[ [ 9,[ 30 ] ],[ 511,[ 35 ] ],[ 5,[ 17 ] ] ],v).
+tbl_prop_i(2,2000,'DirSuper',[ [ 9,[ 30 ] ],[ 513,[ 35 ] ],[ 5,[ 17 ] ] ],v).
+tbl_prop_i(2,8,'DirSuper',[ [ 9,[ 30 ] ],[ 513,[ 35 ] ],[ 5,[ 17 ] ] ],v).
 tbl_prop_i(2,10,'DirSuper',[ [ 8,[ 27 ] ] ],v).
  
 tbl_att_prop_i(2,10,27,'AllowNulls',n).
@@ -2020,10 +2020,10 @@ tbl_att_prop_i(2,9,30,'AllowNulls',n).
 tbl_att_prop_i(2,9,30,'AUTONUMBER',y).
 tbl_att_prop_i(2,9,31,'AllowNulls',n).
 tbl_att_prop_i(2,9,32,'AllowNulls',n).
-tbl_att_prop_i(2,511,35,'AllowNulls',n).
-tbl_att_prop_i(2,511,36,'AllowNulls',n).
-tbl_att_prop_i(2,511,37,'AllowNulls',n).
-tbl_att_prop_i(2,511,38,'AllowNulls',n).
+tbl_att_prop_i(2,513,35,'AllowNulls',n).
+tbl_att_prop_i(2,513,36,'AllowNulls',n).
+tbl_att_prop_i(2,513,37,'AllowNulls',n).
+tbl_att_prop_i(2,513,38,'AllowNulls',n).
 tbl_att_prop_i(2,2000,27,'AllowNulls',n).
 tbl_att_prop_i(2,2000,27,'AUTONUMBER',y).
  
@@ -2165,7 +2165,9 @@ struct_dt_elem_i([ 26,56,84 ],2,soaptype,'').
 struct_dt_elem_i([ 26,56,84 ],2,'XmlInclude',idXmlIncludeAlways).
 struct_dt_elem_i([ 26,56,84 ],2,'JsonName','').
 struct_dt_elem_i([ 26,56,84 ],2,'JsonInclude',idJsonEmpty).
+struct_dt_elem_i([ 26,56,0 ],1,pic,'99/99/99').
 struct_dt_elem_i([ 26,56,0 ],3,pic,'ZZZ9').
+struct_dt_elem_i([ 26,56,0 ],4,pic,'99/99/99').
  
  
  

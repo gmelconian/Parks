@@ -18,8 +18,17 @@ public final  class amusementparkslist extends GXProcedure
 
    public void executeCmdLine( String args[] )
    {
+      short[] aP0 = new short[] {0};
 
-      execute();
+      try
+      {
+         aP0[0] = (short) GXutil.lval( args[0]);
+      }
+      catch ( ArrayIndexOutOfBoundsException e )
+      {
+      }
+
+      execute(aP0);
    }
 
    public amusementparkslist( )
@@ -39,13 +48,22 @@ public final  class amusementparkslist extends GXProcedure
       super( remoteHandle , context, "" );
    }
 
-   public void execute( )
+   @SuppressWarnings("unchecked")
+   public short executeUdp( )
    {
-      execute_int();
+      short[] aP0 = new short[] {0};
+      execute_int(aP0);
+      return aP0[0];
    }
 
-   private void execute_int( )
+   public void execute( short[] aP0 )
    {
+      execute_int(aP0);
+   }
+
+   private void execute_int( short[] aP0 )
+   {
+      amusementparkslist.this.aP0 = aP0;
       initialize();
       /* GeneXus formulas */
       /* Output device settings */
@@ -53,6 +71,7 @@ public final  class amusementparkslist extends GXProcedure
 
    protected void cleanup( )
    {
+      this.aP0[0] = amusementparkslist.this.AV2CountryId;
       CloseOpenCursors();
       Application.cleanup(context, this, remoteHandle);
    }
@@ -68,6 +87,8 @@ public final  class amusementparkslist extends GXProcedure
       Gx_err = (short)(0) ;
    }
 
+   private short AV2CountryId ;
    private short Gx_err ;
+   private short[] aP0 ;
 }
 

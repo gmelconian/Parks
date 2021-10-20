@@ -1748,7 +1748,9 @@ struct_dt_elem_i([ 26,56,84 ],2,soaptype,'').
 struct_dt_elem_i([ 26,56,84 ],2,'XmlInclude',idXmlIncludeAlways).
 struct_dt_elem_i([ 26,56,84 ],2,'JsonName','').
 struct_dt_elem_i([ 26,56,84 ],2,'JsonInclude',idJsonEmpty).
+struct_dt_elem_i([ 26,56,0 ],1,pic,'99/99/99').
 struct_dt_elem_i([ 26,56,0 ],3,pic,'ZZZ9').
+struct_dt_elem_i([ 26,56,0 ],4,pic,'99/99/99').
  
  
  

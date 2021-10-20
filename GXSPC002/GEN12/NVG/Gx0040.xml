@@ -9,7 +9,7 @@
 <ObjDesc>Selection List Show</ObjDesc>
 <ObjPgmName>Gx0040</ObjPgmName>
 <ObjClsName>Web Panel</ObjClsName></Object>
-<Result>nogenreq</Result>
+<Result>genreq</Result>
 <Warnings></Warnings>
 <Errors></Errors>
 <Generator>
@@ -31,6 +31,10 @@
 <EventName>Lblshowidfilter.Click</EventName></Event>
 <Event>
 <EventName>Lblshownamefilter.Click</EventName></Event>
+<Event>
+<EventName>Lblshowdatefilter.Click</EventName></Event>
+<Event>
+<EventName>Lblshowschedulefilter.Click</EventName></Event>
 <Event>
 <EventName>Load</EventName>
 <LoadMethod>Auto</LoadMethod>
@@ -88,6 +92,48 @@
 <Variable>
 <VarId>Cshowname</VarId>
 <VarName>&amp;cShowName</VarName></Variable>
+<Token>.</Token>
+<Token>isempty(</Token>
+<Token>)</Token></Condition></ConditionalConstraint>
+<ConditionalConstraint>
+<Constraint>
+<Attribute>
+<AttriId>50</AttriId>
+<AttriName>ShowDate</AttriName>
+<Description>Show Date</Description></Attribute>
+<Sp></Sp>
+<Token>&gt;=</Token>
+<Sp></Sp>
+<Variable>
+<VarId>Cshowdate</VarId>
+<VarName>&amp;cShowDate</VarName></Variable></Constraint>
+<Condition>
+<Token>not</Token>
+<Sp></Sp>
+<Variable>
+<VarId>Cshowdate</VarId>
+<VarName>&amp;cShowDate</VarName></Variable>
+<Token>.</Token>
+<Token>isempty(</Token>
+<Token>)</Token></Condition></ConditionalConstraint>
+<ConditionalConstraint>
+<Constraint>
+<Attribute>
+<AttriId>51</AttriId>
+<AttriName>ShowSchedule</AttriName>
+<Description>Show Schedule</Description></Attribute>
+<Sp></Sp>
+<Token>&gt;=</Token>
+<Sp></Sp>
+<Variable>
+<VarId>Cshowschedule</VarId>
+<VarName>&amp;cShowSchedule</VarName></Variable></Constraint>
+<Condition>
+<Token>not</Token>
+<Sp></Sp>
+<Variable>
+<VarId>Cshowschedule</VarId>
+<VarName>&amp;cShowSchedule</VarName></Variable>
 <Token>.</Token>
 <Token>isempty(</Token>
 <Token>)</Token></Condition></ConditionalConstraint></NonOptimizedWhere>

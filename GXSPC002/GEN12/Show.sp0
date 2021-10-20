@@ -188,9 +188,11 @@ v_i(f,o,6,'Pgmname').
 act_info_i(3,[ [ 14 ] ]).
  
  
+tbl_to_delete_i(4,[ 12,[ [ 4,14,14 ] ],c,'IAMUSEMENTPARKSHOW1',0,[ 7,14 ],'' ]).
  
  
  
+attri_i(7,[ 'AmusementParkId',int,4,0,'ZZZ9',0,'Amusement Park Id','',0 ]).
 attri_i(51,[ 'ShowSchedule',dtime,8,5,'99/99/99 99:99',0,'Show Schedule','',0 ]).
 attri_i(50,[ 'ShowDate',date,8,0,'99/99/99',0,'Show Date','',0 ]).
 attri_i(16,[ 'ShowImage',bits,4,0,'',0,'Show Image','',0 ]).
@@ -205,9 +207,12 @@ attri_i('Isauthorized',[ 'IsAuthorized',boolean,4,0,'',0,'Is Authorized','',8 ])
 attri_i('Showid',[ 'ShowId',int,4,0,'ZZZ9',0,'Show Id','',7 ]).
 attri_i('Mode',[ 'Gx_mode',char,3,0,'@!',1,'','',2 ]).
  
+table_i(12,[ 'AmusementParkShow',[ 7,14 ],'Show','AmusementParkShow' ]).
 table_i(4,[ 'Show',[ 14,15,16,40000,50,51 ],'Show','Show' ]).
  
 index_i(4,[ 'ISHOW',u,[ 14 ],'IShow' ]).
+index_i(12,[ 'IAMUSEMENTPARKSHOW',u,[ 7,14 ],'IAmusementParkShow' ]).
+index_i(12,[ 'IAMUSEMENTPARKSHOW1',d,[ 14 ],'IAmusementParkShow1' ]).
  
  
  
@@ -1157,6 +1162,20 @@ att_prop_i(2,51,idHOURFORMAT,idHOURFORMAT_HOURMIN,d).
 att_prop_i(2,51,'DownloadOffline','0',d).
 att_prop_i(2,51,'VarServiceExtName','',d).
 att_prop_i(2,51,'FullName','ShowSchedule',v).
+att_prop_i(2,7,'ExternalName','AmusementParkId',d).
+att_prop_i(2,7,'ExternalNamespace','Parks',d).
+att_prop_i(2,7,'EmptyAsNull','Yes',d).
+att_prop_i(2,7,idBasedOn,82,v).
+att_prop_i(2,7,'AUTONUMBER','-1',v).
+att_prop_i(2,7,'AUTONUMBER_START','1',d).
+att_prop_i(2,7,'AUTONUMBER_STEP','1',d).
+att_prop_i(2,7,'AUTONUMBER_FORREPLICATION','-1',d).
+att_prop_i(2,7,'ATT_INITIAL_VALUE','',d).
+att_prop_i(2,7,'AttRegEx','',d).
+att_prop_i(2,7,'AttValidationFailedMsg','',d).
+att_prop_i(2,7,'DownloadOffline','0',d).
+att_prop_i(2,7,'VarServiceExtName','',d).
+att_prop_i(2,7,'FullName','AmusementParkId',v).
 att_prop_i(2,40000,'ExternalName','',d).
 att_prop_i(2,40000,'ExternalNamespace','',d).
 att_prop_i(2,40000,'EmptyAsNull','Yes',d).
@@ -1167,6 +1186,9 @@ att_prop_i(2,40000,'AttRegEx','',d).
 att_prop_i(2,40000,'AttValidationFailedMsg','',d).
 att_prop_i(2,40000,'FullName','',v).
  
+tbl_prop_i(2,12,'AllDirSuper',[ [ 4,[ 14 ] ] ],v).
+tbl_prop_i(2,4,'DirSubor',[ [ 12,[ 14 ] ] ],v).
+tbl_prop_i(2,12,'DirSuper',[ [ 4,[ 14 ] ] ],v).
  
 tbl_att_prop_i(2,4,14,'AllowNulls',n).
 tbl_att_prop_i(2,4,14,'AUTONUMBER',y).
@@ -1175,6 +1197,8 @@ tbl_att_prop_i(2,4,16,'AllowNulls',n).
 tbl_att_prop_i(2,4,40000,'AllowNulls',n).
 tbl_att_prop_i(2,4,50,'AllowNulls',n).
 tbl_att_prop_i(2,4,51,'AllowNulls',n).
+tbl_att_prop_i(2,12,7,'AllowNulls',n).
+tbl_att_prop_i(2,12,14,'AllowNulls',n).
  
 var_prop_i(2,'Showid',idBasedOn,'',v).
  

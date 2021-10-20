@@ -100,7 +100,7 @@ public final  class appmasterpage_impl extends GXMasterPage
       {
          WebComp_Wcrecentlinks.componentjscripts();
       }
-      httpContext.AddJavascriptSource("appmasterpage.js", "?20211071155536", false, true);
+      httpContext.AddJavascriptSource("appmasterpage.js", "?2021102014432076", false, true);
       httpContext.writeTextNL( "</body>") ;
       httpContext.writeTextNL( "</html>") ;
       if ( httpContext.isSpaRequest( ) )
@@ -897,7 +897,7 @@ public final  class appmasterpage_impl extends GXMasterPage
       idxLst = 1 ;
       while ( idxLst <= (getDataAreaObject() == null ? Form : getDataAreaObject().getForm()).getJscriptsrc().getCount() )
       {
-         httpContext.AddJavascriptSource(GXutil.rtrim( (getDataAreaObject() == null ? Form : getDataAreaObject().getForm()).getJscriptsrc().item(idxLst)), "?20211071155551", true, true);
+         httpContext.AddJavascriptSource(GXutil.rtrim( (getDataAreaObject() == null ? Form : getDataAreaObject().getForm()).getJscriptsrc().item(idxLst)), "?2021102014432091", true, true);
          idxLst = (int)(idxLst+1) ;
       }
       if ( ! outputEnabled )
@@ -912,7 +912,7 @@ public final  class appmasterpage_impl extends GXMasterPage
 
    public void include_jscripts( )
    {
-      httpContext.AddJavascriptSource("appmasterpage.js", "?20211071155551", false, true);
+      httpContext.AddJavascriptSource("appmasterpage.js", "?2021102014432091", false, true);
       /* End function include_jscripts */
    }
 

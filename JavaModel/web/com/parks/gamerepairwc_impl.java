@@ -250,7 +250,7 @@ public final  class gamerepairwc_impl extends GXWebComponent
       }
       httpContext.AddJavascriptSource("jquery.js", "?"+httpContext.getBuildNumber( 75940), false, true);
       httpContext.AddJavascriptSource("gxgral.js", "?"+httpContext.getBuildNumber( 75940), false, true);
-      httpContext.AddJavascriptSource("gxcfg.js", "?2021107115547", false, true);
+      httpContext.AddJavascriptSource("gxcfg.js", "?2021102014432062", false, true);
       if ( httpContext.isSpaRequest( ) )
       {
          httpContext.enableOutput();
@@ -1662,7 +1662,7 @@ public final  class gamerepairwc_impl extends GXWebComponent
       idxLst = 1 ;
       while ( idxLst <= Form.getJscriptsrc().getCount() )
       {
-         httpContext.AddJavascriptSource(GXutil.rtrim( Form.getJscriptsrc().item(idxLst)), "?20211071155473", true, true);
+         httpContext.AddJavascriptSource(GXutil.rtrim( Form.getJscriptsrc().item(idxLst)), "?2021102014432129", true, true);
          idxLst = (int)(idxLst+1) ;
       }
       if ( ! outputEnabled )
@@ -1679,7 +1679,7 @@ public final  class gamerepairwc_impl extends GXWebComponent
    {
       if ( nGXWrapped != 1 )
       {
-         httpContext.AddJavascriptSource("gamerepairwc.js", "?20211071155473", false, true);
+         httpContext.AddJavascriptSource("gamerepairwc.js", "?2021102014432129", false, true);
       }
       /* End function include_jscripts */
    }

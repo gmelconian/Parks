@@ -214,7 +214,7 @@ public final  class employeegeneral_impl extends GXWebComponent
       }
       httpContext.AddJavascriptSource("jquery.js", "?"+httpContext.getBuildNumber( 75940), false, true);
       httpContext.AddJavascriptSource("gxgral.js", "?"+httpContext.getBuildNumber( 75940), false, true);
-      httpContext.AddJavascriptSource("gxcfg.js", "?20211071155048", false, true);
+      httpContext.AddJavascriptSource("gxcfg.js", "?2021102014431690", false, true);
       if ( httpContext.isSpaRequest( ) )
       {
          httpContext.enableOutput();
@@ -1216,7 +1216,7 @@ public final  class employeegeneral_impl extends GXWebComponent
       idxLst = 1 ;
       while ( idxLst <= Form.getJscriptsrc().getCount() )
       {
-         httpContext.AddJavascriptSource(GXutil.rtrim( Form.getJscriptsrc().item(idxLst)), "?20211071155086", true, true);
+         httpContext.AddJavascriptSource(GXutil.rtrim( Form.getJscriptsrc().item(idxLst)), "?2021102014431729", true, true);
          idxLst = (int)(idxLst+1) ;
       }
       if ( ! outputEnabled )
@@ -1231,7 +1231,7 @@ public final  class employeegeneral_impl extends GXWebComponent
 
    public void include_jscripts( )
    {
-      httpContext.AddJavascriptSource("employeegeneral.js", "?20211071155087", false, true);
+      httpContext.AddJavascriptSource("employeegeneral.js", "?2021102014431729", false, true);
       /* End function include_jscripts */
    }
 

@@ -210,7 +210,7 @@ public final  class wwamusementpark_impl extends GXDataArea
       }
       httpContext.AddJavascriptSource("jquery.js", "?"+httpContext.getBuildNumber( 75940), false, true);
       httpContext.AddJavascriptSource("gxgral.js", "?"+httpContext.getBuildNumber( 75940), false, true);
-      httpContext.AddJavascriptSource("gxcfg.js", "?20211071155643", false, true);
+      httpContext.AddJavascriptSource("gxcfg.js", "?2021102014432165", false, true);
       if ( httpContext.isSpaRequest( ) )
       {
          httpContext.enableOutput();
@@ -1355,7 +1355,7 @@ public final  class wwamusementpark_impl extends GXDataArea
       idxLst = 1 ;
       while ( idxLst <= Form.getJscriptsrc().getCount() )
       {
-         httpContext.AddJavascriptSource(GXutil.rtrim( Form.getJscriptsrc().item(idxLst)), "?20211071155694", true, true);
+         httpContext.AddJavascriptSource(GXutil.rtrim( Form.getJscriptsrc().item(idxLst)), "?2021102014432214", true, true);
          idxLst = (int)(idxLst+1) ;
       }
       if ( ! outputEnabled )
@@ -1373,7 +1373,7 @@ public final  class wwamusementpark_impl extends GXDataArea
       if ( nGXWrapped != 1 )
       {
          httpContext.AddJavascriptSource("messages.spa.js", "?"+httpContext.getCacheInvalidationToken( ), false, true);
-         httpContext.AddJavascriptSource("wwamusementpark.js", "?20211071155694", false, true);
+         httpContext.AddJavascriptSource("wwamusementpark.js", "?2021102014432214", false, true);
       }
       /* End function include_jscripts */
    }

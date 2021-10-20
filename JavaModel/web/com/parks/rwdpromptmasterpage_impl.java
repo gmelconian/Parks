@@ -95,7 +95,7 @@ public final  class rwdpromptmasterpage_impl extends GXMasterPage
       {
          httpContext.disableOutput();
       }
-      httpContext.AddJavascriptSource("rwdpromptmasterpage.js", "?20211071155545", false, true);
+      httpContext.AddJavascriptSource("rwdpromptmasterpage.js", "?2021102014432123", false, true);
       httpContext.writeTextNL( "</body>") ;
       httpContext.writeTextNL( "</html>") ;
       if ( httpContext.isSpaRequest( ) )
@@ -535,7 +535,7 @@ public final  class rwdpromptmasterpage_impl extends GXMasterPage
       idxLst = 1 ;
       while ( idxLst <= (getDataAreaObject() == null ? Form : getDataAreaObject().getForm()).getJscriptsrc().getCount() )
       {
-         httpContext.AddJavascriptSource(GXutil.rtrim( (getDataAreaObject() == null ? Form : getDataAreaObject().getForm()).getJscriptsrc().item(idxLst)), "?20211071155549", true, true);
+         httpContext.AddJavascriptSource(GXutil.rtrim( (getDataAreaObject() == null ? Form : getDataAreaObject().getForm()).getJscriptsrc().item(idxLst)), "?2021102014432127", true, true);
          idxLst = (int)(idxLst+1) ;
       }
       if ( ! outputEnabled )
@@ -552,7 +552,7 @@ public final  class rwdpromptmasterpage_impl extends GXMasterPage
    {
       if ( nGXWrapped != 1 )
       {
-         httpContext.AddJavascriptSource("rwdpromptmasterpage.js", "?20211071155549", false, true);
+         httpContext.AddJavascriptSource("rwdpromptmasterpage.js", "?2021102014432127", false, true);
       }
       /* End function include_jscripts */
    }

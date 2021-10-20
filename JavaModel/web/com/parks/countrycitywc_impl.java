@@ -246,7 +246,7 @@ public final  class countrycitywc_impl extends GXWebComponent
       }
       httpContext.AddJavascriptSource("jquery.js", "?"+httpContext.getBuildNumber( 75940), false, true);
       httpContext.AddJavascriptSource("gxgral.js", "?"+httpContext.getBuildNumber( 75940), false, true);
-      httpContext.AddJavascriptSource("gxcfg.js", "?202110711545983", false, true);
+      httpContext.AddJavascriptSource("gxcfg.js", "?2021102014431377", false, true);
       if ( httpContext.isSpaRequest( ) )
       {
          httpContext.enableOutput();
@@ -1447,7 +1447,7 @@ public final  class countrycitywc_impl extends GXWebComponent
       idxLst = 1 ;
       while ( idxLst <= Form.getJscriptsrc().getCount() )
       {
-         httpContext.AddJavascriptSource(GXutil.rtrim( Form.getJscriptsrc().item(idxLst)), "?20211071155020", true, true);
+         httpContext.AddJavascriptSource(GXutil.rtrim( Form.getJscriptsrc().item(idxLst)), "?202110201443148", true, true);
          idxLst = (int)(idxLst+1) ;
       }
       if ( ! outputEnabled )
@@ -1464,7 +1464,7 @@ public final  class countrycitywc_impl extends GXWebComponent
    {
       if ( nGXWrapped != 1 )
       {
-         httpContext.AddJavascriptSource("countrycitywc.js", "?20211071155020", false, true);
+         httpContext.AddJavascriptSource("countrycitywc.js", "?202110201443149", false, true);
       }
       /* End function include_jscripts */
    }

@@ -1,9 +1,9 @@
 ﻿<ConnectionInformation>
-	<DBName>GX_KB_Parks</DBName>
+	<DBName>GX_KB_Parks_903d4e28-6865-4331-b42c-8fada6992188</DBName>
 	<IntegratedSecurity>True</IntegratedSecurity>
 	<ServerInstance>(LocalDB)\MSSQLLocalDB</ServerInstance>
 	<CreateDbInKbFolder>True</CreateDbInKbFolder>
-	<Directory>C:\KB\Parks\Parks</Directory>
+	<Directory>C:\KB\Parks</Directory>
 	<DataFile>GX_KB_Parks.mdf</DataFile>
 	<LogFile>GX_KB_Parks_log.ldf</LogFile>
 	<HostName>DGS_339</HostName>

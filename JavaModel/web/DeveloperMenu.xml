@@ -65,12 +65,6 @@
    </Object>
    <Object>
       <ObjCls>1</ObjCls>
-      <ObjName>AmusementParksList</ObjName>
-      <ObjDesc>Amusement Parks List</ObjDesc>
-      <ObjLink>/ParksJavaEnvironment/com.parks.aamusementparkslist</ObjLink>
-   </Object>
-   <Object>
-      <ObjCls>1</ObjCls>
       <ObjName>GamesByCategory</ObjName>
       <ObjDesc>Games By Category</ObjDesc>
       <ObjLink>/ParksJavaEnvironment/com.parks.agamesbycategory</ObjLink>
